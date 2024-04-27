@@ -1,0 +1,33 @@
+{
+  "name": "design-system",
+  "version": "0.0.0",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    "./styles.css": "./dist/index.css",
+    "./card": "./src/card.tsx"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tailwindcss -i ./src/styles.css -o dist/index.css",
+    "lint": "eslint \"**/*.ts*\" --max-warnings 0",
+    "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+    "type-check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint-config": "*",
+    "tailwind-config": "*",
+    "typescript-config": "*",
+    "@types/react": "^18.2.38",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "react": "^18.2.0",
+    "tailwindcss": "3.4.1",
+    "tsup": "^8.0.2",
+    "typescript": "5.3.3"
+  }
+}
