@@ -7,13 +7,12 @@
     "type-check": "tsc --noEmit"
   },
   "exports": {
-    ".": {
-      "import": "./src/index.ts",
-      "require": "./src/index.ts"
-    }
+    ".": "./src/index.ts"
   },
   "dependencies": {
-    "infrastructure-supabase": "workspace:*"
+    "infrastructure-supabase": "workspace:*",
+    "@supabase/ssr": "latest",
+    "@supabase/supabase-js": "latest"
   },
   "peerDependencies": {
     "typescript": "latest"
