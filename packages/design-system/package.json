@@ -5,8 +5,10 @@
     "**/*.css"
   ],
   "exports": {
-    "./styles.css": "./dist/index.css",
-    "./card": "./src/card.tsx"
+    "./styles.css": "./styles/styles.css",
+    "./atoms": "./atoms/index.ts",
+    "./molecules": "./molecules/index.ts",
+    "./organisms": "./organisms/index.ts"
   },
   "license": "MIT",
   "scripts": {
