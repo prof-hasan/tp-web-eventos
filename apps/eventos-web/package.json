@@ -7,12 +7,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "@supabase/auth-helpers-nextjs": "^0.10.0",
+    "common-utils": "workspace:*",
+    "design-system": "workspace:*",
+    "events-domain": "workspace:*",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "design-system": "workspace:*",
-    "common-utils": "workspace:*",
-    "events-domain": "workspace:*"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@types/node": "20.11.5",
