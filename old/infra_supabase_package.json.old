@@ -5,8 +5,8 @@
   "scripts": {
     "supabase:gen-types": "supabase gen types typescript --linked --schema public > src/types/models.ts",
     "supabase:reset": " supabase db reset --db-url $POSTGRES_URL",
-    "gen": "bun supabase:gen-types",
-    "db:reset": "bun gen && bun supabase:reset",
+    "gen": "pnpm supabase:gen-types",
+    "db:reset": "pnpm gen && pnpm supabase:reset",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
