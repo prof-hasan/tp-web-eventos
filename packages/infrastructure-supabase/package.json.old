@@ -9,7 +9,6 @@
     "snaplet:seed": "pnpm dlx tsx seed.mts > supabase/seed.sql",
     "gen": "bun supabase:gen-types && bun snaplet:gen-cli",
     "db:reset": "bun gen && bun snaplet:seed && bun supabase:reset",
-    "lint": "eslint src/",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {

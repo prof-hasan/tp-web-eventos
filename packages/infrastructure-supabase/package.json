@@ -7,7 +7,6 @@
     "supabase:reset": " supabase db reset --db-url $POSTGRES_URL",
     "gen": "bun supabase:gen-types",
     "db:reset": "bun gen && bun supabase:reset",
-    "lint": "eslint src/",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {

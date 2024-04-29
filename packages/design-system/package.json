@@ -11,7 +11,6 @@
   "license": "MIT",
   "scripts": {
     "build": "tailwindcss -i ./styles/styles.css -ow dist/index.css",
-    "lint": "eslint \"**/*.ts*\" --max-warnings 0",
     "dev": "tailwindcss -i ./styles/styles.css -o ./dist/index.css --watch",
     "type-check": "tsc --noEmit"
   },
@@ -22,7 +21,7 @@
     "antd": "^5.16.5"
   },
   "devDependencies": {
-    "eslint-config": "*",
+    "eslint-config-custom": "*",
     "tailwind-config": "*",
     "typescript-config": "*",
     "@types/react": "^18.2.38",

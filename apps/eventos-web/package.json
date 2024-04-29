@@ -25,7 +25,7 @@
     "postcss": "8.4.33",
     "typescript": "5.3.3",
     "encoding": "^0.1.13",
-    "eslint-config": "*",
+    "eslint-config-custom": "*",
     "tailwind-config": "*",
     "typescript-config": "*"
   }
