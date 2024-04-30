@@ -1,0 +1,21 @@
+{
+  "name": "@repo/events-domain",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "lint": "eslint src/**/* --no-ignore",
+    "type-check": "tsc --noEmit"
+  },
+  "exports": {
+    "./events-cli": "./src/events-cli.ts"
+  },
+  "dependencies": {
+    "@repo/supabase-infra": "workspace:*",
+    "@supabase/auth-helpers-nextjs": "latest",
+    "@supabase/supabase-js": "latest",
+    "next": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "latest"
+  }
+}
