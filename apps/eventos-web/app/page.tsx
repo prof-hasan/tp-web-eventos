@@ -1,6 +1,6 @@
-import { Button } from "@repo/ui/atoms";
+import { Button } from "@repo/design-system/atoms";
 import { events } from "@repo/events-domain/events-cli";
-import { classname } from "@repo/ui/utils";
+import { classname } from "@repo/design-system/utils";
 
 const Home = async () => {
   const eventsList = await events.forServerAction().events().list();

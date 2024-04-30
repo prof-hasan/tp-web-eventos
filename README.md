@@ -3,7 +3,7 @@
 # Devs
 * [Victor Le Roy Matos](https://github.com/vmleroy)
 * [Vinícius N. Silva](https://github.com/vnszero)
-* [William](https://github.com/willhss1)
+* [Willian Silva de Almeida](https://github.com/willhss1)
 
 ## Instalando e executando o projeto:
 1. Instalar o NVM: 
@@ -33,10 +33,12 @@
 * Ir nas configurações do projeto e ir na aba de API.
 * Com as chaves **Project Url** e **Project API keys - anon public** em mãos, copiar o arquivo *.env.example* para cada projeto em `apps/[nome projeto]`.
 * Alterar o nome de *.env.example* para *.env*.
-* Agora com os *.env* configurados, seguir para o diretório `packages/infra-supabase` e rodar os seguintes comandos:
+* Agora com os *.env* configurados, seguir para o diretório `packages/infra-supabase` e execute os seguintes comandos:
 a. supabase login --> para logar no seu usuário.
 b. supabase link --> para vincular o seu banco no projeto.
 c. supabase db reset --linked --> para resetar o banco e executar as migrações.
+
+*PS: Um outro comando importante:*
 d. supabase db push --> aplicar as migrações pendentes.
 
 6. Verifique se há mais alguma outra chave pendente para ser preenchida no `.env`
@@ -47,7 +49,7 @@ d. supabase db push --> aplicar as migrações pendentes.
 
 6. Com as tarefas feitas e a PR (Pull Request) cridas:
 * Rode `bun lint` ou `pnpm lint` para verificar erros no eslint.
-* Rode `bun run build` ou `pnpm lint` para verificar errors no build.
+* Rode `bun run build` ou `pnpm build` para verificar errors no build.
 
 7. Com todos os testes rodadados e tudo estando ok, basta pedir a outro dev que corrija a sua PR. Com tudo aprovado, faça o merge da PR na main e verifique o processo de build.
 

@@ -18,8 +18,7 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
-    "strictNullChecks": true,
-    "paths": {"@/*": ["./*"]}
+    "strictNullChecks": true
   },
   "include": ["src", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

@@ -9,4 +9,5 @@ export interface EventsEntity {
   date: Date;
   time: Date;
   deletedAt: Date;
+  deleted: boolean;
 }

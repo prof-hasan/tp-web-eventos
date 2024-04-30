@@ -1,9 +1,9 @@
 import "./globals.css";
-import "@repo/ui/styles.css";
+import "@repo/design-system/styles.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { PropsWithChildren } from "react";
-import { LayoutProvider } from "@repo/ui/organisms";
+import { LayoutProvider } from "@repo/design-system/organisms";
 
 const inter = Inter({ subsets: ["latin"] });
 
