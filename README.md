@@ -34,11 +34,15 @@
 * Com as chaves **Project Url** e **Project API keys - anon public** em mãos, copiar o arquivo *.env.example* para cada projeto em `apps/[nome projeto]`.
 * Alterar o nome de *.env.example* para *.env*.
 * Agora com os *.env* configurados, seguir para o diretório `packages/infra-supabase` e execute os seguintes comandos:
+* 
 a. supabase login --> para logar no seu usuário.
+
 b. supabase link --> para vincular o seu banco no projeto.
+
 c. supabase db reset --linked --> para resetar o banco e executar as migrações.
 
 *PS: Um outro comando importante:*
+
 d. supabase db push --> aplicar as migrações pendentes.
 
 6. Verifique se há mais alguma outra chave pendente para ser preenchida no `.env`
