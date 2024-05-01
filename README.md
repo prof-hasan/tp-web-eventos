@@ -15,7 +15,7 @@
 * No momento estamos utilizando o [bun](https://bun.sh/), porém ele está em beta, portanto, caso ocorra erros, instalar o [pnpm](https://pnpm.io/pt/).
 
 2.1. Caso tenha instalado o **pnpm**:
-* Dentro do diretório `old` temos os pacotes antigos utilizados para a instalação e funcionamento utilizando o bundler.
+* Dentro do diretório `backup` temos os pacotes antigos utilizados para a instalação e funcionamento utilizando o bundler.
 * Devemos substituir os arquivos do projeto pelos presentes nesta pasta. Por exemplo: o arquivo `root_[nome do arquivo].old` será colocado na raiz do projeto e, em seguinda, remover a extensão `.old`.
 
 3. Instalando as CLIs:
