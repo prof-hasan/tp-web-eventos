@@ -11,15 +11,14 @@
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "eslint": "^8.57.0",
-    "prettier": "^3.2.5",
-    "prettier-plugin-tailwindcss": "^0.5.14",
+    "prettier": "3.2.5",
     "turbo": "latest"
   },
   "packageManager": "bun@1.1.6",
   "engines": {
     "node": ">=18"
   },
-  "workspaces":[
+  "workspaces": [
     "apps/*",
     "packages/*"
   ]
