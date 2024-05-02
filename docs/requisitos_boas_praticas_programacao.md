@@ -52,7 +52,7 @@ Componentes pequenos misturados com o intuito de montar um componente maior. Ex:
 Componentes que possuem "vida", por exemplo, os providers. No geral são componentes que passam informação para os filhos. Ex: packages\design-system\src\organisms\layout-provider.tsx
 
 #### Tailwind CSS
-Biblioteca de estilização inline. Além dela será utilizado as bibliotecas tailwind-merge e clsx para fazer o controle e evitar possíveis problemas na estilização.
+Biblioteca de estilização inline. Além dela será utilizado as bibliotecas tailwind-merge e clsx para fazer o controle e evitar possíveis problemas na estilização. Com relação à ordem dos identificadores, esta foi definida com base no plugin para tailwind do `Prettier`, um framework de sort arquivos famoso para TypeScript.
 
 
 ### Monorepo

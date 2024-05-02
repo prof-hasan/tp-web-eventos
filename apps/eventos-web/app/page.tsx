@@ -1,6 +1,6 @@
-import { Button } from "@repo/design-system/atoms";
-import { events } from "@repo/events-domain/events-cli";
-import { classname } from "@repo/design-system/utils";
+import { Button } from '@repo/design-system/atoms';
+import { events } from '@repo/events-domain/events-cli';
+import { cn } from '@repo/design-system/utils';
 
 const Home = async () => {
   const eventsList = await events.forServerAction().events().list();
@@ -13,7 +13,7 @@ const Home = async () => {
           <p>{event.description}</p>
         </div>
       ))}
-      <Button type="link" className={classname("bg-red-600", "border", "border-red-600")}>
+      <Button type='link' className={cn('h-full w-full border border-red-600 bg-red-600 p-3 text-white')}>
         Click me
       </Button>
     </main>
