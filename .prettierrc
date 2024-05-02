@@ -6,7 +6,7 @@
   "singleQuote": true,
   "trailingComma": "all",
   "bracketSpacing": true,
-  "jsxBracketSameLine": false,
+  "jsxBracketSameLine": true,
   "endOfLine": "lf",
   "jsxSingleQuote": true,
   "tailwindFunctions": ["cn", "classname"],

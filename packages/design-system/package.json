@@ -14,7 +14,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
-    "lint": "eslint src/**/* --no-ignore",
+    "lint": "eslint src/**/*.{ts,tsx} --no-ignore",
     "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
     "type-check": "tsc --noEmit"
   },
@@ -37,6 +37,8 @@
     "@ant-design/icons": "^5.3.6",
     "@ant-design/nextjs-registry": "^1.0.0",
     "antd": "^5.16.5",
-    "next": "latest"
+    "clsx": "^2.1.1",
+    "next": "latest",
+    "tailwind-merge": "^2.3.0"
   }
 }

@@ -1,4 +1,4 @@
-import type { EventsModel, EventsEntity } from "../types";
+import type { EventsModel, EventsEntity } from '../types';
 
 export const fromModel: (ActingModel: EventsModel) => EventsEntity = ({
   id,
@@ -10,7 +10,7 @@ export const fromModel: (ActingModel: EventsModel) => EventsEntity = ({
   address,
   date,
   time,
-  deleted_at
+  deleted_at,
 }) => ({
   id,
   name,
@@ -22,5 +22,5 @@ export const fromModel: (ActingModel: EventsModel) => EventsEntity = ({
   date,
   time,
   deleted: Boolean(deleted_at),
-  deletedAt: deleted_at
+  deletedAt: deleted_at,
 });
