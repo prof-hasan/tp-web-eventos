@@ -1,0 +1,22 @@
+name: Pre Realese CI
+
+on: [pull_request]
+
+concurrency:
+  group: ci-pre-release-${{ github.ref }}-1
+  cancel-in-progress: true
+
+jobs:
+  call-unit-tests:
+    uses: ./.github/workflows/1-1-tests-and-code-analysis.yaml
+    secrets: inherit
+  # TODO add vercel and the following jobs
+  # call-eventos-preview:
+  #   needs: call-unit-tests
+  #   uses: ./.github/workflows/1-2-preview-publishing.yaml
+  #   with:
+  #     component: events
+  #     vercel-project-id-var: REGISTRATION_VERCEL_PROJECT_ID
+  #     # subdomain: eventos
+  #     supabase-working-directory: ./packages/core-registration-domain/
+  #   secrets: inherit
