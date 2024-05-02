@@ -1,1 +1,1 @@
-export * from "./events-card"
+export * from "./event-card"

@@ -4,7 +4,7 @@ import { cn } from "../utils";
 interface EventCardPros {
     title: string;
     description: string;
-    imgSrc: string;
+    imgSrc?: string; 
 }
 
 export const EventCard: React.FC<EventCardPros> = ({ title, description, imgSrc }) => {

@@ -1,3 +1,4 @@
+'use client'
 import { Card as BaseCard, type CardProps } from 'antd';
 
 export const Card = ({ children, ...props } : CardProps) => {
