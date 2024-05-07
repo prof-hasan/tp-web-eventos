@@ -34,7 +34,7 @@ jobs:
         working-directory: ${{ inputs.supabase-working-directory }}
     steps:
       - name: Repository checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Supabase cli
         uses: supabase/setup-cli@v1
