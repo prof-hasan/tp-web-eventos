@@ -1,6 +1,7 @@
 import { type SupabaseClient } from '@supabase/supabase-js';
 import * as Events from './events';
-import * as User from './user';
+import * as Users from './users';
+import * as UsersEvents from './users-events';
 
 export const EventsDomain = (supabase: SupabaseClient) => ({
   events: () => ({
@@ -18,19 +19,32 @@ export const EventsDomain = (supabase: SupabaseClient) => ({
   }),
   
   users: () => ({
-    create: (user: User.UserCreateEntity) => User.create(supabase)(user),
-    bulkCreate: (users: User.UserCreateEntity[]) => User.bulkCreate(supabase)(users),
-    list: User.list(supabase),
+    create: (user: Users.UserCreateEntity) => Users.create(supabase)(user),
+    bulkCreate: (users: Users.UserCreateEntity[]) => Users.bulkCreate(supabase)(users),
+    list: Users.list(supabase),
     id: (id: string) => ({
-      get: () => User.getById(supabase)(id),
-      remove: () => User.remove(supabase)(id),
-      update: (user: User.UserUpdateEntity) => User.update(supabase)(id, user),
+      get: () => Users.getById(supabase)(id),
+      remove: () => Users.remove(supabase)(id),
+      update: (user: Users.UserUpdateEntity) => Users.update(supabase)(id, user),
     }),
     email: (email: string) => ({
-      get: () => User.getByEmail(supabase)(email),
+      get: () => Users.getByEmail(supabase)(email),
     }),
     auth_id: (auth_id: string) => ({
-      get: () => User.getByExternalAuthId(supabase)(auth_id),
+      get: () => Users.getByExternalAuthId(supabase)(auth_id),
     }),
+  }),
+
+  users_events: () => ({
+    create: (user_event: UsersEvents.UsersEventsCreateEntity) => UsersEvents.create(supabase)(user_event),
+    bulkCreate: (users_events: UsersEvents.UsersEventsCreateEntity[]) => UsersEvents.bulkCreate(supabase)(users_events),
+    list: UsersEvents.list(supabase),
+    event_id: (event_id: string) => ({
+      get: () => UsersEvents.getByEventId(supabase)(event_id),
+    }),
+    user_id: (user_id: string) => ({
+      get: () => UsersEvents.getByUserId(supabase)(user_id),
+    }),
+    remove: ({event_id, user_id}: {event_id: string, user_id: string}) => UsersEvents.remove(supabase)(event_id, user_id),
   }),
 });

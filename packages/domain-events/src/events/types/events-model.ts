@@ -1,4 +1,4 @@
-import { UserEntity } from "../../user/types";
+import { UserEntity } from "../../users/types";
 
 export interface EventsModel {
   id: string;
