@@ -6,15 +6,15 @@ on:
       component:
         required: true
         type: string
-      vercel-project-id-var:
-        required: true
-        type: string
-      subdomain:
-        required: true
-        type: string
       supabase-working-directory:
         required: true
         type: string
+      # vercel-project-id-var:
+      #   required: true
+      #   type: string
+      # subdomain:
+      #   required: true
+      #   type: string
 
 concurrency:
   group: ci-staging-${{ inputs.component }}-${{ github.ref }}-1

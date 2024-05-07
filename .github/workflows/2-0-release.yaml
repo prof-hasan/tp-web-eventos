@@ -10,15 +10,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  call-events-staging:
-    needs: call-registration-production
-    uses: ./.github/workflows/2-1-staging-publishing.yaml
-    with:
-      component: events-web
-      supabase-working-directory: ./packages/infra-supabase/
-      # vercel-project-id-var: REGISTRATION_VERCEL_PROJECT_ID
-      # subdomain: registros
-    secrets: inherit
   call-events-production:
     uses: ./.github/workflows/2-1-production-publishing.yaml
     with:
@@ -26,4 +17,13 @@ jobs:
       supabase-working-directory: ./packages/infra-supabase/
       # vercel-project-id-var: REGISTRATION_VERCEL_PROJECT_ID
       # subdomain: registros.plataforma
+    secrets: inherit
+  call-events-staging:
+    needs: call-events-production
+    uses: ./.github/workflows/2-1-staging-publishing.yaml
+    with:
+      component: events-web
+      supabase-working-directory: ./packages/infra-supabase/
+      # vercel-project-id-var: REGISTRATION_VERCEL_PROJECT_ID
+      # subdomain: registros
     secrets: inherit
