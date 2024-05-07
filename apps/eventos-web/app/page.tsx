@@ -11,7 +11,6 @@ const Home = async () => {
       <div className={cn('flex flex-row gap-2 p-2')}>
         {eventsList.map((event: any) => (
           <div key={event.id}>
-          
             <EventCard
               title={event.name}
               description={event.description}
@@ -19,7 +18,7 @@ const Home = async () => {
           </div>
         ))}
       </div>
-      <Button type='link' className={cn('h-full w-full border border-red-600 bg-red-600 p-3 text-white')}>
+      <Button variant='primary'>
         Click me
       </Button>
     </main>

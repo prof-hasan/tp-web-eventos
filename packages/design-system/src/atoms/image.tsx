@@ -1,5 +1,5 @@
-import { Image as BaseImage, type ImageProps } from 'antd';
+interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
 
 export const Image: React.FC<ImageProps> = ({ children, ...props }) => {
-  return <BaseImage {...props}>{children}</BaseImage>;
+  return <img {...props} />;
 };
