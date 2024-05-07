@@ -1,3 +1,5 @@
+import { UserEntity } from "../../user/types";
+
 export interface EventsEntity {
   id: string;
   name: string;
@@ -8,6 +10,7 @@ export interface EventsEntity {
   address: string;
   date: Date;
   time: Date;
+  owner: UserEntity;
   deletedAt: Date;
   deleted: boolean;
 }
