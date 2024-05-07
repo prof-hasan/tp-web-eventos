@@ -1,4 +1,4 @@
-import { UsersRoles } from "./users-roles";
+import type { UsersRoles } from "./users-roles";
 
 export interface UserCreateEntity {
   name: string;

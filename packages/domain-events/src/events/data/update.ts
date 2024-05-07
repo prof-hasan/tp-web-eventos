@@ -1,6 +1,6 @@
-import { SupabaseClient } from '@supabase/supabase-js';
+import { type SupabaseClient } from '@supabase/supabase-js';
 import { fromModel, toUpdate } from '../adapters';
-import { EventsUpdateEntity, EventsUpdateModel, EventsEntity as Events } from '../types';
+import { type EventsUpdateEntity, type EventsUpdateModel, type EventsEntity as Events, type EventsModel } from '../types';
 
 export const update =
   (supabase: SupabaseClient) =>
@@ -12,7 +12,5 @@ export const update =
       .select(`*, owner: users(*)`);
     if (error) throw error;
 
-    if (!data) throw new Error('No data returned from update query. A problem occurred.');
-
-    return fromModel(data[0]);
+    return fromModel(data[0] as EventsModel);
   };

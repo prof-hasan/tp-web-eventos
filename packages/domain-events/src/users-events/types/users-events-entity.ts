@@ -1,5 +1,5 @@
-import { EventsEntity } from "../../events";
-import { UserEntity } from "../../users/types";
+import type { EventsEntity } from "../../events";
+import type { UserEntity } from "../../users/types";
 
 export interface UsersEventsEntity {
   event: EventsEntity;

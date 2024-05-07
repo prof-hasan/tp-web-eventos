@@ -1,6 +1,6 @@
-import { SupabaseClient } from '@supabase/supabase-js';
+import { type SupabaseClient } from '@supabase/supabase-js';
 import { fromModel } from '../adapters';
-import { UserEntity as Users } from '../types';
+import { type UserModel, type UserEntity as Users } from '../types';
 
 export const getById =
   (supabase: SupabaseClient) =>
@@ -12,9 +12,7 @@ export const getById =
       .is('deleted_at', null);
     if (error) throw error;
 
-    if (!data) throw new Error('No data returned from get by id query. A problem occurred.');
-
-    return fromModel(data[0]);
+    return fromModel(data[0] as UserModel);
   };
 
 export const getByExternalAuthId =
@@ -27,9 +25,7 @@ export const getByExternalAuthId =
       .is('deleted_at', null);
     if (error) throw error;
 
-    if (!data) throw new Error('No data returned from get by auth_id query. A problem occurred.');
-
-    return fromModel(data[0]);
+    return fromModel(data[0] as UserModel);
   };
 
 export const getByEmail =
@@ -41,7 +37,6 @@ export const getByEmail =
       .eq('email', email)
       .is('deleted_at', null);
     if (error) throw error;
-    if (!data) throw new Error('No data returned from get by email query. A problem occurred.');
 
-    return fromModel(data[0]);
+    return fromModel(data[0] as UserModel);
   };

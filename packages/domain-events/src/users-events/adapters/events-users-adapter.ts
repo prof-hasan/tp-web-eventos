@@ -1,4 +1,4 @@
-import { UsersEventsCreateEntity, UsersEventsCreateModel, UsersEventsEntity, UsersEventsModel } from "../types";
+import type { UsersEventsCreateEntity, UsersEventsCreateModel, UsersEventsEntity, UsersEventsModel } from "../types";
 import { fromModel as eventsFromModel, fromEntity as eventsFromEntity } from "../../events";
 import { fromModel as usersFromModel, fromEntity as usersFromEntity } from "../../users";
 

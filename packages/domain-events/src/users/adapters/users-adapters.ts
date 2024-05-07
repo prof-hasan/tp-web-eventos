@@ -44,7 +44,7 @@ export const toCreate: (UserEntity: UserCreateEntity) => UserCreateModel = ({
 }) => ({
   name,
   email,
-  role_id: role?.id || 'user',
+  role_id: role.id,
   external_auth_id: externalAuthId || null,
 });
 

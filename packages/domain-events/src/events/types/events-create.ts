@@ -1,4 +1,4 @@
-import { UserEntity } from "../../users";
+import type { UserEntity } from "../../users";
 
 export interface EventsCreateEntity {
   name: string;

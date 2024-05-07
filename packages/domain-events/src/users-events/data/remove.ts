@@ -1,6 +1,6 @@
-import { SupabaseClient } from '@supabase/supabase-js';
+import { type SupabaseClient } from '@supabase/supabase-js';
 import { fromModel } from '../adapters';
-import { UsersEventsEntity as UsersEvents } from '../types';
+import { type UsersEventsModel, type UsersEventsEntity as UsersEvents } from '../types';
 
 export const remove =
   (supabase: SupabaseClient) =>
@@ -12,7 +12,5 @@ export const remove =
       .select(`*, event: events(*), user: users(*, role: users_roles(*))`);
     if (error) throw error;
 
-    if (!data) throw new Error('No data returned from delete query. A problem occurred.');
-
-    return fromModel(data[0]);
+    return fromModel(data[0] as UsersEventsModel);
   };

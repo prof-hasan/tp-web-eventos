@@ -1,6 +1,6 @@
-import { SupabaseClient } from '@supabase/supabase-js';
+import { type SupabaseClient } from '@supabase/supabase-js';
 import { fromModel, toCreate } from '../adapters';
-import { EventsCreateEntity, EventsCreateModel, EventsEntity as Events } from '../types';
+import { type EventsCreateEntity, type EventsCreateModel, type EventsEntity as Events, type EventsModel } from '../types';
 
 export const create =
   (supabase: SupabaseClient) =>
@@ -11,9 +11,7 @@ export const create =
       .select(`*, owner: users(*)`);
     if (error) throw error;
 
-    if (!data) throw new Error('No data returned from create query. A problem occurred.');
-
-    return fromModel(data[0]);
+    return fromModel(data[0] as EventsModel);
   };
 
 export const bulkCreate =
@@ -24,8 +22,6 @@ export const bulkCreate =
       .insert<EventsCreateModel[]>(events.map(toCreate))
       .select(`*, owner: users(*)`);
     if (error) throw error;
-
-    if (!data) throw new Error('No data returned from create query. A problem occurred.');
 
     return data.map(fromModel);
   };
