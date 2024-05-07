@@ -9,6 +9,12 @@ const config: Omit<Config, 'content'> = {
       },
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/container-queries'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('tailwind-scrollbar-hide')
+  ],
 };
 export default config;
