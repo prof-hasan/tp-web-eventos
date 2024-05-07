@@ -46,4 +46,5 @@ jobs:
         run: supabase link --project-ref ${{ vars.SUPABASE_PROJECT_ID }}
 
       - name: Clean database, run migrations and seed data
-        run: supabase db reset --linked
+        run: supabase db reset --linked | y
+
