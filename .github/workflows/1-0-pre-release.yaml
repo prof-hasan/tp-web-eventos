@@ -10,6 +10,16 @@ jobs:
   call-unit-tests:
     uses: ./.github/workflows/1-1-tests-and-code-analysis.yaml
     secrets: inherit
+  events-preview-release:
+    uses: ./.github/workflows/1-2-preview-publishing.yaml
+    with:
+      component: events-web
+      # TOOD add vercel and the following jobs
+      # vercel-project-id-var: SELECTION_VERCEL_PROJECT_ID
+      # subdomain: processos-seletivos
+      supabase-working-directory: ./packages/infra-supabase/
+    secrets: inherit
+    
   # TODO add vercel and the following jobs
   # call-eventos-preview:
   #   needs: call-unit-tests
