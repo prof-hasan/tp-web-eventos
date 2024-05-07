@@ -1,4 +1,4 @@
-import type { EventsModel, EventsEntity } from '../types';
+import type { EventsModel, EventsEntity, EventsCreateEntity, EventsCreateModel, EventsUpdateEntity, EventsUpdateModel } from '../types';
 
 export const fromModel: (ActingModel: EventsModel) => EventsEntity = ({
   id,
@@ -27,7 +27,7 @@ export const fromModel: (ActingModel: EventsModel) => EventsEntity = ({
   deletedAt: deleted_at,
 });
 
-export const fromEntity: (ActingModel: EventsEntity) => EventsModel = ({
+export const fromEntity: (EventsEntity: EventsEntity) => EventsModel = ({
   id,
   name,
   description,
@@ -54,4 +54,48 @@ export const fromEntity: (ActingModel: EventsEntity) => EventsModel = ({
   deleted_at: deletedAt,
   created_at: new Date(),
   updated_at: new Date(),
+});
+
+export const toCreate: (EventsEntity: EventsCreateEntity) => EventsCreateModel = ({
+  name,
+  description,
+  country,
+  state,
+  city,
+  address,
+  date,
+  time,
+  owner,
+}) => ({
+  name,
+  description,
+  country,
+  state,
+  city,
+  address,
+  date,
+  time,
+  owner_id: owner.id,
+});
+
+export const toUpdate: (EventsEntity: EventsUpdateEntity) => EventsUpdateModel = ({
+  id,
+  name,
+  description,
+  country,
+  state,
+  city,
+  address,
+  date,
+  time,
+}) => ({
+  id,
+  name,
+  description,
+  country,
+  state,
+  city,
+  address,
+  date,
+  time,
 });

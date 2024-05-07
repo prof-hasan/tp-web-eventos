@@ -1,6 +1,6 @@
 import type { UserModel, UserEntity, UserCreateEntity, UserCreateModel, UserUpdateEntity, UserUpdateModel } from '../types';
 
-export const fromModel: (ActingModel: UserModel) => UserEntity = ({
+export const fromModel: (UserModel: UserModel) => UserEntity = ({
   id,
   name,
   external_auth_id,
@@ -18,7 +18,7 @@ export const fromModel: (ActingModel: UserModel) => UserEntity = ({
   updatedAt: updated_at,
 });
 
-export const fromEntity: (ActingModel: UserEntity) => UserModel = ({
+export const fromEntity: (UserEntity: UserEntity) => UserModel = ({
   id,
   name,
   externalAuthId,
@@ -36,7 +36,7 @@ export const fromEntity: (ActingModel: UserEntity) => UserModel = ({
   updated_at: updatedAt,
 });
 
-export const toCreate: (ActingModel: UserCreateEntity) => UserCreateModel = ({
+export const toCreate: (UserEntity: UserCreateEntity) => UserCreateModel = ({
   name,
   email,
   role,
@@ -48,7 +48,7 @@ export const toCreate: (ActingModel: UserCreateEntity) => UserCreateModel = ({
   external_auth_id: externalAuthId || null,
 });
 
-export const toUpdate: (ActingModel: UserUpdateEntity) => UserUpdateModel = ({
+export const toUpdate: (UserEntity: UserUpdateEntity) => UserUpdateModel = ({
   id,
   name,
   email,
