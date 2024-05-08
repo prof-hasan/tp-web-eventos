@@ -1,3 +1,5 @@
+import type { UserEntity } from "../../users/types";
+
 export type EventsEntity = {
   id: string;
   name: string;
@@ -8,6 +10,7 @@ export type EventsEntity = {
   address: string;
   date: Date;
   time: Date;
+  owner: UserEntity;
   deletedAt: Date;
   deleted: boolean;
 }
