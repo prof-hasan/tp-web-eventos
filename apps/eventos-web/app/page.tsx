@@ -36,28 +36,23 @@ const Home = async () => {
         className={cn('mt-10 w-40')}
         icon={<UserIcon />}
       />
-      <div className={cn('mt-10')}>
-        <Select>
-          <SelectTrigger placeholder='Select an option' />
-          <SelectContent>
-            <SelectItem value='Option 1'>
-              <span className='font-caption text-cp-sm  text-neutral-850 flex items-center gap-2 font-medium dark:text-neutral-300'>
-                <span>Option 1</span>
-              </span>
-            </SelectItem>
-            <SelectItem value='Option 2'>
-              <span className='font-caption text-cp-sm  text-neutral-850 flex items-center gap-2 font-medium dark:text-neutral-300'>
-                <span>Option 2</span>
-              </span>
-            </SelectItem>
-            <SelectItem value='Option 3'>
-              <span className='font-caption text-cp-sm  text-neutral-850 flex items-center gap-2 font-medium dark:text-neutral-300'>
-                <span>Option 3</span>
-              </span>
-            </SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
+      <Select>
+        <SelectTrigger
+          className={cn('mt-10 w-40')}
+          placeholder='Select an option'
+        />
+        <SelectContent>
+          <SelectItem value='Option 1'>
+            Option 1
+          </SelectItem>
+          <SelectItem value='Option 2'>
+            Option 2
+          </SelectItem>
+          <SelectItem value='Option 3'>
+            Option 3
+          </SelectItem>
+        </SelectContent>
+      </Select>
     </main>
   );
 };

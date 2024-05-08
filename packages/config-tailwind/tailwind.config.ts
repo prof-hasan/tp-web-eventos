@@ -7,14 +7,15 @@ const config: Omit<Config, 'content'> = {
       backgroundImage: {
         'glow-conic': 'conic-gradient(from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 360deg)',
       },
-    }
+    },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/container-queries'),
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    require('tailwind-scrollbar-hide')
+    require('tailwind-scrollbar-hide'),
+    require('tailwindcss-radix')(),
   ],
 };
 export default config;
