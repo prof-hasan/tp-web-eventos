@@ -1,21 +1,20 @@
+import { type ReactNode } from 'react';
 import { cn } from '../utils';
 
 interface EventCardPros {
   title: string;
   description: string;
-  imgSrc?: string;
+  img: ReactNode;
 }
 
-export const EventCard: React.FC<EventCardPros> = ({ title, description, imgSrc }) => {
+export const EventCard: React.FC<EventCardPros> = ({  description, title, img }) => {
   return (
-    <>
+    <div>
       <div className={cn('flex flex-col gap-2')}>
-        {imgSrc && (
-          <img src={imgSrc} alt={title} className={cn('h-48 w-full object-cover')} />
-        )}
+        {img}
         <h2 className={cn('text-xl font-bold')}>{title}</h2>
         <p className={cn('text-sm')}>{description}</p>
       </div>
-    </>
+    </div>
   );
 };

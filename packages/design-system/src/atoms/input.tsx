@@ -1,21 +1,18 @@
+import React, {cloneElement, type ComponentProps, type ReactNode} from 'react';
 import { cn } from '../utils';
-import { Label } from './label';
-import { Image } from './image';
-import React from 'react';
 
-interface InputProps extends React.ComponentProps<'input'> {
-  children?: React.ReactNode;
+interface InputProps extends ComponentProps<'input'> {
   className?: string;
 }
 
-interface InputWithLabelProps extends React.ComponentProps<'input'> {
-  label: React.ReactNode;
-  input: React.ReactNode;
+interface InputWithLabelProps {
+  label: ReactNode;
+  input: ReactNode;
   className?: string;
 }
 
 interface InputIconProps extends InputProps {
-  icon: React.ReactNode;
+  icon: ReactNode;
   className?: string;
 }
 
@@ -27,7 +24,7 @@ const baseInputStyle = cn(`
 
 // const
 
-export const Input: React.FC<InputProps> = ({ children, className = '', ...props }) => {
+export const Input: React.FC<InputProps> = ({ className = '', ...props }) => {
   return (
     <input
       className={cn(baseInputStyle, className)}
@@ -42,8 +39,8 @@ export const InputIcon: React.FC<InputIconProps> = ({ icon, className = '', ...p
       <div className='relative w-full'>
         <div className='pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3'>
           {icon &&
-          //@ts-ignore -- its beeign ignored to not throw erros
-            React.cloneElement(icon, {
+          //@ts-expect-error -- its beeign ignored to not throw erros
+            cloneElement(icon, {
               className: 'h-5 w-5 text-gray-400',
               ariaHidden: 'true',
             })}
@@ -57,7 +54,7 @@ export const InputIcon: React.FC<InputIconProps> = ({ icon, className = '', ...p
   );
 };
 
-export const InputWithLabel: React.FC<InputWithLabelProps> = ({ input, className = '', label, ...props }) => {
+export const InputWithLabel: React.FC<InputWithLabelProps> = ({ input, className = '', label }) => {
   return (
     <div className={cn(className)}>
       {label}
