@@ -9,22 +9,14 @@ const baseInputStyle = cn(`
     sm:text-sm sm:leading-6
   `);
 
-export const Input: React.FC<InputProps> = ({ className = '', ...props }) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, type, ...props }, ref) => {
   return (
     <input
       className={cn(baseInputStyle, className)}
-      {...props}
-    />
-  );
-};
-
-export const InputRef = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) => {
-  return (
-    <input
-      className={cn(baseInputStyle, props.className)}
-      ref={ref}
+      ref={ref ? ref : null}
+      type={type ? type : 'text'}	
       {...props}
     />
   );
 });
-InputRef.displayName = 'InputRef';
+Input.displayName = 'Input';
