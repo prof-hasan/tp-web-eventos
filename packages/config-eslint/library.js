@@ -37,6 +37,10 @@ module.exports = {
     '@typescript-eslint/no-throw-literal': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/consistent-type-definitions': [
+      "error",
+      "type"
+    ]
   },
   ignorePatterns: ['node_modules/', 'dist/'],
 };
