@@ -1,7 +1,8 @@
-import { Button } from '@repo/design-system/atoms';
+import { Button, Input, InputIcon, InputWithLabel, Label } from '@repo/design-system/atoms';
 import { EventCard } from '@repo/design-system/molecules';
 import { events } from '@repo/events-domain/events-cli';
 import { cn } from '@repo/design-system/utils';
+import { UserIcon } from '@heroicons/react/16/solid';
 
 const Home = async () => {
   const eventsList = await events.forServerAction().events().list();
@@ -18,9 +19,22 @@ const Home = async () => {
           </div>
         ))}
       </div>
-      <Button variant='primary'>
+      <Button
+        variant='primary'
+        variantTheme='dark'
+      >
         Click me
       </Button>
+      <Input className={cn('mt-10 w-40')} />
+      <InputWithLabel
+        className={cn('mt-10 w-40')}
+        label={<Label label='teste' />}
+        input={<Input />}
+      />
+      <InputIcon
+        className={cn('mt-10 w-40')}
+        icon={<UserIcon />}
+      />
     </main>
   );
 };

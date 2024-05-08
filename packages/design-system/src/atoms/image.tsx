@@ -1,5 +1,9 @@
-interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
+import { cn } from "../utils";
 
-export const Image: React.FC<ImageProps> = ({ children, ...props }) => {
-  return <img {...props} />;
+interface ImageProps extends React.ComponentProps<'img'> {
+  className?: string
+}
+
+export const Image: React.FC<ImageProps> = ({ children, className, ...props }) => {
+  return <img className={cn(className)} {...props} />;
 };
