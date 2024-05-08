@@ -1,29 +1,20 @@
-import { Button, Card, CardMeta, Image } from '../atoms';
-import { cn } from "../utils";
+import { type ReactNode } from 'react';
+import { cn } from '../utils';
+import { Button } from '../atoms';
 
-interface EventCardPros {
-    title: string;
-    description: string;
-    imgSrc?: string; 
+type EventCardPros = {
+  title: string;
+  description: string;
+  img: ReactNode;
 }
 
-export const EventCard: React.FC<EventCardPros> = ({ title, description, imgSrc }) => {
-    return (
-        <Card 
-            cover={
-                <Image
-                    alt={title}
-                    className={cn('w-[150px] h-[150px] object-cover')}
-                    src={imgSrc}
-                    fallback='https://via.placeholder.com/150'
-                />
-            } 
-        >
-            <CardMeta 
-                title={title}
-                description={description}
-            />
-            <Button>{"Saiba mais >"}</Button>
-        </Card>
-    );
+export const EventCard: React.FC<EventCardPros> = ({ description, title, img }) => {
+  return (
+    <div className={cn('flex flex-col items-center justify-center gap-2 border')}>
+      {img}
+      <h2 className={cn('text-xl font-bold')}>{title}</h2>
+      <p className={cn('text-sm')}>{description}</p>
+      <Button>Saiba mais</Button>
+    </div>
+  );
 };

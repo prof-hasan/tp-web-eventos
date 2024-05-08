@@ -1,5 +1,10 @@
-import { Image as BaseImage, type ImageProps } from 'antd';
+import { cn } from "../utils";
 
-export const Image: React.FC<ImageProps> = ({ children, ...props }) => {
-  return <BaseImage {...props}>{children}</BaseImage>;
+type ImageProps = React.ComponentProps<'img'> & {
+  alt: string;
+  className?: string
+}
+
+export const Image: React.FC<ImageProps> = ({ className, ...props }) => {
+  return <img className={cn(className)} {...props} />;
 };
