@@ -1,8 +1,8 @@
-import { type ReactNode } from 'react';
+import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 import { cn } from '../utils';
 import { Button, Select, SelectContent, SelectItem, SelectTrigger } from '../atoms';
-import { InputIcon } from './';
-import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
+import { InputIcon } from '../molecules';
+
 
 type NavBarProps = {
   className?: string;
@@ -10,10 +10,12 @@ type NavBarProps = {
 
 export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
   return (
-    <nav className={cn('flex items-center justify-center gap-4 border-b-2 border-slate-200 bg-slate-50 py-2')}>
+    <nav
+      className={cn('flex items-center justify-center gap-4 border-b-2 border-slate-200 bg-slate-50 py-2', className)}
+    >
       <Button
-        variant='primary'
         className={cn('w-40')}
+        variant='primary'
       >
         Criar Evento
       </Button>
@@ -21,7 +23,7 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
         <SelectTrigger
           className={cn('w-40')}
           placeholder='Categorias'
-        ></SelectTrigger>
+        />
         <SelectContent>
           <SelectItem value='musica'>Música</SelectItem>
           <SelectItem value='cinema'>Cinema</SelectItem>
@@ -33,11 +35,5 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
         icon={<MagnifyingGlassIcon />}
       />
     </nav>
-    // <div className={cn('flex flex-col items-center justify-center gap-2 border')}>
-    //   {img}
-    //   <h2 className={cn('text-xl font-bold')}>{title}</h2>
-    //   <p className={cn('text-sm')}>{description}</p>
-    //   <Button>Saiba mais</Button>
-    // </div>
   );
 };
