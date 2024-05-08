@@ -1,6 +1,6 @@
 import type { UserEntity } from "../../users";
 
-export interface EventsCreateEntity {
+export type EventsCreateEntity = {
   name: string;
   description: string;
   country: string;
@@ -12,7 +12,7 @@ export interface EventsCreateEntity {
   owner: UserEntity;
 }
 
-export interface EventsCreateModel {
+export type EventsCreateModel = {
   name: string;
   description: string;
   country: string;

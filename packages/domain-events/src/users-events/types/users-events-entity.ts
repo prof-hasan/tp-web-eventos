@@ -1,7 +1,7 @@
 import type { EventsEntity } from "../../events";
 import type { UserEntity } from "../../users/types";
 
-export interface UsersEventsEntity {
+export type UsersEventsEntity = {
   event: EventsEntity;
   user: UserEntity;
 }

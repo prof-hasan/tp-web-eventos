@@ -1,4 +1,4 @@
-export interface EventsUpdateEntity {
+export type EventsUpdateEntity = {
   id: string;
   name?: string;
   description?: string;
@@ -10,7 +10,7 @@ export interface EventsUpdateEntity {
   time?: Date;
 }
 
-export interface EventsUpdateModel {
+export type EventsUpdateModel = {
   id: string;
   name?: string;
   description?: string;

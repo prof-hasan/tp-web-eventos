@@ -1,6 +1,6 @@
 import type { UsersRoles } from "./users-roles";
 
-export interface UserModel {
+export type UserModel = {
   id: string;
   external_auth_id: string;
   name: string;

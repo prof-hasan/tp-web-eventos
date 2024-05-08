@@ -1,7 +1,7 @@
 import { Button, Card, CardMeta, Image } from '../atoms';
 import { cn } from "../utils";
 
-interface EventCardPros {
+typeEventCardPros {
     title: string;
     description: string;
     imgSrc?: string; 

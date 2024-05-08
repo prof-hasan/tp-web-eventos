@@ -1,13 +1,13 @@
 import type { UsersRoles } from "./users-roles";
 
-export interface UserCreateEntity {
+export type UserCreateEntity = {
   name: string;
   email: string;
   role: UsersRoles;
   externalAuthId?: string;
 }
 
-export interface UserCreateModel {
+export type UserCreateModel = {
   name: string;
   email: string;
   role_id: string;

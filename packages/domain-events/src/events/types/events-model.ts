@@ -1,6 +1,6 @@
 import type { UserEntity } from "../../users/types";
 
-export interface EventsModel {
+export type EventsModel = {
   id: string;
   name: string;
   description: string;
