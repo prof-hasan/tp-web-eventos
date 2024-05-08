@@ -1,6 +1,6 @@
 import { Button, Input, Select, SelectContent, SelectItem, SelectTrigger } from '@repo/design-system/atoms';
 import { InputIcon, InputWithLabel } from '@repo/design-system/molecules';
-import { EventCard } from '@repo/design-system/molecules';
+import { EventCard, NavBar } from '@repo/design-system/molecules';
 import { events } from '@repo/events-domain/events-cli';
 import { cn } from '@repo/design-system/utils';
 import { PersonIcon } from '@radix-ui/react-icons'
@@ -21,6 +21,7 @@ const Home = async () => {
           </div>
         ))}
       </div>
+      <NavBar/>
       <Button
         variant='primary'
         className={cn('mt-10 w-40')}
