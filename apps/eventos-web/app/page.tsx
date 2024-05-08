@@ -3,7 +3,7 @@ import { InputIcon, InputWithLabel } from '@repo/design-system/molecules';
 import { EventCard } from '@repo/design-system/molecules';
 import { events } from '@repo/events-domain/events-cli';
 import { cn } from '@repo/design-system/utils';
-import { UserIcon } from '@heroicons/react/16/solid';
+import { PersonIcon } from '@radix-ui/react-icons'
 
 const Home = async () => {
   const eventsList = await events.forServerAction().events().list();
@@ -16,7 +16,7 @@ const Home = async () => {
             <EventCard
               title={event.name}
               description={event.description}
-              img={<UserIcon className={cn('h-40 w-40')} />}
+              img={<PersonIcon className={cn('h-40 w-40')} />}
             />
           </div>
         ))}
@@ -34,7 +34,7 @@ const Home = async () => {
       />
       <InputIcon
         className={cn('mt-10 w-40')}
-        icon={<UserIcon />}
+        icon={<PersonIcon />}
       />
       <Select>
         <SelectTrigger
