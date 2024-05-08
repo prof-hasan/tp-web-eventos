@@ -1,6 +1,6 @@
 import { cn } from '../utils';
 
-interface ButtonProps extends React.ComponentProps<'button'> {
+type ButtonProps = React.ComponentProps<'button'> &{
   className?: string;
   children?: React.ReactNode;
   variant?: 'primary' | 'secondary';

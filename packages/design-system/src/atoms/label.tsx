@@ -1,6 +1,6 @@
 import { cn } from '../utils';
 
-interface LabelProps extends React.ComponentProps<'label'> {
+type LabelProps = React.ComponentProps<'label'> & {
   label: string;
   className?: string;
 }

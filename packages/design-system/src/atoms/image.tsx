@@ -1,6 +1,6 @@
 import { cn } from "../utils";
 
-interface ImageProps extends React.ComponentProps<'img'> {
+type ImageProps = React.ComponentProps<'img'> & {
   alt: string;
   className?: string
 }

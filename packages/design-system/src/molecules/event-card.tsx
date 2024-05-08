@@ -2,7 +2,7 @@ import { type ReactNode } from 'react';
 import { cn } from '../utils';
 import { Button } from '../atoms';
 
-interface EventCardPros {
+type EventCardPros = {
   title: string;
   description: string;
   img: ReactNode;

@@ -1,4 +1,4 @@
-export interface EventsEntity {
+export type EventsEntity = {
   id: string;
   name: string;
   description: string;

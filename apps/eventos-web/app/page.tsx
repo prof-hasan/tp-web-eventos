@@ -1,4 +1,5 @@
-import { Button, Input, InputIcon, InputWithLabel, Label } from '@repo/design-system/atoms';
+import { Button, Input, Label } from '@repo/design-system/atoms';
+import { InputIcon, InputWithLabel } from '@repo/design-system/molecules';
 import { EventCard } from '@repo/design-system/molecules';
 import { events } from '@repo/events-domain/events-cli';
 import { cn } from '@repo/design-system/utils';
@@ -30,8 +31,7 @@ const Home = async () => {
       <Input className={cn('mt-10 w-40')} />
       <InputWithLabel
         className={cn('mt-10 w-40')}
-        label={<Label label='teste' />}
-        input={<Input />}
+        label={'teste'}
       />
       <InputIcon
         className={cn('mt-10 w-40')}
