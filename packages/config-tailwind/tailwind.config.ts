@@ -15,7 +15,7 @@ const config: Omit<Config, 'content'> = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('tailwind-scrollbar-hide'),
-    require('tailwindcss-radix')(),
+    // require('tailwindcss-radix'),
   ],
 };
 export default config;

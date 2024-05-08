@@ -2,7 +2,7 @@
 // REF: https://www.radix-ui.com/primitives/docs/components/select#installation
 import * as PrimitiveSelect from '@radix-ui/react-select';
 import { CaretDownIcon, CaretUpIcon, CheckIcon } from '@radix-ui/react-icons';
-import { type ComponentPropsWithoutRef, type ElementRef, forwardRef, type ReactElement, useState } from 'react';
+import { type ComponentPropsWithoutRef, type ElementRef, forwardRef, type ReactElement } from 'react';
 import { cn } from '../utils';
 
 type SelectProps = ComponentPropsWithoutRef<typeof PrimitiveSelect.Root>;
