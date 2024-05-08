@@ -4,7 +4,7 @@ import { EventCard } from '@repo/design-system/molecules';
 import { NavBar } from '@repo/design-system/organisms';
 import { events } from '@repo/events-domain/events-cli';
 import { cn } from '@repo/design-system/utils';
-import { PersonIcon } from '@radix-ui/react-icons'
+import { PersonIcon, SunIcon  } from '@radix-ui/react-icons'
 
 const Home = async () => {
   const eventsList = await events.forServerAction().events().list();
@@ -22,7 +22,7 @@ const Home = async () => {
           </div>
         ))}
       </div>
-      <NavBar/>
+      <NavBar img={<SunIcon className={cn('h-20 w-20')}/>}/>
       <Button
         variant='primary'
         className={cn('mt-10 w-40')}
