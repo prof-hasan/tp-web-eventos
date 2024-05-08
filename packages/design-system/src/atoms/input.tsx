@@ -22,8 +22,9 @@ export const InputRef = forwardRef<HTMLInputElement, InputProps>((props: InputPr
   return (
     <input
       className={cn(baseInputStyle, props.className)}
-      {...props}
       ref={ref}
+      {...props}
     />
   );
 });
+InputRef.displayName = 'InputRef';

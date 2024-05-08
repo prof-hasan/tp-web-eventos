@@ -21,15 +21,15 @@ export const InputWithLabel: React.FC<InputWithLabelProps> = ({
   ...props
 }) => {
   return (
-    <div className={cn(className ?? customStyle.div)}>
+    <div className={cn(className ? className : customStyle.div)}>
       <Label
         className={cn(customStyle.label)}
         label={label}
       />
       {inputRef ? (
         <BaseInputRef
-          ref={props.ref}
           className={cn(customStyle.input)}
+          ref={props.ref}
           {...props}
         />
       ) : (

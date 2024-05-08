@@ -23,7 +23,6 @@ const Home = async () => {
       </div>
       <Button
         variant='primary'
-        variantTheme='dark'
         className={cn('mt-10 w-40')}
       >
         Click me
