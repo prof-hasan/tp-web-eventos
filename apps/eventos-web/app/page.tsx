@@ -15,6 +15,7 @@ const Home = async () => {
             <EventCard
               title={event.name}
               description={event.description}
+              img={<UserIcon className={cn('h-40 w-40')} />}
             />
           </div>
         ))}
@@ -22,6 +23,7 @@ const Home = async () => {
       <Button
         variant='primary'
         variantTheme='dark'
+        className={cn('mt-10 w-40')}
       >
         Click me
       </Button>
