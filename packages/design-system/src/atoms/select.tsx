@@ -15,8 +15,9 @@ type SelectTriggerProps = ComponentPropsWithoutRef<typeof PrimitiveSelect.Trigge
 };
 const selectTriggerStyle = cn(
   `
-    inline-block flex w-full flex-row items-center justify-between rounded-md border-0 px-3 py-2 text-gray-900 shadow-sm ring-1 ring-inset 
-    ring-gray-400 hover:ring-2 hover:ring-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600
+    text-sm font-semibold inline-block flex w-full flex-row items-center justify-between rounded-md border-0 px-3 py-2 
+    text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 hover:ring-2 hover:ring-indigo-600 
+    focus:outline-none focus:ring-2 focus:ring-indigo-600
   `,
 );
 const SelectTrigger = forwardRef<ElementRef<typeof PrimitiveSelect.Trigger>, SelectTriggerProps>(
@@ -75,7 +76,7 @@ type SelectItemProps = ComponentPropsWithoutRef<typeof PrimitiveSelect.Item> & {
   indicator?: ReactElement;
 };
 const selectItemStyle = cn(`
-    text-md relative flex cursor-pointer select-none items-center justify-center gap-1 rounded-lg p-2
+    relative flex cursor-pointer select-none items-center justify-center gap-1 rounded-lg p-2
     leading-none data-[disabled]:pointer-events-none data-[disabled]:bg-gray-500 
     data-[highlighted]:bg-indigo-600 data-[selected]:bg-indigo-600 data-[highlighted]:text-white 
     data-[selected]:text-white data-[highlighted]:outline-none
