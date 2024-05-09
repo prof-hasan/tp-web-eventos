@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@repo/supabase-infra": "workspace:*",
-    "@supabase/auth-helpers-nextjs": "latest",
+    "@supabase/ssr": "^0.3.0",
     "@supabase/supabase-js": "latest",
     "next": "latest"
   },
