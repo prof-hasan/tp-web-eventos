@@ -1,10 +1,10 @@
 import { Button, Input, Select, SelectContent, SelectItem, SelectTrigger } from '@repo/design-system/atoms';
 import { InputIcon, InputWithLabel } from '@repo/design-system/molecules';
 import { EventCard } from '@repo/design-system/molecules';
-import { NavBar } from '@repo/design-system/organisms';
+import { Header } from '@repo/design-system/organisms';
 import { events } from '@repo/events-domain/events-cli';
 import { cn } from '@repo/design-system/utils';
-import { PersonIcon, SunIcon  } from '@radix-ui/react-icons'
+import { PersonIcon} from '@radix-ui/react-icons'
 
 const Home = async () => {
   const eventsList = await events.forClientComponent().events().list();
@@ -17,7 +17,7 @@ const Home = async () => {
 
   return (
     <main>
-      <NavBar img={<SunIcon className={cn('h-20 w-20')}/>}/>
+      <Header/>
       <div className={cn('flex flex-row gap-2 p-2')}>
         {eventsList.map((event: any) => (
           <div key={event.id}>

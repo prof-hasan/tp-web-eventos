@@ -1,20 +1,18 @@
-import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
-import { type ReactNode } from 'react';
+import { MagnifyingGlassIcon,SunIcon } from '@radix-ui/react-icons';
 import { cn } from '../utils';
-import { Button, Select, SelectContent, SelectItem, SelectTrigger } from '../atoms';
-import { InputIcon } from '../molecules';
+import { Button, Select, SelectContent, SelectItem, SelectTrigger,Logo } from '../atoms';
+import { InputIcon} from '../molecules';
 
-type NavBarProps = {
+type HeaderProps = {
   className?: string;
-  img: ReactNode;
 };
 
-export const NavBar: React.FC<NavBarProps> = ({ className = '', img }) => {
+export const Header: React.FC <HeaderProps> = ({ className = ''}) => {
   return (
     <nav
       className={cn('border-b-2 border-slate-200 bg-slate-50 py-2', className)}
     >
-      <div className={cn('flex justify-center py-2')}>{img}</div>
+      <Logo img={<SunIcon className={cn('h-20 w-20')}/>}/>
       <div className={cn('flex items-center justify-center gap-4')}>
         <Button
           className={cn('w-40')}
