@@ -7,7 +7,7 @@ export const getByEventId =
   async (eventId: string): Promise<UsersEvents[]> => {
     const { data, error } = await supabase
       .from('users_events')
-      .select(`*, event: events(*), user: users(*, role: users_roles(*))`)
+      .select(`*, event: events!fk_event_id(*), user: users!fk_user_id(*, role: users_roles(*))`)
       .eq('event_id', eventId);
     if (error) throw error;
 
@@ -19,7 +19,7 @@ export const getByUserId =
   async (userId: string): Promise<UsersEvents[]> => {
     const { data, error } = await supabase
       .from('users_events')
-      .select(`*, event: events(*), user: users(*, role: users_roles(*))`)
+      .select(`*, event: events!fk_event_id(*), user: users!fk_user_id(*, role: users_roles(*))`)
       .eq('user_id', userId);
     if (error) throw error;
 
