@@ -1,6 +1,7 @@
 import { Button, Input, Select, SelectContent, SelectItem, SelectTrigger } from '@repo/design-system/atoms';
 import { InputIcon, InputWithLabel } from '@repo/design-system/molecules';
 import { EventCard } from '@repo/design-system/molecules';
+import { Footer } from '@repo/design-system/organisms';
 import { events } from '@repo/events-domain/events-cli';
 import { cn } from '@repo/design-system/utils';
 import { PersonIcon } from '@radix-ui/react-icons';
@@ -62,6 +63,7 @@ const Home = async () => {
           <SelectItem value='Option 3'>Option 3</SelectItem>
         </SelectContent>
       </Select>
+      <Footer />
     </main>
   );
 };
