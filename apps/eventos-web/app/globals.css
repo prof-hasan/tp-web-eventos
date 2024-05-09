@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #2364AA; 
+  --secundary-color: #2D2327; 
+  --accent-color: #FFBF00; 
+  --background-color-1: #F7F0F0;
+  --background-color-2:#FAFDF6;
+}
 /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

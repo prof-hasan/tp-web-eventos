@@ -4,3 +4,4 @@ export * from "./input";
 export * from "./label"
 export * from "./select";
 // export * from "./typograph";
+export *  from "./section"
