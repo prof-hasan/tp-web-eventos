@@ -9,7 +9,7 @@ export const remove =
       .from('users_events')
       .delete()
       .match({ event_id, user_id })
-      .select(`*, event: events(*), user: users(*, role: users_roles(*))`);
+      .select(`*, event: events!fk_event_id(*), user: users!fk_user_id(*, role: users_roles(*))`);
     if (error) throw error;
 
     return fromModel(data[0] as UsersEventsModel);
