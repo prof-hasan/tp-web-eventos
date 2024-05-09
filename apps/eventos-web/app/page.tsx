@@ -6,7 +6,7 @@ import { cn } from '@repo/design-system/utils';
 import { PersonIcon } from '@radix-ui/react-icons'
 
 const Home = async () => {
-  const eventsList = await events.forServerAction().events().list();
+  const eventsList = await events.forClientComponent().events().list();
 
   return (
     <main>
