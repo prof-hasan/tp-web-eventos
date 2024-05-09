@@ -9,11 +9,11 @@ type HeaderProps = {
 
 export const Header: React.FC <HeaderProps> = ({ className = ''}) => {
   return (
-    <nav
-      className={cn('border-b-2 border-slate-200 bg-slate-50 py-2', className)}
+    <div
+      className={cn('border-b-2 border-slate-200 bg-slate-50 py-2')}
     >
       <Logo img={<SunIcon className={cn('h-20 w-20')}/>}/>
-      <div className={cn('flex items-center justify-center gap-4')}>
+      <div className={cn('flex items-center justify-center gap-4',className)}>
         <Button
           className={cn('w-40')}
           variant='primary'
@@ -36,6 +36,6 @@ export const Header: React.FC <HeaderProps> = ({ className = ''}) => {
           icon={<MagnifyingGlassIcon />}
         />
       </div>
-    </nav>
+    </div>
   );
 };

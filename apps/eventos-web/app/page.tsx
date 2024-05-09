@@ -17,7 +17,7 @@ const Home = async () => {
 
   return (
     <main>
-      <Header/>
+      <Header className=''/>
       <div className={cn('flex flex-row gap-2 p-2')}>
         {eventsList.map((event: any) => (
           <div key={event.id}>
