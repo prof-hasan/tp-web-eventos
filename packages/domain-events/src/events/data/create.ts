@@ -1,6 +1,11 @@
 import { type SupabaseClient } from '@supabase/supabase-js';
 import { fromModel, toCreate } from '../adapters';
-import { type EventsCreateEntity, type EventsCreateModel, type EventsEntity as Events, type EventsModel } from '../types';
+import {
+  type EventsCreateEntity,
+  type EventsCreateModel,
+  type EventsEntity as Events,
+  type EventsModel,
+} from '../types';
 
 export const create =
   (supabase: SupabaseClient) =>
