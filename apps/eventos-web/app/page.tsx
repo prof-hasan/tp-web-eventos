@@ -6,12 +6,12 @@ import { cn } from '@repo/design-system/utils';
 import { PersonIcon } from '@radix-ui/react-icons';
 
 const Home = async () => {
-  const eventsList = await events.forClientComponent().events().list();
-  const userList = await events.forClientComponent().users().list();
+  const eventsList = await events.forServerComponent().events().list();
+  const userList = await events.forServerComponent().users().list();
 
   const eventsParticipants: any = {};
   for (const event of eventsList) {
-    eventsParticipants[event.id] = await events.forClientComponent().users_events().event_id(event.id).get();
+    eventsParticipants[event.id] = await events.forServerComponent().users_events().event_id(event.id).get();
   }
 
   return (
