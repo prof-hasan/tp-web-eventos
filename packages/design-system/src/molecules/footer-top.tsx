@@ -8,6 +8,7 @@ type FooterTopProps = ComponentProps<'input'> & {
   className?: string;
 };
 
+// To Do: What can be Small Logo?
 export const FooterTop: React.FC<FooterTopProps> = ({
   className = ''
 }) => {

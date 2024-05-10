@@ -5,6 +5,7 @@ type FooterBottomProps = ComponentProps<'input'> & {
   className?: string;
 };
 
+// To Do: Should keep this here?
 var currentDate = new Date();
 
 export const FooterBottom: React.FC<FooterBottomProps> = ({ className = '' }) => {

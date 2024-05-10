@@ -5,6 +5,7 @@ type ColumnProps = ComponentProps<'input'> & {
   className?: string;
 };
 
+// To Do: How to Loop?
 export const Column: React.FC<ColumnProps> = ({ className = '' }) => {
   return (
     <div className={cn('', className)}>
