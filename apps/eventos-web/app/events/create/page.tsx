@@ -8,8 +8,8 @@ const CreateEventsPage = () => {
   const onSubmit = async (data: FieldValues) => {
     'use server';
     // TODO: get user id from session
-    const { id } = await auth.forServerComponent().auth().user().get();
-    const { id: owner_id } = await events.forServerComponent().users().auth_id(id).get(); //example of user id
+    const { id: authId } = await auth.forServerComponent().auth().user().get();
+    const { id: owner_id } = await events.forServerComponent().users().auth_id(authId).get();
     const event = await events
       .forServerComponent()
       .events()
@@ -19,7 +19,7 @@ const CreateEventsPage = () => {
       console.error('Error creating event');
       return;
     }
-    redirect(`/events/${encodeURIComponent(event.id)}`);
+    redirect(`/events/${encodeURIComponent}`);
   };
 
   return (
