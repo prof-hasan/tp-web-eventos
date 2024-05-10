@@ -12,7 +12,7 @@ const SignUpPage = () => {
     'use server';
     let userAuth: UserAuth = {} as UserAuth;
     try {
-      userAuth = await auth.forServerAction().auth().signUp({ email: data.email, password: data.password });
+      userAuth = await auth.forServerComponent().auth().signUp({ email: data.email, password: data.password });
     } catch (error) {
       console.log(error);
       return;

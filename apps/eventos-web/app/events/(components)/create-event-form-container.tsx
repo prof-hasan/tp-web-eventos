@@ -55,6 +55,7 @@ export const CreteEventFormContainer = ({onSubmit}: CreteEventContainerProps) =>
             label='Data'
             type='date'
             onChange={onChange}
+            pattern="dd-mm-yyyy" 
           />
         )}
       />
