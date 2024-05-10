@@ -1,3 +1,5 @@
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 import { FieldValues } from 'react-hook-form';
 import { SignUpFormContainer } from '../(components)/signup-form-container';
 import { auth } from '@repo/auth-domain/auth-cli';
@@ -30,6 +32,11 @@ const SignUpPage = () => {
     } catch (error) {
       console.log(error);
       return;
+    }
+
+    if (user) {
+      revalidatePath('/', 'layout');
+      redirect('/');
     }
   };
 
