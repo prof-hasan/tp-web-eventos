@@ -1,5 +1,4 @@
 import type { EmailOtpType, SupabaseClient } from '@supabase/supabase-js';
-
 import * as User from './user';
 
 export const AuthDomain = (supabase: SupabaseClient) => ({

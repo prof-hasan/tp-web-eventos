@@ -1,5 +1,5 @@
 import type { User, SupabaseClient } from '@supabase/supabase-js';
-import { headers } from 'next/headers';
+// import { headers } from 'next/headers';
 
 export const signUp =
   (supabase: SupabaseClient) =>

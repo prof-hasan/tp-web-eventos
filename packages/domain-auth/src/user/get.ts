@@ -5,5 +5,5 @@ export const get =
   async (): Promise<User> => {
     const { data, error } = await supabase.auth.getUser();
     if (error) throw error;
-    return data.user ? data.user : ({} as User);
+    return data.user;
   };
