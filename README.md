@@ -1,4 +1,5 @@
 # cefet-web-tp
+***Documentos relativos às entregas do tp estão presentes na pasta `docs`***
 
 # Devs
 * [Victor Le Roy Matos](https://github.com/vmleroy)
