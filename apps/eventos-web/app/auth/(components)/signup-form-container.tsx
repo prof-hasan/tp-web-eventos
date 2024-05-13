@@ -11,7 +11,7 @@ interface SignUpFormContainerProps {
 }
 
 export const SignUpFormContainer = ({onSubmit}: SignUpFormContainerProps) => {
-  const { control, handleSubmit } = useForm({
+  const { control, formState, handleSubmit } = useForm({
     resolver: zodResolver(signupSchema),
   });
 
@@ -33,6 +33,7 @@ export const SignUpFormContainer = ({onSubmit}: SignUpFormContainerProps) => {
           />
         )}
       />
+      { formState.errors.name && <span>{`${formState.errors.name.message}`}</span> }
       <Controller
         name='email'
         control={control}
@@ -45,6 +46,7 @@ export const SignUpFormContainer = ({onSubmit}: SignUpFormContainerProps) => {
           />
         )}
       />
+      { formState.errors.email && <span>{`${formState.errors.email.message}`}</span> }
       <Controller
         name='password'
         control={control}
@@ -57,6 +59,7 @@ export const SignUpFormContainer = ({onSubmit}: SignUpFormContainerProps) => {
           />
         )}
       />
+      { formState.errors.password && <span>{`${formState.errors.password.message}`}</span> }
       <Button type='submit'>Entrar</Button>
     </form>
   );
