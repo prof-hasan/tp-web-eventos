@@ -1,6 +1,7 @@
 import { Button, Input, Select, SelectContent, SelectItem, SelectTrigger } from '@repo/design-system/atoms';
 import { InputIcon, InputWithLabel } from '@repo/design-system/molecules';
 import { EventCard } from '@repo/design-system/molecules';
+import { Header } from '@repo/design-system/organisms';
 import { events } from '@repo/events-domain/events-cli';
 import { cn } from '@repo/design-system/utils';
 import { PersonIcon } from '@radix-ui/react-icons';
@@ -16,6 +17,7 @@ const Home = async () => {
 
   return (
     <main>
+      <Header className='' />
       <div className={cn('flex flex-row gap-2 p-2')}>
         {eventsList.map((event: any) => (
           <div key={event.id}>
@@ -29,10 +31,11 @@ const Home = async () => {
       </div>
       <div className={cn('flex flex-row gap-2 p-2')}>
         {userList.map((user: any) => (
-          <div key={user.id} className='border p-2'>
-            {user.email}
-            {' '}
-            {user.name}
+          <div
+            key={user.id}
+            className='border p-2'
+          >
+            {user.email} {user.name}
           </div>
         ))}
       </div>
