@@ -62,3 +62,21 @@ Monorepo é um único repositório contendo vários mini-projetos interno. Ele p
 ### Banco de dados
 Para o banco de dados será utilizado um bano em nuuvem baseado em PostgreSQL. Para as requisições vamos utilizar a CLI fornecida pelo banco para evitar o uso do SQL. Além disso será definido os tipos de cada requisição para mentermos um maior controle sob os dados obtidos e o uso de adapters para fazer a tradução de dados do front-end (as entidades) para os dados de back-end (os modelos)
 
+
+
+## Testes automatizados
+- Será utilizando o framework JEST ou CYPRESS.
+- Será feito testes de (os marcados já estão concluídos):
+
+- [x] **Build, Lint e migrações em bancos de dados através do github actions e scripts de Continuous Integration e Continous Delivery**
+    - Build: verifica se o projeto consegue rodar corretamente e se não houve problemas de compilação durante o processo de build do projeto
+    - Lint: verifica se o projeto segue os padrões pre-estabelecidos de código, como forçar a tipagem dos objetos, o modo que os imports são feitos, obrigar um retorno nas funções caso necessário, entre outros.
+    - Migrações: executa as migrações no banco de preview para verificar se não haverá problemas nos SQLs das migrações criadas, além de possibilitar o teste no ambiente de preview (PR pendente para aprovação)
+  - Deploy no Vercel: depende da aprovação do professor para dar acesso da Vercel no projeto
+
+- [] **Testes unitários**
+    - Testar as rotas de API do backend
+  - Definição e implementação de novos testes: pendente para últimma entrega
+
+- [] **Testes de integração do banco de dados com front-end**
+  - Definição e implementação de novos testes: pendente para últimma entrega
