@@ -16,7 +16,7 @@ export const FooterBottom: React.FC<FooterBottomProps> = ({ className = '' }) =>
         {currentDate.toLocaleDateString('pt-BR', {
           weekday: 'long',
           month: 'long',
-          day: 'numeric'
+          day: 'numeric',
         })}
       </span>
     </div>
