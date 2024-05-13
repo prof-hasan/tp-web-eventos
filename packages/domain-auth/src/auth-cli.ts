@@ -10,7 +10,6 @@ export const auth = {
   forServerComponent: (): any =>
     Auth(
       (() => {
-        // console.log('server component', process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
         const cookieStore = cookies();
         return createServerClient(
           process.env.NEXT_PUBLIC_SUPABASE_URL ? process.env.NEXT_PUBLIC_SUPABASE_URL : '',
@@ -28,7 +27,6 @@ export const auth = {
   forServerAction: (): any =>
     Auth(
       (() => {
-        // console.log('server action', process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
         const cookieStore = cookies();
         return createServerClient(
           process.env.NEXT_PUBLIC_SUPABASE_URL ? process.env.NEXT_PUBLIC_SUPABASE_URL : '',
@@ -52,7 +50,6 @@ export const auth = {
   forClientComponent: (): any =>
     Auth(
       (() => {
-        // console.log('client component', process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
         return createBrowserClient(
           process.env.NEXT_PUBLIC_SUPABASE_URL ? process.env.NEXT_PUBLIC_SUPABASE_URL : '',
           process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY : '',
@@ -62,7 +59,6 @@ export const auth = {
   forRouteHandler: (): any =>
     Auth(
       (() => {
-        // console.log('route handler', process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
         const cookieStore = cookies();
         return createServerClient(
           process.env.NEXT_PUBLIC_SUPABASE_URL ? process.env.NEXT_PUBLIC_SUPABASE_URL : '',
@@ -86,7 +82,6 @@ export const auth = {
   forMiddleware: ({ request, response }: { request: NextRequest; response: NextResponse }): any =>
     Auth(
       (() => {
-        // console.log('middleware', process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
         return createServerClient(
           process.env.NEXT_PUBLIC_SUPABASE_URL ? process.env.NEXT_PUBLIC_SUPABASE_URL : '',
           process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY : '',
