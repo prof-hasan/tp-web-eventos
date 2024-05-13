@@ -19,15 +19,16 @@ const Home = async () => {
       <Section
         caption='Teste'
         title='Isso é um teste'
-        variant='secondary'
+        variant='primary'
       >
         <div className={cn('flex flex-row gap-2 p-2')}>
           {eventsList.map((event: any) => (
-            <div key={event.id}>
+            <div key={event.id} >
               <EventCard
+                className={cn('rounded-md hover:shadow-lg')}
                 title={event.name}
                 description={`${event.description} with ${eventsParticipants[event.id].length} participants`}
-                img={<PersonIcon className={cn('h-40 w-40')} />}
+                img={<PersonIcon className={cn('h-40 w-40 border-b-2')} />}
               />
             </div>
           ))}
