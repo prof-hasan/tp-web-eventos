@@ -1,7 +1,7 @@
 import { type ComponentProps } from 'react';
-import { Column } from '../atoms';
 import { TwitterLogoIcon, InstagramLogoIcon, LinkedInLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
-import { cn } from '../utils';
+import { Column } from '../../atoms';
+import { cn } from '../../utils';
 
 type FooterColumnsProps = ComponentProps<'input'> & {
   className?: string;
@@ -11,25 +11,39 @@ export const FooterColumns: React.FC<FooterColumnsProps> = ({ className = '' }) 
   return (
     <div className={cn('grid grid-cols-4 place-content-between', className)}>
       <Column
+        className=''
         header='informações'
+        icons={[]}
         items={['Quem somos? / Nosso trabalho', 'Política de Implementação', 'Design', 'Termos de Uso']}
-        icons={[]}
+        key='1'
       />
       <Column
+        className=''
         header='produtores'
-        items={['criar evento']}
         icons={[]}
+        items={['criar evento']}
+        key='2'
       />
       <Column
+        className=''
         header='ajuda'
-        items={['SAC']}
         icons={[]}
+        items={['SAC']}
+        key='3'
       />
       <Column
         className='flex-row'
         header='siga nas redes sociais'
+        icons={
+          [
+            <TwitterLogoIcon key='1'/>, 
+            <InstagramLogoIcon key='2'/>, 
+            <LinkedInLogoIcon key='3'/>,
+            <GitHubLogoIcon key='4'/>
+          ]
+        }
         items={['']}
-        icons={[<TwitterLogoIcon />, <InstagramLogoIcon />, <LinkedInLogoIcon />, <GitHubLogoIcon />]}
+        key='4'
       />
     </div>
   );

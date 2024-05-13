@@ -1,8 +1,8 @@
 import { type ComponentProps } from 'react';
-import { Button } from '../atoms';
-import { InputIcon } from '.';
 import { EnvelopeClosedIcon, SunIcon } from '@radix-ui/react-icons';
-import { cn } from '../utils';
+import { Button } from '../../atoms';
+import { InputIcon } from '../../molecules';
+import { cn } from '../../utils';
 
 type FooterTopProps = ComponentProps<'input'> & {
   className?: string;
@@ -18,8 +18,8 @@ export const FooterTop: React.FC<FooterTopProps> = ({ className = '' }) => {
           icon={<EnvelopeClosedIcon />}
         />
         <Button
-          variant='primary'
           className={cn('w-40')}
+          variant='primary'
         >
           Increva-se
         </Button>

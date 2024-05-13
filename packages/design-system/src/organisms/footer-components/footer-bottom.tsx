@@ -1,12 +1,11 @@
 import { type ComponentProps } from 'react';
-import { cn } from '../utils';
+import { cn } from '../../utils';
 
 type FooterBottomProps = ComponentProps<'input'> & {
   className?: string;
 };
 
-// To Do: Should keep this here?
-var currentDate = new Date();
+const currentDate = new Date();
 
 export const FooterBottom: React.FC<FooterBottomProps> = ({ className = '' }) => {
   return (
