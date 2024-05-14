@@ -1,7 +1,6 @@
 import React from 'react';
 import { test, expect, afterEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { cn } from '@repo/design-system/utils';
 import { Logo } from '@repo/design-system/atoms';
 
 type LogoProps = React.ComponentProps<typeof Logo>;
