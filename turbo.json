@@ -17,6 +17,10 @@
     },
     "clean": {
       "cache": false
+    },
+    "test": {},
+    "test:watch": {
+      "cache": false
     }
   }
 }
