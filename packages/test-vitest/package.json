@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:watch:ui": "vitest --ui"
   },
   "peerDependencies": {
     "react": "^18.2.0"
@@ -17,6 +18,8 @@
     "@testing-library/react": "^15.0.7",
     "@types/react": "^18.2.61",
     "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/browser": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
     "jsdom": "^24.0.0",
     "typescript": "^5.3.3",
     "vitest": "^1.6.0"

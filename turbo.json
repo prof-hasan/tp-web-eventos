@@ -21,6 +21,9 @@
     "test": {},
     "test:watch": {
       "cache": false
+    },
+    "test:watch:ui": {
+      "cache": false
     }
   }
 }
