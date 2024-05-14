@@ -7,12 +7,12 @@ import { Label } from '@repo/design-system/atoms';
 type LabelProps = React.ComponentProps<typeof Label>;
 
 const clearTestingData = async () => {
-  screen.getByText('test-label').remove();
+  screen.getByTestId('label').remove();
 };
 
 const setup = ({ ...props }: LabelProps) => {
   const utils = render(<Label {...props} />);
-  const label = screen.getByText('test-label') as HTMLLabelElement;
+  const label = screen.getByTestId('label');
   return { utils, label };
 };
 

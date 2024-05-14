@@ -7,7 +7,7 @@ import { Input } from '@repo/design-system/atoms';
 type InputProps = React.ComponentProps<typeof Input>;
 
 const clearTestingData = async () => {
-  screen.getByPlaceholderText('Test input').remove();
+  screen.getByTestId('input').remove();
 };
 
 const setup = ({ ...props }: InputProps) => {
@@ -17,7 +17,7 @@ const setup = ({ ...props }: InputProps) => {
       {...props}
     />,
   );
-  const input = screen.getByPlaceholderText('Test input') as HTMLInputElement;
+  const input = screen.getByTestId('input') as HTMLInputElement;
   return { utils, input };
 };
 

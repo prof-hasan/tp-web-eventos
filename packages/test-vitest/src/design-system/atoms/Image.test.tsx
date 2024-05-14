@@ -7,7 +7,7 @@ import { Image } from '@repo/design-system/atoms';
 type ImageProps = React.ComponentProps<typeof Image>;
 
 const clearTestingData = async () => {
-  screen.getByAltText('test-image').remove();
+  screen.getByTestId('image').remove();
 };
 
 const setup = ({ ...props }: Omit<ImageProps, 'alt'>) => {
@@ -18,7 +18,7 @@ const setup = ({ ...props }: Omit<ImageProps, 'alt'>) => {
       {...props}
     />,
   );
-  const image = screen.getByAltText('test-image') as HTMLImageElement;
+  const image = screen.getByTestId('image') as HTMLImageElement;
   return { utils, image };
 };
 
