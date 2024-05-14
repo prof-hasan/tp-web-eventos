@@ -7,9 +7,6 @@
     "test:watch": "vitest",
     "test:watch:ui": "vitest --ui"
   },
-  "peerDependencies": {
-    "react": "^18.2.0"
-  },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",

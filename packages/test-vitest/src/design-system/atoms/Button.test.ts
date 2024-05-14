@@ -1,7 +1,7 @@
 import { test, expect, vi, afterEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { Button } from '@repo/design-system/atoms';
 import { cn } from '@repo/design-system/utils';
+import { Button } from '@repo/design-system/atoms';
 
 const clearTestingData = async () => {
   screen.getByText('Click me').remove();
