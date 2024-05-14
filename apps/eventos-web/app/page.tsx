@@ -1,5 +1,5 @@
 import { Button, Input, Select, SelectContent, SelectItem, SelectTrigger } from '@repo/design-system/atoms';
-import { InputIcon, InputWithLabel } from '@repo/design-system/molecules';
+import { InputIcon, InputLabel } from '@repo/design-system/molecules';
 import { EventCard } from '@repo/design-system/molecules';
 import { Header } from '@repo/design-system/organisms';
 import { events } from '@repo/events-domain/events-cli';
@@ -46,7 +46,7 @@ const Home = async () => {
         Click me
       </Button>
       <Input className={cn('mt-10 w-40')} />
-      <InputWithLabel
+      <InputLabel
         className={cn('mt-10 w-40')}
         label={'teste'}
       />

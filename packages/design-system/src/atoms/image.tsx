@@ -8,8 +8,8 @@ type ImageProps = React.ComponentProps<'img'> & {
 export const Image: React.FC<ImageProps> = ({ className, ...props }) => {
   return (
     <img
-      data-testid='image'
       className={cn(className)}
+      data-testid='image'
       {...props}
     />
   );

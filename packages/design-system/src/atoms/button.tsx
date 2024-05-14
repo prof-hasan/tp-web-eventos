@@ -17,8 +17,8 @@ const baseButtonStyle = ({ variant }: ButtonProps) => {
 export const Button: React.FC<ButtonProps> = ({ className = '', children, variant = 'primary', type, ...props }) => {
   return (
     <button
-      data-testid='button'
       className={cn(baseButtonStyle({ variant }), className)}
+      data-testid='button'
       type={type ?? 'button'}
       {...props}
     >

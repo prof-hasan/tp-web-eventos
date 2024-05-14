@@ -23,8 +23,8 @@ export const InputLabel: React.FC<InputWithLabelProps> = ({
 }) => {
   return (
     <div
-      data-testid='input-label'
       className={cn(className)}
+      data-testid='input-label'
     >
       <Label
         className={cn(customStyle.label)}

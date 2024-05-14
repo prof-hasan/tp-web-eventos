@@ -12,7 +12,10 @@ type EventCardPros = {
 
 export const EventCard: React.FC<EventCardPros> = ({ className, description, title, img, onClick }) => {
   return (
-    <div data-testid='event-card' className={cn('flex flex-col items-center justify-center gap-2 border', className)}>
+    <div
+      className={cn('flex flex-col items-center justify-center gap-2 border', className)}
+      data-testid='event-card'
+    >
       {img}
       <h2 className={cn('text-xl font-bold')}>{title}</h2>
       <p className={cn('text-sm')}>{description}</p>

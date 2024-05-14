@@ -8,8 +8,8 @@ type LabelProps = React.ComponentProps<'label'> & {
 export const Label: React.FC<LabelProps> = ({ label = '', className = '' }) => {
   return (
     <label
-      data-testid='label'
       className={cn('block text-sm font-medium leading-6 text-gray-900', className)}
+      data-testid='label'
     >
       {label}
     </label>

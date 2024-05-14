@@ -21,14 +21,14 @@ const setup = ({ ...props }: Omit<InputLabelProps, 'children'>) => {
   return { utils, inputLabel, input };
 };
 
-test('InputWithLabel renders correctly', async () => {
+test('InputLabel renders correctly', async () => {
   const { inputLabel } = setup({
     label: 'Test Label',
   });
   expect(inputLabel).toBeTruthy();
 });
 
-test('InputWithLabel on change', async () => {
+test('InputLabel on change', async () => {
   const handleChange = vi.fn();
   const { inputLabel, input } = setup({ label: 'Test Label', onChange: handleChange });
   fireEvent.change(input, { target: { value: 'Hello' } });
