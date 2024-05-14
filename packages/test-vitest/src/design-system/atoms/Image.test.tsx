@@ -28,11 +28,6 @@ test('Image renders', () => {
 });
 
 test('Image renders with custom style', () => {
-  const { image } = setup({ className: 'rounded-lg' });
-  expect(image).toHaveProperty('className', 'rounded-lg');
-});
-
-test('Image renders with custom style using cn', () => {
   const { image } = setup({ className: 'rounded-lg border-2' });
   expect(image).toHaveProperty(
     'className',
