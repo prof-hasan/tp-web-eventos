@@ -42,5 +42,10 @@ jobs:
       - name: Lint
         run: bun run lint
 
-      # - name: Run tests
-      #   run: pnpm test
+      - name: Run tests
+        run: bun run test
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: logs
+          path: logs
