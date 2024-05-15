@@ -13,6 +13,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({ className, type
   return (
     <input
       className={cn(baseInputStyle, className)}
+      data-testid='input'
       ref={ref ? ref : null}
       type={type ? type : 'text'}
       {...props}

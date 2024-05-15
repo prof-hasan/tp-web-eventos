@@ -3,7 +3,7 @@
 import { Controller, useForm, type FieldValues } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { createEventSchema } from './forms-schemas';
-import { InputWithLabel } from '@repo/design-system/molecules';
+import { InputLabel } from '@repo/design-system/molecules';
 import { Button } from '@repo/design-system/atoms';
 
 interface CreteEventContainerProps {
@@ -25,7 +25,7 @@ export const CreteEventFormContainer = ({onSubmit}: CreteEventContainerProps) =>
         name='name'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='Nome'
             type='text'
             placeholder='Digite o nome do evento'
@@ -38,7 +38,7 @@ export const CreteEventFormContainer = ({onSubmit}: CreteEventContainerProps) =>
         name='description'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='Descrição'
             type='text'
             placeholder='Digite a descrição do evento'
@@ -51,7 +51,7 @@ export const CreteEventFormContainer = ({onSubmit}: CreteEventContainerProps) =>
         name='date'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='Data'
             type='date'
             onChange={onChange}
@@ -64,7 +64,7 @@ export const CreteEventFormContainer = ({onSubmit}: CreteEventContainerProps) =>
         name='time'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='Hora'
             type='time'
             onChange={onChange}
@@ -76,7 +76,7 @@ export const CreteEventFormContainer = ({onSubmit}: CreteEventContainerProps) =>
         name='country'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='País'
             type='text'
             placeholder='Digite o local do evento'
@@ -89,7 +89,7 @@ export const CreteEventFormContainer = ({onSubmit}: CreteEventContainerProps) =>
         name='state'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='Estado'
             type='text'
             placeholder='Digite a cidade do evento'
@@ -102,7 +102,7 @@ export const CreteEventFormContainer = ({onSubmit}: CreteEventContainerProps) =>
         name='city'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='Cidade'
             type='text'
             placeholder='Digite a cidade do evento'
@@ -115,7 +115,7 @@ export const CreteEventFormContainer = ({onSubmit}: CreteEventContainerProps) =>
         name='address'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='Endereço'
             type='text'
             placeholder='Digite o endereço do evento'

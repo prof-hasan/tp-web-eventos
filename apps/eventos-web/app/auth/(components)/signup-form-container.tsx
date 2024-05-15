@@ -3,7 +3,7 @@
 import { Controller, useForm, type FieldValues } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { signupSchema } from './forms-schemas';
-import { InputWithLabel } from '@repo/design-system/molecules';
+import { InputLabel } from '@repo/design-system/molecules';
 import { Button } from '@repo/design-system/atoms';
 
 interface SignUpFormContainerProps {
@@ -25,7 +25,7 @@ export const SignUpFormContainer = ({onSubmit}: SignUpFormContainerProps) => {
         name='name'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='Nome'
             type='text'
             placeholder='Digite seu nome'
@@ -38,7 +38,7 @@ export const SignUpFormContainer = ({onSubmit}: SignUpFormContainerProps) => {
         name='email'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='Email'
             type='email'
             placeholder='Digite seu email'
@@ -51,7 +51,7 @@ export const SignUpFormContainer = ({onSubmit}: SignUpFormContainerProps) => {
         name='password'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='Senha'
             type='password'
             placeholder='Digite sua senha'

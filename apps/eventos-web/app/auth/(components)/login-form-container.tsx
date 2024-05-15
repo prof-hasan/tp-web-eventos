@@ -3,7 +3,7 @@
 import { Controller, useForm, type FieldValues } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema } from './forms-schemas';
-import { InputWithLabel } from '@repo/design-system/molecules';
+import { InputLabel } from '@repo/design-system/molecules';
 import { Button } from '@repo/design-system/atoms';
 
 interface LoginFormContainerProps {
@@ -25,7 +25,7 @@ export const LoginFormContainer = ({ onSubmit }: LoginFormContainerProps) => {
         name='email'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='Email'
             type='email'
             placeholder='Digite seu email'
@@ -38,7 +38,7 @@ export const LoginFormContainer = ({ onSubmit }: LoginFormContainerProps) => {
         name='password'
         control={control}
         render={({ field: { onChange, value } }) => (
-          <InputWithLabel
+          <InputLabel
             label='Senha'
             type='password'
             placeholder='Digite sua senha'

@@ -7,7 +7,7 @@ type ButtonProps = React.ComponentProps<'button'> & {
 };
 
 const baseButtonStyle = ({ variant }: ButtonProps) => {
-  return cn(`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm`, {
+  return cn(`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm `, {
     'bg-indigo-600 text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600':
       variant === 'primary',
     'bg-white/10 text-white hover:bg-white/20': variant === 'secondary',
@@ -18,6 +18,7 @@ export const Button: React.FC<ButtonProps> = ({ className = '', children, varian
   return (
     <button
       className={cn(baseButtonStyle({ variant }), className)}
+      data-testid='button'
       type={type ?? 'button'}
       {...props}
     >

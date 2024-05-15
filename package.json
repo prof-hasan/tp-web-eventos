@@ -6,7 +6,10 @@
     "lint": "turbo lint",
     "type-check": "turbo type-check",
     "clean": "turbo clean",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo test",
+    "test:watch": "turbo test:watch",
+    "test:watch:ui": "turbo test:watch:ui"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",

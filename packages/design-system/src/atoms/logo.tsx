@@ -6,5 +6,12 @@ type LogoProps = {
 };
 
 export const Logo: React.FC<LogoProps> = ({ img }) => {
-  return <div className={cn('flex justify-center py-2')}>{img}</div>;
+  return (
+    <div
+      className={cn('flex justify-center py-2')}
+      data-testid='logo'
+    >
+      {img}
+    </div>
+  );
 };

@@ -75,8 +75,9 @@ Para o banco de dados será utilizado um bano em nuuvem baseado em PostgreSQL. P
   - Deploy no Vercel: depende da aprovação do professor para dar acesso da Vercel no projeto
 
 - [] **Testes unitários**
-    - Testar as rotas de API do backend
+    - Testar os componentes do design system
+    - TODO: Testar as rotas de API do backend
   - Definição e implementação de novos testes: pendente para últimma entrega
 
-- [] **Testes de integração do banco de dados com front-end**
+- [] **Testes de integração**
   - Definição e implementação de novos testes: pendente para últimma entrega
