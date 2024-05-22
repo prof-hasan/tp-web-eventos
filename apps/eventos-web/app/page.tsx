@@ -1,22 +1,24 @@
 import { Button, Input, Select, SelectContent, SelectItem, SelectTrigger } from '@repo/design-system/atoms';
-import { InputIcon, InputWithLabel } from '@repo/design-system/molecules';
+import { InputIcon, InputLabel } from '@repo/design-system/molecules';
 import { EventCard } from '@repo/design-system/molecules';
 import { Footer } from '@repo/design-system/organisms';
+import { Header } from '@repo/design-system/organisms';
 import { events } from '@repo/events-domain/events-cli';
 import { cn } from '@repo/design-system/utils';
 import { PersonIcon } from '@radix-ui/react-icons';
 
 const Home = async () => {
-  const eventsList = await events.forClientComponent().events().list();
-  const userList = await events.forClientComponent().users().list();
+  const eventsList = await events.forServerComponent().events().list();
+  const userList = await events.forServerComponent().users().list();
 
   const eventsParticipants: any = {};
   for (const event of eventsList) {
-    eventsParticipants[event.id] = await events.forClientComponent().users_events().event_id(event.id).get();
+    eventsParticipants[event.id] = await events.forServerComponent().users_events().event_id(event.id).get();
   }
 
   return (
     <main>
+      <Header className='' />
       <div className={cn('flex flex-row gap-2 p-2')}>
         {eventsList.map((event: any) => (
           <div key={event.id}>
@@ -30,10 +32,11 @@ const Home = async () => {
       </div>
       <div className={cn('flex flex-row gap-2 p-2')}>
         {userList.map((user: any) => (
-          <div key={user.id} className='border p-2'>
-            {user.email}
-            {' '}
-            {user.name}
+          <div
+            key={user.id}
+            className='border p-2'
+          >
+            {user.email} {user.name}
           </div>
         ))}
       </div>
@@ -44,7 +47,7 @@ const Home = async () => {
         Click me
       </Button>
       <Input className={cn('mt-10 w-40')} />
-      <InputWithLabel
+      <InputLabel
         className={cn('mt-10 w-40')}
         label={'teste'}
       />

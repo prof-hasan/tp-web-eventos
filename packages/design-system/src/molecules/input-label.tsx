@@ -12,7 +12,7 @@ type InputWithLabelProps = ComponentProps<'input'> & {
   label: string;
 };
 
-export const InputWithLabel: React.FC<InputWithLabelProps> = ({
+export const InputLabel: React.FC<InputWithLabelProps> = ({
   className = '',
   customStyle = {
     input: '',
@@ -22,7 +22,10 @@ export const InputWithLabel: React.FC<InputWithLabelProps> = ({
   ...props
 }) => {
   return (
-    <div className={cn(className)}>
+    <div
+      className={cn(className)}
+      data-testid='input-label'
+    >
       <Label
         className={cn(customStyle.label)}
         label={label}

@@ -20,7 +20,10 @@ export const InputIcon: React.FC<InputIconProps> = ({
   ...props
 }) => {
   return (
-    <div className={cn(className)}>
+    <div
+      className={cn(className)}
+      data-testid='input-icon'
+    >
       <div className='relative w-full'>
         <div className='pointer-events-none absolute inset-y-0 start-0 flex items-center ps-2'>
           {Icon &&
