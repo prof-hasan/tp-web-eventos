@@ -42,6 +42,7 @@ jobs:
       - name: Lint
         run: bun run lint
 
-      - name: Run tests
-        needs: [supabase-preview]
+    tests:
+        needs: [unit-test, supabase-preview]
+        - name: Run tests
         run: bun run test
