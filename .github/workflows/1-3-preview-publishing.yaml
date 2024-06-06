@@ -48,7 +48,7 @@ jobs:
         id: netlify_deploy
         run: | 
               netlify deploy \
-              --dir .turbo \
+              --dir .next \
               --site ${{ secrets.NETLIFY_SITE_ID }} \
               --auth ${{ secrets.NETLIFY_API_TOKEN }} \
               --filter eventos-web
