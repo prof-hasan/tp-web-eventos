@@ -1,4 +1,4 @@
-import type { UserEntity } from "../../users";
+import type { UserEntity } from '../../users';
 
 export type EventsCreateEntity = {
   name: string;
@@ -9,8 +9,8 @@ export type EventsCreateEntity = {
   address: string;
   date: Date;
   time: Date;
-  owner: UserEntity;
-}
+  owner: UserEntity | Omit<UserEntity, 'externalAuthId' | 'name' | 'email' | 'role' | 'createdAt' | 'updatedAt'>;
+};
 
 export type EventsCreateModel = {
   name: string;
@@ -22,4 +22,4 @@ export type EventsCreateModel = {
   date: Date;
   time: Date;
   owner_id: string;
-}
+};

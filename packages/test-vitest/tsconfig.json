@@ -1,5 +1,5 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
-  "include": ["src/**/*.ts", "src/design-system/atoms/Button.test.tsx", "src/design-system/atoms/Image.test.tsx", "src/design-system/atoms/Input.test.tsx", "src/design-system/molecules/EventCard.test.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }
