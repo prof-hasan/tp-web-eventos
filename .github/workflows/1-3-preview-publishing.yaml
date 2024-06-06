@@ -30,14 +30,11 @@ jobs:
       - name: Install Netlify
         run: bun add netlify-cli@17.10.1 -g
 
-      - name: Build
-        run: bun run build
-
       - name: Netlify publish
         id: netlify_deploy
         run: | 
               netlify deploy \
-              --dir .turbo \
+              --dir .next \
               --site ${{ secrets.NETLIFY_SITE_ID }} \
               --auth ${{ secrets.NETLIFY_API_TOKEN }} \
               --filter eventos-web
