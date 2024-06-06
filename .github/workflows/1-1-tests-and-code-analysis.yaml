@@ -43,4 +43,5 @@ jobs:
         run: bun run lint
 
       - name: Run tests
+        needs: [supabase-preview]
         run: bun run test
