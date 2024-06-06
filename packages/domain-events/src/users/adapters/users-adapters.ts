@@ -47,7 +47,7 @@ export const toCreate: (UserEntity: UserCreateEntity) => UserCreateModel = ({
   name,
   email,
   role_id: role.id,
-  external_auth_id: externalAuthId || null,
+  external_auth_id: externalAuthId ?? null,
 });
 
 export const toUpdate: (UserEntity: UserUpdateEntity) => UserUpdateModel = ({
