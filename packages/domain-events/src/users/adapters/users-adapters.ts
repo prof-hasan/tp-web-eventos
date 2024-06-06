@@ -37,15 +37,17 @@ export const fromEntity: (UserEntity: UserEntity) => UserModel = ({
 });
 
 export const toCreate: (UserEntity: UserCreateEntity) => UserCreateModel = ({
+  id,
   name,
   email,
   role,
   externalAuthId,
 }) => ({
+  id,
   name,
   email,
   role_id: role.id,
-  external_auth_id: externalAuthId || null,
+  external_auth_id: externalAuthId ?? null,
 });
 
 export const toUpdate: (UserEntity: UserUpdateEntity) => UserUpdateModel = ({
