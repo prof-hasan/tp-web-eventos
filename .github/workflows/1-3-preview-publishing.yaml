@@ -1,0 +1,39 @@
+name: Preview Publishing
+
+on:
+  workflow_call:
+    inputs:
+      component:
+        required: true
+        type: string
+
+concurrency:
+  group: ci-preview-${{ inputs.component }}-${{ github.ref }}-1
+  cancel-in-progress: true
+
+jobs:
+  netlify-preview:
+    name: Build netlify preview
+    runs-on: ubuntu-latest
+    environment: "preview-${{github.actor}}"
+    env:
+      HEAD: ${{ github.head_ref || github.ref_name }}
+      NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+    steps:
+      - name: Repository checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup BUN
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install Netlify
+        run: bun add netlify-cli@17.10.1 -g
+
+      - name: Netlify publish
+        id: netlify_deploy
+        run: netlify deploy \
+              --dir dist \
+              --site ${{ secrets.NETLIFY_SITE_ID }} \
+              --auth ${{ secrets.NETLIFY_API_TOKEN }}
+
