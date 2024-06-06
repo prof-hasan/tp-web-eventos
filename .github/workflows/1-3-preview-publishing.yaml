@@ -21,7 +21,7 @@ jobs:
       NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
       NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
     steps:
-       - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup BUN
@@ -52,4 +52,3 @@ jobs:
               --site ${{ secrets.NETLIFY_SITE_ID }} \
               --auth ${{ secrets.NETLIFY_API_TOKEN }} \
               --filter eventos-web
-
