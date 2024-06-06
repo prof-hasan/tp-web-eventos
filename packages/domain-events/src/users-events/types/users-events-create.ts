@@ -2,8 +2,8 @@ import type { EventsEntity } from "../../events";
 import type { UserEntity } from "../../users/types";
 
 export type UsersEventsCreateEntity = {
-  event: EventsEntity;
-  user: UserEntity;
+  event: EventsEntity | { id: string };
+  user: UserEntity | { id: string };
 }
 
 export type UsersEventsCreateModel = {

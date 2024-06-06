@@ -25,6 +25,8 @@
   "dependencies": {
     "@repo/design-system": "workspace:*",
     "@repo/events-domain": "workspace:*",
+    "@supabase/ssr": "^0.3.0",
+    "@supabase/supabase-js": "2.43.1",
     "webdriverio": "^8.36.1"
   }
 }

@@ -1,6 +1,7 @@
 import { expect, test } from 'vitest';
-import { events } from '@repo/events-domain/events-cli';
 import { UserCreateEntity } from '@repo/events-domain/user-types';
+import { createBrowserClient } from '@supabase/ssr';
+import { EventsDomain } from '../../../../domain-events/src/domain';
 
 const setup = () => {
   const user1: UserCreateEntity = {
@@ -33,17 +34,26 @@ const setup = () => {
       name: 'User',
     },
   };
-  return { user1, user2, user3 };
+
+  const client = EventsDomain(
+    (() =>
+      createBrowserClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL ? process.env.NEXT_PUBLIC_SUPABASE_URL : '',
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY : '',
+      ))(),
+  );
+
+  return { user1, user2, user3, client };
 };
 
 test('Should create a user', async () => {
-  const { user1 } = setup();
-  const result = await events.forClientComponent().users().create(user1);
+  const { client, user1 } = setup();
+  const result = await client.users().create(user1);
   expect(result).toBeDefined();
 });
 
 test('Should create multiple users', async () => {
-  const { user2, user3 } = setup();
-  const result = await events.forClientComponent().users().bulkCreate([user2, user3]);
+  const { client, user2, user3 } = setup();
+  const result = await client.users().bulkCreate([user2, user3]);
   expect(result).toBeDefined();
 });

@@ -5,6 +5,13 @@ import { cookies } from 'next/headers';
 import { NextResponse, type NextRequest } from 'next/server';
 import { EventsDomain as Events } from './domain';
 
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+console.log(__dirname);
+
 export const events = {
   forServerComponent: (): any =>
     Events(

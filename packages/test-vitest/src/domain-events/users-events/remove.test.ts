@@ -1,6 +1,6 @@
-import { expect, test } from "vitest";
+import { expect, test } from 'vitest';
 import { createBrowserClient } from '@supabase/ssr';
-import { EventsDomain } from "../../../../domain-events/src/domain";
+import { EventsDomain } from '../../../../domain-events/src/domain';
 
 const setup = () => {
   const client = EventsDomain(
@@ -11,10 +11,10 @@ const setup = () => {
       ))(),
   );
   return { client };
-}
+};
 
-test('Should list users', async () => {
+test('Should soft delete a user', async () => {
   const { client } = setup();
-  const users = await client.users().list();
-  expect(users).toBeDefined();
+  const user = await client.users_events().remove({ event_id: '2', user_id: '2' });
+  expect(user).toBeDefined();
 });

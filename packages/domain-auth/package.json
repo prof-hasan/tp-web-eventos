@@ -13,10 +13,10 @@
   "dependencies": {
     "@repo/supabase-infra": "workspace:*",
     "@supabase/ssr": "^0.3.0",
-    "@supabase/supabase-js": "latest",
-    "next": "latest"
+    "@supabase/supabase-js": "2.43.1",
+    "next": "14.2.3"
   },
   "peerDependencies": {
-    "typescript": "latest"
+    "typescript": "^5.3.3"
   }
 }

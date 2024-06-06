@@ -1,6 +1,6 @@
-import { expect, test } from "vitest";
+import { expect, test } from 'vitest';
 import { createBrowserClient } from '@supabase/ssr';
-import { EventsDomain } from "../../../../domain-events/src/domain";
+import { EventsDomain } from '../../../../domain-events/src/domain';
 
 const setup = () => {
   const client = EventsDomain(
@@ -13,8 +13,14 @@ const setup = () => {
   return { client };
 }
 
-test('Should list users', async () => {
+test('Should get user', async () => {
   const { client } = setup();
-  const users = await client.users().list();
-  expect(users).toBeDefined();
+  const user = await client.events().id('1').get();
+  expect(user).toBeDefined();
+});
+
+test('Should get user by owner id', async () => {
+  const { client } = setup();
+  const user = await client.events().owner_id('1').get();
+  expect(user).toBeDefined();
 });

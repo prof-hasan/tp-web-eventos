@@ -1,6 +1,7 @@
 import type { UserEntity } from '../../users';
 
 export type EventsCreateEntity = {
+  id?: string;
   name: string;
   description: string;
   country: string;
@@ -9,10 +10,11 @@ export type EventsCreateEntity = {
   address: string;
   date: Date;
   time: Date;
-  owner: UserEntity | Omit<UserEntity, 'externalAuthId' | 'name' | 'email' | 'role' | 'createdAt' | 'updatedAt'>;
+  owner: UserEntity | { id: string };
 };
 
 export type EventsCreateModel = {
+  id?: string;
   name: string;
   description: string;
   country: string;
