@@ -22,8 +22,8 @@ const setup = () => {
   };
 };
 
-// test('should create an event', async () => {
-//   const { event } = setup();
-//   const result = await events.forServerComponent().events().create(event);
-//   expect(result).toBeDefined();
-// });
+test('should create an event', async () => {
+  const { event } = setup();
+  const result = await events.forServerComponent().events().create(event);
+  expect(result).toBeDefined();
+});

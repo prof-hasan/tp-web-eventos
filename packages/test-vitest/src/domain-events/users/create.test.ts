@@ -1,6 +1,6 @@
+import { expect, test } from 'vitest';
 import { events } from '@repo/events-domain/events-cli';
 import { UserCreateEntity } from '@repo/events-domain/user-types';
-import { expect, test } from 'vitest';
 
 const setup = () => {
   const user1: UserCreateEntity = {
