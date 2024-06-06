@@ -43,5 +43,6 @@ module.exports = {
     'import/no-default-export': 'off',
     '@typescript-eslint/no-throw-literal': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/only-throw-error': 'off',
   },
 };
