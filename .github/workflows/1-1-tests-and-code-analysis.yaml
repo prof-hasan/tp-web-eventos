@@ -11,6 +11,7 @@ jobs:
   unit-test:
     name: Run automated unit tests
     timeout-minutes: 15
+    needs: [supabase-preview]
     runs-on: ubuntu-latest
     environment: 'preview-${{github.actor}}'
     env:
@@ -42,7 +43,5 @@ jobs:
       - name: Lint
         run: bun run lint
 
-    tests:
-        needs: [unit-test, supabase-preview]
-        - name: Run tests
+      - name: Run tests
         run: bun run test
