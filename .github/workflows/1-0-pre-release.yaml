@@ -7,15 +7,15 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  call-unit-tests:
-    uses: ./.github/workflows/1-1-tests-and-code-analysis.yaml
-    secrets: inherit
   events-preview-release:
-    uses: ./.github/workflows/1-2-preview-publishing.yaml
+    uses: ./.github/workflows/1-1-backend-preview-publishing.yaml
     with:
       component: events-web
       supabase-working-directory: ./packages/infra-supabase/
       # TOOD add vercel and the following jobs
       # vercel-project-id-var: SELECTION_VERCEL_PROJECT_ID
       # subdomain: processos-seletivos
+    secrets: inherit
+  call-unit-tests:
+    uses: ./.github/workflows/1-2-tests-and-code-analysis.yaml
     secrets: inherit

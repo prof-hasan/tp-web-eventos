@@ -1,4 +1,4 @@
-name: Preview Publishing
+name: Backend Preview Publishing
 
 on:
   workflow_call:
