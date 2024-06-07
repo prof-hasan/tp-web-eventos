@@ -42,7 +42,7 @@ jobs:
         run: bun install
 
       - name: Build
-        run: bun run build
+        run: bun run build --filter eventos-web
 
       - name: Netlify publish
         id: netlify_deploy
@@ -50,5 +50,4 @@ jobs:
               netlify deploy \
               --dir apps/eventos-web/.next \
               --site ${{ secrets.NETLIFY_SITE_ID }} \
-              --auth ${{ secrets.NETLIFY_API_TOKEN }} \
-              --filter eventos-web
+              --auth ${{ secrets.NETLIFY_API_TOKEN }}
