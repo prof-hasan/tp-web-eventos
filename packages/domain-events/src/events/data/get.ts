@@ -20,7 +20,7 @@ export const getByOwnerId =
   async (owner_id: string): Promise<Events[]> => {
     const { data, error } = await supabase
       .from('events')
-      .select(`*, owner: users!user_foreign_key(*)`)
+      .select(`*, owner: users!fk_user_id(*)`)
       .eq('owner_id', owner_id)
       .is('deleted_at', null);
     if (error) throw error;

@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:watch:ui": "vitest --ui"
+    "test": "vitest run -no-cache",
+    "test:watch": "vitest -no-cache",
+    "test:watch:ui": "vitest --ui -no-cache"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -25,6 +25,8 @@
   "dependencies": {
     "@repo/design-system": "workspace:*",
     "@repo/events-domain": "workspace:*",
+    "@supabase/ssr": "^0.3.0",
+    "@supabase/supabase-js": "2.43.1",
     "webdriverio": "^8.36.1"
   }
 }

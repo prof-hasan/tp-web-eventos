@@ -57,6 +57,7 @@ export const fromEntity: (EventsEntity: EventsEntity) => EventsModel = ({
 });
 
 export const toCreate: (EventsEntity: EventsCreateEntity) => EventsCreateModel = ({
+  id,
   name,
   description,
   country,
@@ -67,6 +68,7 @@ export const toCreate: (EventsEntity: EventsCreateEntity) => EventsCreateModel =
   time,
   owner,
 }) => ({
+  id,
   name,
   description,
   country,

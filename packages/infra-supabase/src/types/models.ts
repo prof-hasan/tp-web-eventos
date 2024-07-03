@@ -20,6 +20,7 @@ export type Database = {
           description: string
           id: string
           name: string
+          owner_id: string
           state: string
           time: string
           updated_at: string | null
@@ -34,6 +35,7 @@ export type Database = {
           description: string
           id?: string
           name: string
+          owner_id: string
           state: string
           time: string
           updated_at?: string | null
@@ -48,9 +50,104 @@ export type Database = {
           description?: string
           id?: string
           name?: string
+          owner_id?: string
           state?: string
           time?: string
           updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "fk_user_id"
+            columns: ["owner_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      users: {
+        Row: {
+          created_at: string | null
+          deleted_at: string | null
+          email: string
+          external_auth_id: string
+          id: string
+          name: string
+          role_id: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          deleted_at?: string | null
+          email: string
+          external_auth_id: string
+          id?: string
+          name: string
+          role_id?: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          deleted_at?: string | null
+          email?: string
+          external_auth_id?: string
+          id?: string
+          name?: string
+          role_id?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "fk_role_id"
+            columns: ["role_id"]
+            isOneToOne: false
+            referencedRelation: "users_roles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      users_events: {
+        Row: {
+          event_id: string
+          user_id: string
+        }
+        Insert: {
+          event_id: string
+          user_id: string
+        }
+        Update: {
+          event_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "fk_event_id"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "events"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "fk_user_id"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      users_roles: {
+        Row: {
+          id: string
+          name: string
+        }
+        Insert: {
+          id: string
+          name: string
+        }
+        Update: {
+          id?: string
+          name?: string
         }
         Relationships: []
       }

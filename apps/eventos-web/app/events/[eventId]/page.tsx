@@ -23,7 +23,7 @@ const EventPage = async ({ params: { eventId: initialEventId } }: Props) => {
       <EventCard
         title={event.name}
         description={event.description}
-        img={event.img || <IconJarLogoIcon />}
+        img={event.img ?? <IconJarLogoIcon />}
       />
     </div>
   );

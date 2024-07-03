@@ -16,7 +16,7 @@ const CreateEventsPage = () => {
       .create({ ...data, owner: { id: owner_id } });
     if (!event) {
       // TODO: if error, show error message
-      console.error('Error creating event');
+      console.log('Error creating event');
       return;
     }
     redirect(`/events/${encodeURIComponent}`);

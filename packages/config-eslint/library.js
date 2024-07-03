@@ -34,13 +34,11 @@ module.exports = {
   rules: {
     'import/no-default-export': 'off',
     camelcase: ['error', { allow: ['[A-Za-z0-9]+_[A-Za-z0-9]+'] }],
-    '@typescript-eslint/no-throw-literal': 'off',
+    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-throw-literal': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/consistent-type-definitions': [
-      "error",
-      "type"
-    ]
+    '@typescript-eslint/only-throw-error': 'off',
   },
   ignorePatterns: ['node_modules/', 'dist/'],
 };

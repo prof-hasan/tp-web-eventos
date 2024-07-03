@@ -37,16 +37,17 @@ module.exports = {
   // add rules configurations here
   rules: {
     'import/no-default-export': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-throw-literal': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/only-throw-error': 'off',
     'jsx-a11y/alt-text': 'off',
     'react/jsx-no-leaked-render': 'off',
     'react/button-has-type': 'off',
     'react/function-component-definition': [
       'error',
       { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' },
-    ]
+    ],
   },
   overrides: [
     {
