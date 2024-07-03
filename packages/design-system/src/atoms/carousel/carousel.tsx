@@ -11,9 +11,11 @@ import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 
 import  './css/embla.css'
+import { EventsEntity } from '../../../../domain-events/src/events/types/events-entity'
+import { EventCard } from '../../molecules'
 
 type PropType = {
-  slides: number[]
+  slides: EventsEntity[]
   options?: EmblaOptionsType
 }
 
@@ -44,9 +46,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((index) => (
+          {slides.map((object, index) => (
             <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">{index}</div>
+              <EventCard title={object.name} description={object.description} img={'placeholder'} />
             </div>
           ))}
         </div>

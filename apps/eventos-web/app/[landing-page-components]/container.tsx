@@ -1,11 +1,14 @@
-'use client'
+import { EventsSection } from '@repo/design-system/organisms';
+import { events } from '@repo/events-domain/events-cli';
+import { EventsEntity } from '@repo/events-domain/events-types';
 
-import { EmblaCarousel } from "@repo/design-system/atoms"
-
-export const LandingPageContainer = () => {
+export const LandingPageContainer = async () => {
+  const eventsObj = await events.forServerComponent().events().list();
   return (
-    <>
-      <EmblaCarousel slides={[1, 2, 3, 4, 5]} />    
-    </>
-  )
-}
+    <EventsSection
+      title='Eventos'
+      description='App to manage events.'
+      events={eventsObj}
+    />
+  );
+};
