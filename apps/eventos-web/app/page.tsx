@@ -1,9 +1,7 @@
+import { LandingPageContainer } from './[landing-page-components]/container';
+
 const Home = async () => {
-  return (
-    <main>
-      LANDING PAGE
-    </main>
-  );
+  return <LandingPageContainer />;
 };
 
 export default Home;
