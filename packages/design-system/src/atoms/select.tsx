@@ -24,6 +24,7 @@ const SelectTrigger = forwardRef<ElementRef<typeof PrimitiveSelect.Trigger>, Sel
   ({ placeholder, className, ...rest }, forwardedRef) => {
     return (
       <PrimitiveSelect.Trigger
+        aria-label='Select Trigger'
         className={cn(selectTriggerStyle, className)}
         ref={forwardedRef}
         {...rest}

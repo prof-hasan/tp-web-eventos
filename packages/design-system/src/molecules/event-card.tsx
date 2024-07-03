@@ -13,6 +13,7 @@ type EventCardPros = {
 export const EventCard: React.FC<EventCardPros> = ({ className, description, title, img, onClick }) => {
   return (
     <div
+      aria-label='Event Card'
       className={cn('flex flex-col items-center justify-center gap-2 border', className)}
       data-testid='event-card'
     >
