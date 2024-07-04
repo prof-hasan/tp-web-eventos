@@ -1,3 +1,4 @@
+import { EventsCategoryModel } from "../../category";
 import type { UserEntity } from "../../users/types";
 
 export type EventsModel = {
@@ -12,6 +13,7 @@ export type EventsModel = {
   time: Date;
   owner_id: string;
   owner: UserEntity;
+  category: EventsCategoryModel
   created_at: Date;
   updated_at: Date;
   deleted_at: Date;

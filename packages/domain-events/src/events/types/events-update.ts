@@ -1,3 +1,5 @@
+import { EventsCategoryEntity, EventsCategoryModel } from "../../category";
+
 export type EventsUpdateEntity = {
   id: string;
   name?: string;
@@ -8,6 +10,7 @@ export type EventsUpdateEntity = {
   address?: string;
   date?: Date;
   time?: Date;
+  category?: EventsCategoryEntity | { id: string };
 }
 
 export type EventsUpdateModel = {
@@ -20,4 +23,5 @@ export type EventsUpdateModel = {
   address?: string;
   date?: Date;
   time?: Date;
+  category?: EventsCategoryModel | { id: string };
 }
