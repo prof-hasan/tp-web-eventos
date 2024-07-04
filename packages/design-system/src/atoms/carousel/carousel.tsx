@@ -21,7 +21,15 @@ type PropType = {
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { slides, options } = props
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
+
+  const carouselOptions: EmblaOptionsType = {
+    dragFree: options?.dragFree ?? true,
+    align: options?.align ?? 'start',
+    slidesToScroll: options?.slidesToScroll ?? 'auto',
+    ...options
+  }
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(carouselOptions, [Autoplay()])
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
     const autoplay = emblaApi?.plugins()?.autoplay
@@ -43,19 +51,19 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi, onNavButtonClick)
 
   return (
-    <section className="embla">
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
+    <section className="carousel-section">
+      <div className="carousel-viewport" ref={emblaRef}>
+        <div className="carousel-container">
           {slides.map((object, index) => (
-            <div className="embla__slide" key={index}>
+            <div className="carousel-slide" key={index}>
               <EventCard title={object.name} description={object.description} img={'placeholder'} />
             </div>
           ))}
         </div>
       </div>
 
-      <div className="embla__controls">
-        <div className="embla__buttons">
+      <div className="carousel-controls">
+        <div className="carousel-buttons">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
