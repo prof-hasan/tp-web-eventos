@@ -14,12 +14,12 @@ import  './css/embla.css'
 import { EventsEntity } from '../../../../domain-events/src/events/types/events-entity'
 import { EventCard } from '../../molecules'
 
-type PropType = {
+type EventsCarouselType = {
   slides: EventsEntity[]
   options?: EmblaOptionsType
 }
 
-const EmblaCarousel: React.FC<PropType> = (props) => {
+const EventsCarousel: React.FC<EventsCarouselType> = (props) => {
   const { slides, options } = props
 
   const carouselOptions: EmblaOptionsType = {
@@ -56,7 +56,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="carousel-container">
           {slides.map((object, index) => (
             <div className="carousel-slide" key={index}>
-              <EventCard title={object.name} description={object.description} img={'placeholder'} />
+              <EventCard title={object.name} description={object.description} />
             </div>
           ))}
         </div>
@@ -72,6 +72,4 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   )
 }
 
-export default EmblaCarousel
-
-export { EmblaCarousel }
+export { EventsCarousel }

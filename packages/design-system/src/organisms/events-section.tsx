@@ -1,5 +1,5 @@
 import type { EventsEntity } from '@repo/events-domain/events-types';
-import { EmblaCarousel } from '../atoms';
+import { EventsCarousel } from '../atoms';
 import { cn } from '../utils';
 
 type EventsSectionProps = {
@@ -11,12 +11,14 @@ type EventsSectionProps = {
 
 export const EventsSection: React.FC<EventsSectionProps> = ({ events, className, title, description }) => {
   return (
-    <section className={cn(className, 'bg-white')}>
-      <h2 className='text-2xl font-bold text-gray-800'>{title}</h2>
-      <p className='text-gray-600'>{description}</p>
-      <div>
-        <EmblaCarousel slides={events} />
+    <section className={cn('flex flex-col items-center justify-center py-6', className)}>
+      <div className=' flex flex-col items-center justify-center'>
+        <h2 className='text-2xl font-bold text-gray-800'>{title}</h2>
+        <p className='text-gray-600'>{description}</p>
       </div>
+      <div className='mt-6 h-fit w-full'>
+        <EventsCarousel slides={events} />
+      </div>  
     </section>
   );
 };
