@@ -3,7 +3,7 @@
   margin: auto;
   --slide-height: 19rem;
   --slide-spacing: 1rem;
-  --slide-size: 25%;
+  --slide-size: 250px;
 }
 
 .carousel-viewport {
@@ -19,7 +19,7 @@
 
 .carousel-slide {
   flex: 0 0 var(--slide-size);
-  min-width: 0;
+  min-width: 220px;
   padding-left: var(--slide-spacing);
 }
 
