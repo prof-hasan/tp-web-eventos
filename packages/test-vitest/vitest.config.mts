@@ -25,6 +25,7 @@ export default defineConfig(({ mode }) => {
       sequence: {
         sequencer: MySequencer,
       },
+      globals: true,
     },
   };
 });

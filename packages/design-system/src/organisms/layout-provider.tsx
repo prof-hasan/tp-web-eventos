@@ -1,7 +1,15 @@
 'use client';
 
-import { type PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
+import { Header } from './header';
+import { Footer } from './footer';
 
-export const LayoutProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  return <>{children}</>;
+export const LayoutProvider = ({ children }: PropsWithChildren) => {
+  return (
+    <main>
+      <Header />
+      {children}
+      <Footer />
+    </main>
+  );
 };

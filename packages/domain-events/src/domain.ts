@@ -13,6 +13,9 @@ export const EventsDomain = (supabase: SupabaseClient) => ({
       remove: () => Events.remove(supabase)(id),
       update: (event: Events.EventsUpdateEntity) => Events.update(supabase)(id, event),
     }),
+    category: (category: string) => ({
+      get: () => Events.getByCategory(supabase)(category),
+    }),
     owner_id: (owner_id: string) => ({
       get: () => Events.getByOwnerId(supabase)(owner_id),
     }),

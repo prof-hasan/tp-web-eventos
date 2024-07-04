@@ -21,11 +21,16 @@ export const InputIcon: React.FC<InputIconProps> = ({
 }) => {
   return (
     <div
+      aria-label='Input Icon'
       className={cn(className)}
       data-testid='input-icon'
     >
-      <div className='relative w-full'>
-        <div className='pointer-events-none absolute inset-y-0 start-0 flex items-center ps-2'>
+      <div 
+      aria-label='Input Icon Container'
+      className='relative w-full'>
+        <div 
+        aria-label='Input Icon Icon'
+        className='pointer-events-none absolute inset-y-0 start-0 flex items-center ps-2'>
           {Icon &&
             //@ts-expect-error -- its beeign ignored to not throw erros
             cloneElement(Icon, {

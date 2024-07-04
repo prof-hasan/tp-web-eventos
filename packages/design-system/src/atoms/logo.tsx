@@ -8,6 +8,7 @@ type LogoProps = {
 export const Logo: React.FC<LogoProps> = ({ img }) => {
   return (
     <div
+      aria-label='Logo'
       className={cn('flex justify-center py-2')}
       data-testid='logo'
     >

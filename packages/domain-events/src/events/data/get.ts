@@ -27,3 +27,16 @@ export const getByOwnerId =
 
     return data.map((event: EventsModel) => fromModel(event));
   };
+
+export const getByCategory =
+  (supabase: SupabaseClient) =>
+  async (category: string): Promise<Events[]> => {
+    const { data, error } = await supabase
+      .from('events')
+      .select(`*, owner: users!fk_user_id(*)`)
+      .eq('category', category)
+      .is('deleted_at', null);
+    if (error) throw error;
+
+    return data.map((event: EventsModel) => fromModel(event));
+  };

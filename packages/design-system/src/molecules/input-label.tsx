@@ -23,6 +23,7 @@ export const InputLabel: React.FC<InputWithLabelProps> = ({
 }) => {
   return (
     <div
+      aria-label='Input Label'
       className={cn(className)}
       data-testid='input-label'
     >

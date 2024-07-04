@@ -9,12 +9,16 @@ type FooterProps = ComponentProps<'input'> & {
 
 export const Footer: React.FC<FooterProps> = ({ className }) => {
   return (
-    <div className={cn('mt-4 flex flex-col gap-4 bg-[#2D2327] p-2 text-white', className)}>
-      <FooterTop className=''/>
+    <div
+      aria-label='Footer'
+      data-testid='footer'
+      className={cn('flex flex-col gap-4 bg-[#2D2327] p-2 text-white', className)}
+    >
+      <FooterTop />
       <hr />
-      <FooterColumns className=''/>
+      <FooterColumns />
       <hr />
-      <FooterBottom className=''/>
+      <FooterBottom />
     </div>
   );
 };
