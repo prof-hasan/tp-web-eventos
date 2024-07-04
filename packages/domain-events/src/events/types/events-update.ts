@@ -23,5 +23,5 @@ export type EventsUpdateModel = {
   address?: string;
   date?: Date;
   time?: Date;
-  category?: EventsCategoryModel | { id: string };
+  category?: string;
 }

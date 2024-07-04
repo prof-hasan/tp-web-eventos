@@ -7,12 +7,12 @@ import { Button } from '@repo/design-system/atoms';
 type ButtonProps = React.ComponentProps<typeof Button>;
 
 const clearTestingData = async () => {
-  screen.getByTestId('button').remove();
+  screen.queryByTestId('button')?.remove();
 };
 
 const setup = ({ ...props }: ButtonProps) => {
   const utils = render(<Button {...props}>Click me</Button>);
-  const button = screen.getByTestId('button') as HTMLButtonElement;
+  const button = screen.queryByTestId('button') as HTMLButtonElement;
   return { utils, button };
 };
 

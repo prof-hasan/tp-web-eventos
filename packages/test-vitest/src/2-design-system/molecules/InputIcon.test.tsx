@@ -6,7 +6,7 @@ import { InputIcon } from '@repo/design-system/molecules';
 type InputIconProps = React.ComponentProps<typeof InputIcon>;
 
 const clearTestingData = async () => {
-  screen.getByTestId('input-icon').remove();
+  screen.queryByTestId('input-icon')?.remove();
 };
 
 const setup = ({ icon, ...props }: InputIconProps) => {
@@ -17,8 +17,8 @@ const setup = ({ icon, ...props }: InputIconProps) => {
       {...props}
     />,
   );
-  const inputIcon = screen.getByTestId('input-icon');
-  const input = screen.getByTestId('input');
+  const inputIcon = screen.queryByTestId('input-icon') as HTMLDivElement;
+  const input = screen.queryByTestId('input') as HTMLInputElement;
   return { utils, inputIcon, input };
 };
 

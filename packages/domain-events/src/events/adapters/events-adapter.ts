@@ -11,6 +11,7 @@ export const fromModel: (ActingModel: EventsModel) => EventsEntity = ({
   date,
   time,
   owner,
+  category,
   deleted_at,
 }) => ({
   id,
@@ -23,6 +24,7 @@ export const fromModel: (ActingModel: EventsModel) => EventsEntity = ({
   date,
   time,
   owner,
+  category,
   deleted: Boolean(deleted_at),
   deletedAt: deleted_at,
 });
@@ -38,6 +40,7 @@ export const fromEntity: (EventsEntity: EventsEntity) => EventsModel = ({
   date,
   time,
   owner,
+  category,
   deletedAt,
 }) => ({
   id,
@@ -51,6 +54,7 @@ export const fromEntity: (EventsEntity: EventsEntity) => EventsModel = ({
   time,
   owner_id: owner.id,
   owner,
+  category,
   deleted_at: deletedAt,
   created_at: new Date(),
   updated_at: new Date(),
@@ -67,6 +71,7 @@ export const toCreate: (EventsEntity: EventsCreateEntity) => EventsCreateModel =
   date,
   time,
   owner,
+  category,
 }) => ({
   id,
   name,
@@ -78,6 +83,7 @@ export const toCreate: (EventsEntity: EventsCreateEntity) => EventsCreateModel =
   date,
   time,
   owner_id: owner.id,
+  category: category.id,
 });
 
 export const toUpdate: (EventsEntity: EventsUpdateEntity) => EventsUpdateModel = ({
@@ -90,6 +96,7 @@ export const toUpdate: (EventsEntity: EventsUpdateEntity) => EventsUpdateModel =
   address,
   date,
   time,
+  category,
 }) => ({
   id,
   name,
@@ -100,4 +107,5 @@ export const toUpdate: (EventsEntity: EventsUpdateEntity) => EventsUpdateModel =
   address,
   date,
   time,
+  category: category?.id,
 });

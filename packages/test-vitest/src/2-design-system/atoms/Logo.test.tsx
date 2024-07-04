@@ -6,12 +6,12 @@ import { Logo } from '@repo/design-system/atoms';
 type LogoProps = React.ComponentProps<typeof Logo>;
 
 const clearTestingData = async () => {
-  screen.getByTestId('logo').remove();
+  screen.queryByTestId('logo')?.remove();
 };
 
 const setup = ({ ...props }: LogoProps) => {
   const utils = render(<Logo {...props} />);
-  const logo = screen.getByTestId('logo');
+  const logo = screen.queryByTestId('logo');
   return { utils, logo };
 };
 

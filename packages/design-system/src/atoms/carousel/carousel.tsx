@@ -56,7 +56,7 @@ const EventsCarousel: React.FC<EventsCarouselType> = (props) => {
         <div className="carousel-container">
           {slides.map((object, index) => (
             <div className="carousel-slide" key={index}>
-              <EventCard title={object.name} description={object.description} />
+              <EventCard event={object} />
             </div>
           ))}
         </div>

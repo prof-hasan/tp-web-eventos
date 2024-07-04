@@ -6,7 +6,7 @@ import { InputLabel } from '@repo/design-system/molecules';
 type InputLabelProps = React.ComponentProps<typeof InputLabel>;
 
 const clearTestingData = async () => {
-  screen.getByTestId('input-label').remove();
+  screen.queryByTestId('input-label')?.remove();
 };
 
 const setup = ({ ...props }: Omit<InputLabelProps, 'children'>) => {
@@ -16,8 +16,8 @@ const setup = ({ ...props }: Omit<InputLabelProps, 'children'>) => {
       {...props}
     />,
   );
-  const inputLabel = screen.getByTestId('input-label');
-  const input = screen.getByTestId('input');
+  const inputLabel = screen.queryByTestId('input-label') as HTMLLabelElement;
+  const input = screen.queryByTestId('input') as HTMLInputElement;
   return { utils, inputLabel, input };
 };
 

@@ -13,9 +13,8 @@ const setup = () => {
   return { client };
 }
 
-
-test('Should soft delete a user', async () => {
+test('Should list event', async () => {
   const { client } = setup();
-  const user = await client.events().id('3').remove();
-  expect(user).toBeDefined();
+  const event = await client.events().list();
+  expect(event).toBeDefined();
 });

@@ -13,20 +13,20 @@ const setup = () => {
   return { client };
 }
 
-test('Should get user', async () => {
+test('Should get event', async () => {
   const { client } = setup();
-  const user = await client.events().id('1').get();
-  expect(user).toBeDefined();
+  const event = await client.events().id('1').get();
+  expect(event).toBeDefined();
 });
 
-test('Should get user by owner id', async () => {
+test('Should get event by owner id', async () => {
   const { client } = setup();
-  const user = await client.events().owner_id('1').get();
-  expect(user).toBeDefined();
+  const event = await client.events().owner_id('1').get();
+  expect(event).toBeDefined();
 });
 
-test('Should get user by category', async () => {
+test('Should get event by category', async () => {
   const { client } = setup();
-  const user = await client.events().category('music').get();
-  expect(user).toBeDefined();
+  const event = await client.events().category('music').get();
+  expect(event).toBeDefined();
 });

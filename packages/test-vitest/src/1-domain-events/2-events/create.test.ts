@@ -12,12 +12,12 @@ const setup = () => {
     state: 'Event State',
     city: 'Event City',
     address: 'Event Address',
-    category: {id: 'music'},
     date: new Date().getUTCFullYear() + '-' + new Date().getUTCMonth() + '-' + new Date().getUTCDate(),
     time: new Date().getUTCHours() + ':' + new Date().getUTCMinutes() + ':' + new Date().getUTCSeconds(),
     owner: {
       id: '1',
     },
+    category: { id: 'music' },
   };
 
   const event2: EventsCreateEntity = {
@@ -28,12 +28,12 @@ const setup = () => {
     state: 'Event State 2',
     city: 'Event City 2',
     address: 'Event Address 2',
-    category: {id: 'theater'},
     date: new Date().getUTCFullYear() + '-' + new Date().getUTCMonth() + '-' + new Date().getUTCDate(),
     time: new Date().getUTCHours() + ':' + new Date().getUTCMinutes() + ':' + new Date().getUTCSeconds(),
     owner: {
       id: '1',
     },
+    category: { id: 'theater' },
   };
 
   const event3: EventsCreateEntity = {
@@ -44,12 +44,12 @@ const setup = () => {
     state: 'Event State 3',
     city: 'Event City 3',
     address: 'Event Address 3',
-    category: {id: 'movies'},
     date: new Date().getUTCFullYear() + '-' + new Date().getUTCMonth() + '-' + new Date().getUTCDate(),
     time: new Date().getUTCHours() + ':' + new Date().getUTCMinutes() + ':' + new Date().getUTCSeconds(),
     owner: {
       id: '1',
     },
+    category: { id: 'movies' },
   };
 
   const client = EventsDomain(
@@ -64,7 +64,7 @@ const setup = () => {
     event1,
     event2,
     event3,
-    client
+    client,
   };
 };
 
