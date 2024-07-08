@@ -6,8 +6,8 @@ import { type ComponentPropsWithoutRef, type ElementRef, forwardRef, type ReactE
 import { cn } from '../utils';
 
 type SelectProps = ComponentPropsWithoutRef<typeof PrimitiveSelect.Root>;
-const Select = ({ children }: SelectProps) => {
-  return <PrimitiveSelect.Root> {children} </PrimitiveSelect.Root>;
+const Select = ({ children, ...props }: SelectProps) => {
+  return <PrimitiveSelect.Root {...props}> {children} </PrimitiveSelect.Root>;
 };
 
 type SelectTriggerProps = ComponentPropsWithoutRef<typeof PrimitiveSelect.Trigger> & {
@@ -21,13 +21,13 @@ const selectTriggerStyle = cn(
   `,
 );
 const SelectTrigger = forwardRef<ElementRef<typeof PrimitiveSelect.Trigger>, SelectTriggerProps>(
-  ({ placeholder, className, ...rest }, forwardedRef) => {
+  ({ placeholder, className, ...props }, forwardedRef) => {
     return (
       <PrimitiveSelect.Trigger
         aria-label='Select Trigger'
         className={cn(selectTriggerStyle, className)}
         ref={forwardedRef}
-        {...rest}
+        {...props}
       >
         <PrimitiveSelect.Value placeholder={placeholder} />
         <PrimitiveSelect.Icon>
@@ -48,7 +48,7 @@ const SelectContent = ({
   position = 'popper',
   side = 'bottom',
   sideOffset = 5,
-  ...res
+  ...props
 }: SelectContentProps) => {
   return (
     <PrimitiveSelect.Portal>
@@ -59,7 +59,7 @@ const SelectContent = ({
         position={position}
         side={side}
         sideOffset={sideOffset}
-        {...res}
+        {...props}
       >
         <PrimitiveSelect.ScrollUpButton>
           <CaretUpIcon className='stroke-brand' />
@@ -83,12 +83,12 @@ const selectItemStyle = cn(`
     data-[selected]:text-white data-[highlighted]:outline-none
   `);
 const SelectItem = forwardRef<ElementRef<typeof PrimitiveSelect.Item>, SelectItemProps>(
-  ({ children, indicator, ...res }, forwardedRef) => {
+  ({ children, indicator, ...props }, forwardedRef) => {
     return (
       <PrimitiveSelect.Item
         className={cn(selectItemStyle)}
         ref={forwardedRef}
-        {...res}
+        {...props}
       >
         <PrimitiveSelect.ItemText>{children}</PrimitiveSelect.ItemText>
         <PrimitiveSelect.ItemIndicator className={cn('inline-flex w-6 items-center justify-center')}>
