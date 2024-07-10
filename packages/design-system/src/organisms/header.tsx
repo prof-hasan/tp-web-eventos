@@ -5,18 +5,34 @@ import { cn } from '../utils';
 import { Button, Select, SelectContent, SelectItem, SelectTrigger, Logo } from '../atoms';
 import { InputIcon } from '../molecules';
 import { useEffect, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 
 type HeaderProps = {
   className?: string;
 };
 
 export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
-  const [category, setCategory] = useState<string>('Categorias');
+  const [category, setCategory] = useState<string>('');
+  const router = useRouter();
+  const pathname = usePathname();
 
   const onValueChange = (value: string) => {
-    console.log(value);
     setCategory(value);
+    router.push(`/events/${value}`);
   };
+
+  const onClickLogo = () => {
+    router.push('/');
+  };
+
+  useEffect(() => {
+    const path = pathname.split('/')[2];
+    if (path) {
+      setCategory(path);
+    } else {
+      setCategory('');
+    }
+  }, [pathname]);
 
   return (
     <div
@@ -24,7 +40,11 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
       data-testid='header'
       aria-label='Header'
     >
-      <Logo img={<SunIcon className={cn('h-20 w-20')} />} />
+      <Logo
+        className='hover:cursor-pointer'
+        img={<SunIcon className={cn('h-20 w-20')} />}
+        onClick={onClickLogo}
+      />
       <div className={cn('flex items-center justify-center gap-4', className)}>
         <Button
           className={cn('w-40')}
@@ -33,16 +53,17 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           Criar Evento
         </Button>
         <Select
+          value={category}
           onValueChange={(value) => onValueChange(value)}
         >
           <SelectTrigger
             className={cn('w-40')}
-            placeholder={category}
+            placeholder={'Categorias'}
           />
           <SelectContent>
-            <SelectItem value='musica'>Música</SelectItem>
-            <SelectItem value='cinema'>Cinema</SelectItem>
-            <SelectItem value='teatro'>Teatro</SelectItem>
+            <SelectItem value='music'>Música</SelectItem>
+            <SelectItem value='movies'>Cinema</SelectItem>
+            <SelectItem value='theater'>Teatro</SelectItem>
           </SelectContent>
         </Select>
         <InputIcon
