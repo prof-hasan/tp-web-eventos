@@ -6,12 +6,14 @@ import { Button, Select, SelectContent, SelectItem, SelectTrigger, Logo } from '
 import { InputIcon } from '../molecules';
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { UserEntity } from '@repo/events-domain/user-types';
 
 type HeaderProps = {
+  user?: UserEntity;
   className?: string;
 };
 
-export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
+export const Header: React.FC<HeaderProps> = ({ className = '', user }) => {
   const [category, setCategory] = useState<string>('');
   const router = useRouter();
   const pathname = usePathname();
@@ -24,6 +26,14 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   const onClickLogo = () => {
     router.push('/');
   };
+
+  const onClickCreateEvent = () => {
+    router.push('/events/create');
+  }
+
+  const onClickSignIn = () => {
+    router.push('/auth/signin');
+  }
 
   useEffect(() => {
     const path = pathname.split('/')[2];
@@ -46,12 +56,23 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         onClick={onClickLogo}
       />
       <div className={cn('flex items-center justify-center gap-4', className)}>
-        <Button
-          className={cn('w-40')}
-          variant='primary'
-        >
-          Criar Evento
-        </Button>
+        {user ? (
+          <Button
+            className={cn('w-40')}
+            variant='primary'
+            onClick={onClickCreateEvent}
+          >
+            Criar Evento
+          </Button>
+        ) : (
+          <Button
+            className={cn('w-40')}
+            variant='primary'
+            onClick={onClickSignIn}
+          >
+            Entrar
+          </Button>
+        )}
         <Select
           value={category}
           onValueChange={(value) => onValueChange(value)}

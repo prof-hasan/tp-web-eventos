@@ -9,6 +9,7 @@ export const AuthDomain = (supabase: SupabaseClient) => ({
     user: () => ({
       get: () => User.get(supabase)(),
     }),
+    session: () => supabase.auth.getSession(),
   }),
 
   actions: () => ({
