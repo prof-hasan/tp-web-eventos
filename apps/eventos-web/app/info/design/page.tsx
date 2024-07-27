@@ -11,7 +11,7 @@ const DesignPage = async () => {
           <h4 className={cn('font-bold text-lg')}>Heading 4: Roboto, 1.125rem, Bold, #2D2327</h4>
         </article>
         <article className={cn('flex flex-col items-center justify-center space-y-5 py-8 px-20')}>
-          <h3 className={cn('font-bold text-blue-800 uppercase')}>Text: Roboto 20px 2D2327</h3>
+          <h3 className={cn('font-bold text-xl text-blue-800 uppercase')}>Text: Roboto 20px 2D2327</h3>
           <p>Pellentesque habitant morbi  senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
           <span className={cn('flex space-x-80')}>
             <p className={cn('text-yellow-400')}>TEXTO EM DESTAQUE</p>
