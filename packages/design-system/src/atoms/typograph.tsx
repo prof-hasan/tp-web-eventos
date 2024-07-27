@@ -3,7 +3,7 @@ import { cn } from '../utils';
 type TypographProps = React.ComponentProps<'div'> & {
   className?: string;
   children?: React.ReactNode;
-  variant?: 'h2' | 'h3' | 'h4' | 'p';
+  variant?: 'h2' | 'h3' | 'h4' | 'em' | 'i' | 'p';
 };
 
 const baseTitleStyle = ({ variant }: TypographProps) => {
@@ -11,6 +11,8 @@ const baseTitleStyle = ({ variant }: TypographProps) => {
     'text-4xl': variant === 'h2',
     'font-bold text-xl text-blue-800 uppercase': variant === 'h3',
     'font-bold text-lg': variant === 'h4',
+    'text-yellow-400': variant === 'em',
+    'text-gray-400': variant === 'i',
     '': variant === 'p',
   });
 };
