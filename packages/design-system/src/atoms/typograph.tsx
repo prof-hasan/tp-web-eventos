@@ -6,8 +6,8 @@ type TypographProps = React.ComponentProps<'div'> & {
   variant?: 'h2' | 'h3' | 'h4' | 'em' | 'i' | 'p';
 };
 
-const baseTitleStyle = ({ variant }: TypographProps) => {
-  return cn(`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm`, {
+const typographStyle = ({ variant }: TypographProps) => {
+  return cn(`rounded-md px-3.5 py-2.5 text-sm font-semibold`, {
     'text-4xl': variant === 'h2',
     'font-bold text-xl text-blue-800 uppercase': variant === 'h3',
     'font-bold text-lg': variant === 'h4',
@@ -22,7 +22,7 @@ export const Typograph: React.FC<TypographProps> = ({ className = '', children, 
 
   return (
     <Component
-      className={cn(baseTitleStyle({ variant }), className)}
+      className={cn(typographStyle({ variant }), className)}
       {...props}
     >
       {children}
