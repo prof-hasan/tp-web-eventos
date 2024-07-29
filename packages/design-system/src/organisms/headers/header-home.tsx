@@ -29,11 +29,15 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
 
   const onClickCreateEvent = () => {
     router.push('/events/create');
-  }
+  };
 
   const onClickSignIn = () => {
     router.push('/auth/signin');
-  }
+  };
+
+  const onClickLogout = () => {
+    router.push('/api/auth/signout');
+  };
 
   useEffect(() => {
     const path = pathname.split('/')[2];
@@ -55,7 +59,7 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
         img={<SunIcon className={cn('h-20 w-20')} />}
         onClick={onClickLogo}
       />
-      <div className={cn('flex items-center justify-center gap-4', className)}>
+      <div className={cn('relative flex w-full items-center justify-center gap-4', className)}>
         {user ? (
           <Button
             className={cn('w-40')}
@@ -91,6 +95,15 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
           className={cn('w-80')}
           icon={<MagnifyingGlassIcon />}
         />
+        {user && (
+          <Button
+            className='absolute right-2'
+            onClick={onClickLogout}
+          >
+            {' '}
+            Logout{' '}
+          </Button>
+        )}
       </div>
     </div>
   );
