@@ -12,16 +12,17 @@ type HeaderProps = {
 
 export const Header: React.FC<HeaderProps> = ({ className = '', user }) => {
   const pathname = usePathname();
+  console.log(pathname);
 
-  switch (pathname) {
-    case '/':
-      return (
-        <HeaderHome
-          user={user}
-          className={className}
-        />
-      );
-    default:
-      return <HeaderNoButton />;
-  }
+  const headerHome = ['/', '/events/music', '/events/theater', '/events/movies'];
+
+  if (headerHome.includes(pathname))
+    return (
+      <HeaderHome
+        user={user}
+        className={className}
+      />
+    );
+
+  return <HeaderNoButton />;
 };
