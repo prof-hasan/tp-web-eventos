@@ -15,7 +15,7 @@ type SelectTriggerProps = ComponentPropsWithoutRef<typeof PrimitiveSelect.Trigge
 };
 const selectTriggerStyle = cn(
   `
-    text-sm font-semibold inline-block flex w-full flex-row items-center justify-between rounded-md border-0 px-3 py-2 
+    text-sm inline-block flex w-full flex-row items-center justify-between rounded-md border-0 px-3 py-2 
     text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 hover:ring-2 hover:ring-indigo-600 
     focus:outline-none focus:ring-2 focus:ring-indigo-600
   `,
