@@ -1,10 +1,9 @@
-import { cn } from '../../../../../packages/design-system/src/utils';
-import { Typograph } from '@repo/design-system/atoms';
+import { Article, Typograph } from '@repo/design-system/atoms';
 
 const TermsPage = async () => {
     return (
       <section>
-        <article className={cn('flex flex-col items-center justify-center space-y-5 py-8 px-20 bg-red-50')}>
+        <Article variant='red'>
             <Typograph>
                 Entendemos que seu tempo é precioso. Por isso, destacamos abaixo os pontos mais essenciais para o uso da nossa plataforma. No entanto, recomendamos que você leia o documento completo, certo?
             </Typograph>
@@ -32,7 +31,7 @@ const TermsPage = async () => {
             <Typograph>
                 Para receber nossas mensagens corretamente, você concorda em verificar as configurações do sistema anti-spam, ou similares, na sua caixa de e-mails. O não recebimento do ingresso no e-mail devido a erros nessas configurações não gerará qualquer expectativa de direito ou indenização.
             </Typograph>
-        </article>
+        </Article>
       </section>
     );
   };

@@ -13,7 +13,7 @@ const typographStyle = ({ variant }: TypographProps) => {
     'font-bold text-lg': variant === 'h4',
     'text-yellow-400': variant === 'em',
     'text-gray-400': variant === 'i',
-    '': variant === 'p',
+    'text-justify': variant === 'p',
   });
 };
 
