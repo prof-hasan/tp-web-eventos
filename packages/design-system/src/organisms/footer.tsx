@@ -12,7 +12,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
     <div
       aria-label='Footer'
       data-testid='footer'
-      className={cn('flex flex-col gap-4 bg-[#2D2327] p-2 text-white', className)}
+      className={cn('flex flex-col gap-4 bg-[#2D2327] py-2 px-4 text-white', className)}
     >
       <FooterTop />
       <hr />
