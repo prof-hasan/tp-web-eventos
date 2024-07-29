@@ -4,8 +4,8 @@ import { Typograph } from '@repo/design-system/atoms';
 
 const DesignPage = async () => {
     return (
-      <section className={cn('space-y-10')}>
-        <article className={cn('flex flex-col items-center justify-center space-y-5 bg-red-50 py-8 px-20')}>
+      <section>
+        <article className={cn('flex flex-col items-center justify-center space-y-5 py-8 px-20 bg-red-50')}>
           <Typograph variant='h3'>Tipografia e Paleta</Typograph>
           <Typograph variant='h2'>Heading 2: Roboto, 2.25rem, #2D2327</Typograph>
           <Typograph variant='h3'>Heading 3: Roboto, uppercase, 1.25rem, #2364AA</Typograph>

@@ -3,8 +3,8 @@ import { Typograph } from '@repo/design-system/atoms';
 
 const TermsPage = async () => {
     return (
-      <section className={cn('space-y-10')}>
-        <article className={cn('flex flex-col items-center justify-center space-y-5 bg-red-50 py-8 px-20')}>
+      <section>
+        <article className={cn('flex flex-col items-center justify-center space-y-5 py-8 px-20 bg-red-50')}>
             <Typograph>
                 Entendemos que seu tempo é precioso. Por isso, destacamos abaixo os pontos mais essenciais para o uso da nossa plataforma. No entanto, recomendamos que você leia o documento completo, certo?
             </Typograph>

@@ -3,8 +3,8 @@ import { Typograph } from '@repo/design-system/atoms';
 
 const PoliciesPage = async () => {
     return (
-      <section className={cn('space-y-10')}>
-        <article className={cn('flex flex-col items-center justify-center space-y-5 bg-red-50 py-8 px-20')}>
+      <section>
+        <article className={cn('flex flex-col items-center justify-center space-y-5 py-8 px-20 bg-red-50')}>
             <Typograph variant='h3'>Convenções de Boas Práticas de Segurança</Typograph>
             <Typograph>Mais que propor uma solução, é torná-la consistente e coerente com a realidade.</Typograph>
             <span>
