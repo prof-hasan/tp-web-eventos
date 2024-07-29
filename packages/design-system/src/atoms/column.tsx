@@ -5,7 +5,7 @@ type ColumnProps = ComponentProps<'input'> & {
   className?: string;
   header: string;
   icons: ReactNode[];
-  items: string[];
+  items: Array<string | ReactNode>; // Modificado para aceitar strings e elementos React
 };
 
 export const Column: React.FC<ColumnProps> = ({ className = '', header, icons, items }) => {
