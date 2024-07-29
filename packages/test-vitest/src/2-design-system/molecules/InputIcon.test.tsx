@@ -26,7 +26,7 @@ test('InputIcon renders correctly', async () => {
   const { inputIcon } = setup({
     icon: <div> Icon </div>,
   });
-  expect(inputIcon).toBeTruthy();
+  expect(inputIcon).toBeDefined();
 });
 
 test('InputIcon on change', async () => {

@@ -6,8 +6,8 @@ import { type ComponentPropsWithoutRef, type ElementRef, forwardRef, type ReactE
 import { cn } from '../utils';
 
 type SelectProps = ComponentPropsWithoutRef<typeof PrimitiveSelect.Root>;
-const Select = ({ children }: SelectProps) => {
-  return <PrimitiveSelect.Root> {children} </PrimitiveSelect.Root>;
+const Select = ({ children, ...props }: SelectProps) => {
+  return <PrimitiveSelect.Root {...props}> {children} </PrimitiveSelect.Root>;
 };
 
 type SelectTriggerProps = ComponentPropsWithoutRef<typeof PrimitiveSelect.Trigger> & {
@@ -15,19 +15,19 @@ type SelectTriggerProps = ComponentPropsWithoutRef<typeof PrimitiveSelect.Trigge
 };
 const selectTriggerStyle = cn(
   `
-    text-sm font-semibold inline-block flex w-full flex-row items-center justify-between rounded-md border-0 px-3 py-2 
+    text-sm inline-block flex w-full flex-row items-center justify-between rounded-md border-0 px-3 py-2 
     text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 hover:ring-2 hover:ring-indigo-600 
     focus:outline-none focus:ring-2 focus:ring-indigo-600
   `,
 );
 const SelectTrigger = forwardRef<ElementRef<typeof PrimitiveSelect.Trigger>, SelectTriggerProps>(
-  ({ placeholder, className, ...rest }, forwardedRef) => {
+  ({ placeholder, className, ...props }, forwardedRef) => {
     return (
       <PrimitiveSelect.Trigger
         aria-label='Select Trigger'
         className={cn(selectTriggerStyle, className)}
         ref={forwardedRef}
-        {...rest}
+        {...props}
       >
         <PrimitiveSelect.Value placeholder={placeholder} />
         <PrimitiveSelect.Icon>
@@ -48,7 +48,7 @@ const SelectContent = ({
   position = 'popper',
   side = 'bottom',
   sideOffset = 5,
-  ...res
+  ...props
 }: SelectContentProps) => {
   return (
     <PrimitiveSelect.Portal>
@@ -59,7 +59,7 @@ const SelectContent = ({
         position={position}
         side={side}
         sideOffset={sideOffset}
-        {...res}
+        {...props}
       >
         <PrimitiveSelect.ScrollUpButton>
           <CaretUpIcon className='stroke-brand' />
@@ -83,12 +83,12 @@ const selectItemStyle = cn(`
     data-[selected]:text-white data-[highlighted]:outline-none
   `);
 const SelectItem = forwardRef<ElementRef<typeof PrimitiveSelect.Item>, SelectItemProps>(
-  ({ children, indicator, ...res }, forwardedRef) => {
+  ({ children, indicator, ...props }, forwardedRef) => {
     return (
       <PrimitiveSelect.Item
         className={cn(selectItemStyle)}
         ref={forwardedRef}
-        {...res}
+        {...props}
       >
         <PrimitiveSelect.ItemText>{children}</PrimitiveSelect.ItemText>
         <PrimitiveSelect.ItemIndicator className={cn('inline-flex w-6 items-center justify-center')}>

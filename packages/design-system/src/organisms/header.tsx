@@ -1,43 +1,28 @@
-import { MagnifyingGlassIcon, SunIcon } from '@radix-ui/react-icons';
-import { cn } from '../utils';
-import { Button, Select, SelectContent, SelectItem, SelectTrigger, Logo } from '../atoms';
-import { InputIcon } from '../molecules';
+'use client';
+
+import { usePathname } from 'next/navigation';
+import { UserEntity } from '@repo/events-domain/user-types';
+import { HeaderHome } from './headers/header-home';
+import { HeaderNoButton } from './headers/header-no-button';
 
 type HeaderProps = {
+  user?: UserEntity;
   className?: string;
 };
 
-export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
-  return (
-    <div
-      className={cn('border-b-2 border-slate-200 bg-slate-50 py-2')}
-      data-testid='header'
-      aria-label='Header'
-    >
-      <Logo img={<SunIcon className={cn('h-20 w-20')} />} />
-      <div className={cn('flex items-center justify-center gap-4', className)}>
-        <Button
-          className={cn('w-40')}
-          variant='primary'
-        >
-          Criar Evento
-        </Button>
-        <Select>
-          <SelectTrigger
-            className={cn('w-40')}
-            placeholder='Categorias'
-          />
-          <SelectContent>
-            <SelectItem value='musica'>Música</SelectItem>
-            <SelectItem value='cinema'>Cinema</SelectItem>
-            <SelectItem value='teatro'>Teatro</SelectItem>
-          </SelectContent>
-        </Select>
-        <InputIcon
-          className={cn('w-80')}
-          icon={<MagnifyingGlassIcon />}
-        />
-      </div>
-    </div>
-  );
+export const Header: React.FC<HeaderProps> = ({ className = '', user }) => {
+  const pathname = usePathname();
+  console.log(pathname);
+
+  const headerHome = ['/', '/events/music', '/events/theater', '/events/movies'];
+
+  if (headerHome.includes(pathname))
+    return (
+      <HeaderHome
+        user={user}
+        className={className}
+      />
+    );
+
+  return <HeaderNoButton />;
 };

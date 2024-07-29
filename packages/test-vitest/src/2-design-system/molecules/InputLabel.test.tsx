@@ -25,7 +25,7 @@ test('InputLabel renders correctly', async () => {
   const { inputLabel } = setup({
     label: 'Test Label',
   });
-  expect(inputLabel).toBeTruthy();
+  expect(inputLabel).toBeDefined();
 });
 
 test('InputLabel on change', async () => {

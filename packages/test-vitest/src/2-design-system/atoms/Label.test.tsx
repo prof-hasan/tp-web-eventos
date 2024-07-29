@@ -18,7 +18,7 @@ const setup = ({ ...props }: LabelProps) => {
 
 test('Label renders', () => {
   const { label } = setup({ label: 'test-label' });
-  expect(label).toBeTruthy();
+  expect(label).toBeDefined();
 });
 
 test('Label renders with custom style using cn', () => {

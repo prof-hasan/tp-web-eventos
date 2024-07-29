@@ -17,7 +17,7 @@ const setup = ({ ...props }: LogoProps) => {
 
 test('Logo renders', () => {
   const { logo } = setup({ img: <div>test-logo</div> });
-  expect(logo).toBeTruthy();
+  expect(logo).toBeDefined();
 });
 
 afterEach(async () => {

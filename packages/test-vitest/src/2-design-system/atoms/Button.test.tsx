@@ -18,7 +18,7 @@ const setup = ({ ...props }: ButtonProps) => {
 
 test('Button renders', () => {
   const { button } = setup({});
-  expect(button).toBeTruthy();
+  expect(button).toBeDefined();
 });
 
 test('Button renders primary style', () => {

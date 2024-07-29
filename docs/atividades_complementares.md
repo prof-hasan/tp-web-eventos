@@ -16,7 +16,7 @@ As atividades marcadas estão concluídos
   - Utilizado TailwindCSS, Radix-UI, CLSX e Tailwind Merge
 
 ## Entrega final
-- [] 3 pontos: Criar um ambiente de homologação e alguma forma de atualização dos dados do ambiente de produção para o de homologação (e do ambiente de desenvolvimento). 
+- [x] 3 pontos: Criar um ambiente de homologação e alguma forma de atualização dos dados do ambiente de produção para o de homologação (e do ambiente de desenvolvimento). 
 
 - Uso de recursos de JavaScript:
   - [] 1 ponto: Local Storage

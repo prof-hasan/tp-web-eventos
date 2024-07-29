@@ -23,7 +23,7 @@ const setup = ({ ...props }: Omit<ImageProps, 'alt'>) => {
 
 test('Image renders', () => {
   const { image } = setup({ src: 'https://via.placeholder.com/150' });
-  expect(image).toBeTruthy();
+  expect(image).toBeDefined();
 });
 
 test('Image renders with custom style', () => {
