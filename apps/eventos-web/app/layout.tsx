@@ -3,7 +3,7 @@ import '@repo/design-system/styles.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { PropsWithChildren } from 'react';
-import { Footer, Header, LayoutProvider } from '@repo/design-system/organisms';
+import { LayoutProvider } from '@repo/design-system/organisms';
 import { cn } from '@repo/design-system/utils';
 
 const inter = Inter({ subsets: ['latin'] });

@@ -13,7 +13,7 @@ const CreateEventsPage = () => {
     const event = await events
       .forServerComponent()
       .events()
-      .create({ ...data, owner: { id: owner_id } });
+      .create({ ...data, category: { id: data.category }, owner: { id: owner_id } });
     if (!event) {
       // TODO: if error, show error message
       console.log('Error creating event');
@@ -24,7 +24,6 @@ const CreateEventsPage = () => {
 
   return (
     <div>
-      <h1>Crie seu evento</h1>
       <CreteEventFormContainer onSubmit={onSubmit} />
     </div>
   );

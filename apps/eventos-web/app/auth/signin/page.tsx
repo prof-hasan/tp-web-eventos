@@ -25,7 +25,6 @@ const LoginPage = () => {
 
   return (
     <div>
-      <h1>Login</h1>
       <LoginFormContainer onSubmit={onSubmit} />
     </div>
   );

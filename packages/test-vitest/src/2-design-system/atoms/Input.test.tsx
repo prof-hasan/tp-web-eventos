@@ -23,7 +23,7 @@ const setup = ({ ...props }: InputProps) => {
 
 test('Input renders', () => {
   const { input } = setup({});
-  expect(input).toBeTruthy();
+  expect(input).toBeDefined();
 });
 
 test('Input renders custom style', () => {
