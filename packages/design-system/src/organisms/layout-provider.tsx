@@ -6,10 +6,12 @@ import { Footer } from './footer';
 
 export const LayoutProvider = ({ children }: PropsWithChildren) => {
   return (
-    <main>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      {children}
-      <Footer />
-    </main>
+      <main className="flex-grow">
+        {children}
+      </main>
+      <Footer className="mt-auto" />
+    </div>
   );
 };
