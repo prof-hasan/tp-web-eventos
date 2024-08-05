@@ -15,10 +15,12 @@ export const LayoutProvider = async ({ children }: PropsWithChildren) => {
   const userEntity = user ? await events.forServerComponent().users().auth_id(user.id).get() : null;
 
   return (
-    <main>
+    <div className="flex flex-col min-h-screen">
       <Header user={userEntity} />
-      {children}
-      <Footer />
-    </main>
+      <main className="flex-grow">
+        {children}
+      </main>
+      <Footer className="mt-auto" />
+    </div>
   );
 };

@@ -2,6 +2,7 @@ import { type ComponentProps } from 'react';
 import { TwitterLogoIcon, InstagramLogoIcon, LinkedInLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
 import { Column } from '../../atoms';
 import { cn } from '../../utils';
+import Link from 'next/link'; // Importando o componente Link
 
 type FooterColumnsProps = ComponentProps<'input'> & {
   className?: string;
@@ -9,27 +10,34 @@ type FooterColumnsProps = ComponentProps<'input'> & {
 
 export const FooterColumns: React.FC<FooterColumnsProps> = ({ className = '' }) => {
   return (
-    <div className={cn('grid grid-cols-4 place-content-between', className)}>
+    <div className={cn('grid grid-cols-3 place-content-evenly', className)}>
       <Column
         className=''
         header='informações'
         icons={[]}
-        items={['Quem somos? / Nosso trabalho', 'Política de Implementação', 'Design', 'Termos de Uso']}
+        items={[
+          <Link href="/info/about" passHref>
+            Quem somos? / Nosso trabalho 
+          </Link>,
+          <Link href="/info/policies" passHref>
+            Política de Implementação 
+          </Link>,
+          <Link href="/info/design" passHref>
+            Design
+          </Link>,
+          <Link href="/info/terms" passHref>
+            Termos de Uso
+          </Link> 
+        ]}
       />
       <Column
-        className=''
-        header='produtores'
-        icons={[]}
-        items={['criar evento']}
-      />
-      <Column
-        className=''
+        className='text-center'
         header='ajuda'
         icons={[]}
         items={['SAC']}
       />
       <Column
-        className='flex-row'
+        className='flex-row text-right justify-end'
         header='siga nas redes sociais'
         icons={
           [

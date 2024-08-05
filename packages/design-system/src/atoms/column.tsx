@@ -5,7 +5,7 @@ type ColumnProps = ComponentProps<'input'> & {
   className?: string;
   header: string;
   icons: ReactNode[];
-  items: string[];
+  items: Array<string | ReactNode>; // Modificado para aceitar strings e elementos React
 };
 
 export const Column: React.FC<ColumnProps> = ({ className = '', header, icons, items }) => {
@@ -18,7 +18,7 @@ export const Column: React.FC<ColumnProps> = ({ className = '', header, icons, i
       {items.map((item, index) => (
         <p key={index}>{item}</p>
       ))}
-      <div className='flex flex-row gap-2 pt-1'>
+      <div className='flex flex-row gap-2 pt-1 justify-end'>
         {icons.map(
           (icon, index) =>
             icon &&
