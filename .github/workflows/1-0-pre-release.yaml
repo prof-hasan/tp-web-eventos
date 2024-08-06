@@ -7,7 +7,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  events-preview-release:
+  backend-preview-release:
     uses: ./.github/workflows/1-1-backend-preview-publishing.yaml
     with:
       component: events-web
@@ -18,5 +18,11 @@ jobs:
     secrets: inherit
   call-unit-tests:
     uses: ./.github/workflows/1-2-tests-and-code-analysis.yaml
-    needs: events-preview-release
+    needs: backend-preview-release
+    secrets: inherit
+  events-preview-publishing:
+    uses: ./.github/workflows/1-3-preview-publishing.yaml
+    with:
+      component: events-web
+    needs: call-unit-tests
     secrets: inherit
