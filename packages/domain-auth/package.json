@@ -1,0 +1,22 @@
+{
+  "name": "@repo/auth-domain",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "lint": "eslint src/**/* --no-ignore",
+    "type-check": "tsc --noEmit"
+  },
+  "exports": {
+    "./auth-cli": "./src/auth-cli.ts",
+    "./types": "./src/types/index.ts"
+  },
+  "dependencies": {
+    "@repo/supabase-infra": "workspace:*",
+    "@supabase/ssr": "^0.3.0",
+    "@supabase/supabase-js": "2.43.1",
+    "next": "14.2.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
