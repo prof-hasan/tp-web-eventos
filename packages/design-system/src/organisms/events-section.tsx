@@ -9,6 +9,16 @@ type EventsSectionProps = {
   description: string;
 };
 
+// <div
+// className={cn('flex flex-col items-center justify-center py-6', className)}
+// data-testid='events-section'
+// >
+// Article
+
+//<h2 className='text-2xl font-bold text-gray-800'>{title}</h2>
+{/* <p className='text-gray-600'>{des */} // Typograph
+
+
 export const EventsSection: React.FC<EventsSectionProps> = ({ events, className, title, description }) => {
   return (
     <div

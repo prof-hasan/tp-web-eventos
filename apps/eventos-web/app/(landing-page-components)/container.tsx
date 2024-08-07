@@ -4,11 +4,18 @@ import { EventsEntity } from '@repo/events-domain/events-types';
 
 export const LandingPageContainer = async () => {
   const eventsObj = await events.forServerComponent().events().list();
+
+  // to do: split eventsObj per category
   return (
-    <EventsSection
-      title='Eventos'
-      description='App to manage events.'
-      events={eventsObj}
-    />
+      {
+      eventsObj.map((event,index) => {
+        return <EventsSection
+        title='Eventos'
+        description='App to manage events.'
+        events={event}
+        key={index}
+      />
+      })
+    }
   );
 };
