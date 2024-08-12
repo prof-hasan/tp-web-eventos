@@ -1,6 +1,7 @@
 import { auth } from '@repo/auth-domain/auth-cli';
 import { events } from '@repo/events-domain/events-cli';
 import { EventCard } from '@repo/design-system/molecules';
+import { EventContainer } from './(components)/event-container';
 
 type Props = {
   params: {
@@ -13,12 +14,9 @@ const EventPage = async ({ params: { eventId: initialEventId } }: Props) => {
   const event = await events.forServerComponent().events().id(eventId).get();
 
   return (
-    <div>
-      <h1>Event Page</h1>
-      <EventCard
-        event={event}
-      />
-    </div>
+    <>
+      <EventContainer event={event} />
+    </>
   );
 };
 export default EventPage;
