@@ -2,12 +2,19 @@
 
 import { EventsEntity } from '@repo/events-domain/events-types';
 import { Button, Image, Typograph } from '@repo/design-system/atoms';
+import { UsersEventsEntity } from '@repo/events-domain/users-events-types';
 
 type EventContainerProps = {
   event: EventsEntity;
+  userEventsSubscriptions: UsersEventsEntity[];
+  subscribeAtEvent: (userSubscription: boolean) => void;
 };
 
-export const EventContainer = ({ event }: EventContainerProps) => {
+export const EventContainer = ({ event, subscribeAtEvent, userEventsSubscriptions }: EventContainerProps) => {
+
+  const userSubscription = userEventsSubscriptions.find((e: UsersEventsEntity) => e.event.id === event.id);
+  console.log(userSubscription);
+
   return (
     <div className='flex h-full w-full flex-col items-center justify-center gap-10 p-2'>
       <Image
@@ -28,10 +35,10 @@ export const EventContainer = ({ event }: EventContainerProps) => {
       </div>
       <Button
         variant='primary'
-        onClick={() => alert('Buy ticket')}
+        onClick={() => subscribeAtEvent(userSubscription ? true : false)}
         className='w-56'
       >
-        Inscrever no evento
+        {userSubscription ? 'Sair do evento' : 'Inscrever no evento'}
       </Button>
     </div>
   );
