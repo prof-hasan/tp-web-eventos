@@ -1,6 +1,10 @@
 import { auth } from '@repo/auth-domain/auth-cli';
 import { events } from '@repo/events-domain/events-cli';
-import { EventCard } from '@repo/design-system/molecules';
+import { EventContainer } from './(components)/event-container';
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
+import { UserAuth } from '@repo/auth-domain/types';
 
 type Props = {
   params: {
@@ -9,16 +13,37 @@ type Props = {
 };
 
 const EventPage = async ({ params: { eventId: initialEventId } }: Props) => {
+
   const eventId = decodeURIComponent(initialEventId);
   const event = await events.forServerComponent().events().id(eventId).get();
 
+  const user = JSON.parse(cookies().get('user')?.value ?? '{}') as UserAuth;
+  const userEntity = user ? await events.forServerComponent().users().auth_id(user.id).get() : null;
+  const userEventsSubscriptions = await events.forServerComponent().users_events().user_id(userEntity.id).get();
+
+  const hadleSubscribeAtEvent = async (userSubscribed = false) => {
+    'use server'
+    if (user) {
+      if (userSubscribed) {
+        await events.forServerComponent().users_events().remove({ event_id: eventId, user_id: userEntity.id });
+        revalidatePath(`/event/${encodeURIComponent(eventId)}`);
+        return  
+      }
+
+      await events.forServerComponent().users_events().create({
+        event: { id: eventId },
+        user: { id: userEntity.id },
+      });
+      revalidatePath(`/event/${encodeURIComponent(eventId)}`);
+    }
+  }
+
+  
+
   return (
-    <div>
-      <h1>Event Page</h1>
-      <EventCard
-        event={event}
-      />
-    </div>
+    <>
+      <EventContainer event={event} subscribeAtEvent={hadleSubscribeAtEvent} userEventsSubscriptions={userEventsSubscriptions} />
+    </>
   );
 };
 export default EventPage;

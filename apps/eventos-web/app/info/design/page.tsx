@@ -1,5 +1,5 @@
 import { cn } from '../../../../../packages/design-system/src/utils';
-import { BaseImage as Image } from '@repo/design-system/atoms';
+import { Image } from '@repo/design-system/atoms';
 import { Article, Typograph } from '@repo/design-system/atoms';
 
 const DesignPage = async () => {

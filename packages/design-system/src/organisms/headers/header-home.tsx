@@ -5,8 +5,9 @@ import { cn } from '../../utils';
 import { Button, Select, SelectContent, SelectItem, SelectTrigger, Logo } from '../../atoms';
 import { InputIcon } from '../../molecules';
 import { useEffect, useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
+import { redirect, usePathname, useRouter } from 'next/navigation';
 import { UserEntity } from '@repo/events-domain/user-types';
+import { revalidatePath } from 'next/cache';
 
 type HeaderProps = {
   user?: UserEntity;
@@ -35,7 +36,7 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
     router.push('/auth/signin');
   };
 
-  const onClickLogout = () => {
+  const onClickLogout = async () => {
     router.push('/api/auth/signout');
   };
 

@@ -6,6 +6,7 @@ import { FieldValues } from 'react-hook-form';
 import { LoginFormContainer } from '../(components)/login-form-container';
 import { auth } from '@repo/auth-domain/auth-cli';
 import { UserAuth } from '@repo/auth-domain/types';
+import { cookies } from 'next/headers';
 
 const LoginPage = () => {
   const onSubmit = async (data: FieldValues) => {
@@ -18,7 +19,9 @@ const LoginPage = () => {
       return;
     }
     if (user) {
+      cookies().set('user', JSON.stringify(user));
       revalidatePath('/', 'layout');
+      revalidatePath('/', 'page');
       redirect('/');
     }
   };
