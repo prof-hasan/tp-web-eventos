@@ -19,6 +19,11 @@ export const EventsDomain = (supabase: SupabaseClient) => ({
     owner_id: (owner_id: string) => ({
       get: () => Events.getByOwnerId(supabase)(owner_id),
     }),
+    search: () => ({
+      name: (name: string) => ({
+        get: () => Events.getBySearchByName(supabase)(name),
+      }),
+    }),
   }),
   
   users: () => ({

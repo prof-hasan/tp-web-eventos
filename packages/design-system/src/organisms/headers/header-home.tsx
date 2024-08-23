@@ -5,9 +5,8 @@ import { cn } from '../../utils';
 import { Button, Select, SelectContent, SelectItem, SelectTrigger, Logo } from '../../atoms';
 import { InputIcon } from '../../molecules';
 import { useEffect, useState } from 'react';
-import { redirect, usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { UserEntity } from '@repo/events-domain/user-types';
-import { revalidatePath } from 'next/cache';
 
 type HeaderProps = {
   user?: UserEntity;
@@ -16,12 +15,21 @@ type HeaderProps = {
 
 export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
   const [category, setCategory] = useState<string>('');
+  const [search, setSearch] = useState<string>('');
   const router = useRouter();
   const pathname = usePathname();
 
-  const onValueChange = (value: string) => {
+  // console.log('HeaderHome', { category, search, pathname });
+
+  const onCategoryValueChange = (value: string) => {
     setCategory(value);
-    router.push(`/events/${value}`);
+    router.push(`/events/category/${value}`);
+  };
+
+  const onSearchEventName = () => {
+    if (!search) return;
+    setSearch('');
+    router.push(`/events/search?name=${search}`);
   };
 
   const onClickLogo = () => {
@@ -41,7 +49,7 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
   };
 
   useEffect(() => {
-    const path = pathname.split('/')[2];
+    const path = pathname.includes('category') ? pathname.split('/')[3] : undefined;
     if (path) {
       setCategory(path);
     } else {
@@ -80,7 +88,7 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
         )}
         <Select
           value={category}
-          onValueChange={(value) => onValueChange(value)}
+          onValueChange={(value) => onCategoryValueChange(value)}
         >
           <SelectTrigger
             className={cn('w-40')}
@@ -94,7 +102,17 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
         </Select>
         <InputIcon
           className={cn('w-80')}
+          value={search}
           icon={<MagnifyingGlassIcon />}
+          onChange={(e) => setSearch(e.target.value)}
+          onBlur={() => {
+            onSearchEventName();
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              onSearchEventName();
+            }
+          }}
         />
         {user && (
           <Button
