@@ -1,4 +1,5 @@
 import { type SupabaseClient } from '@supabase/supabase-js';
+import * as Category from './category';
 import * as Events from './events';
 import * as Users from './users';
 import * as UsersEvents from './users-events';
@@ -55,4 +56,10 @@ export const EventsDomain = (supabase: SupabaseClient) => ({
     }),
     remove: ({event_id, user_id}: {event_id: string, user_id: string}) => UsersEvents.remove(supabase)(event_id, user_id),
   }),
+
+  category: () => ({
+    id: (id: string) => ({
+      get: () => Category.getByCategoryId(supabase)(id),
+    }),
+  })
 });
