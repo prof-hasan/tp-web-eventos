@@ -7,9 +7,10 @@ import { InputIcon } from '../../molecules';
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { UserEntity } from '@repo/events-domain/user-types';
+import { revalidatePath } from 'next/cache';
 
 type HeaderProps = {
-  user?: UserEntity;
+  user?: UserEntity | null;
   className?: string;
 };
 
@@ -44,7 +45,7 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
     router.push('/auth/signin');
   };
 
-  const onClickLogout = async () => {
+  const onClickLogout = async () => {      
     router.push('/api/auth/signout');
   };
 

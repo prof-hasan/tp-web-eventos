@@ -36,6 +36,7 @@ const SignUpPage = () => {
 
     if (user) {
       revalidatePath('/', 'layout');
+      revalidatePath('/', 'page');
       redirect('/');
     }
   };

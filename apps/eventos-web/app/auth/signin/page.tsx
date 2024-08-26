@@ -8,7 +8,14 @@ import { auth } from '@repo/auth-domain/auth-cli';
 import { UserAuth } from '@repo/auth-domain/types';
 import { cookies } from 'next/headers';
 
-const LoginPage = () => {
+const LoginPage = ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) => {
+
+  const returnTo = searchParams.returnTo as string;
+
   const onSubmit = async (data: FieldValues) => {
     'use server';
     let user = {} as UserAuth;
@@ -20,9 +27,8 @@ const LoginPage = () => {
     }
     if (user) {
       cookies().set('user', JSON.stringify(user));
-      revalidatePath('/', 'layout');
-      revalidatePath('/', 'page');
-      redirect('/');
+      revalidatePath('/');
+      returnTo ? redirect(returnTo) : redirect('/');
     }
   };
 
