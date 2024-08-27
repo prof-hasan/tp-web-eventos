@@ -1,5 +1,5 @@
 import type { EventsEntity } from '@repo/events-domain/events-types';
-import { EventsCarousel } from '../atoms';
+import { EventsCarousel, Article, Typograph } from '../atoms';
 import { cn } from '../utils';
 
 type EventsSectionProps = {
@@ -11,17 +11,22 @@ type EventsSectionProps = {
 
 export const EventsSection: React.FC<EventsSectionProps> = ({ events, className, title, description }) => {
   return (
-    <div
-      className={cn('flex flex-col items-center justify-center py-6', className)}
-      data-testid='events-section'
-    >
+    <Article data-testid='events-section'>
       <div className=' flex flex-col items-center justify-center'>
-        <h2 className='text-2xl font-bold text-gray-800'>{title}</h2>
-        <p className='text-gray-600'>{description}</p>
+        <Typograph variant='h3'>{title}</Typograph>
+        <Typograph variant='h2'>{description}</Typograph>
       </div>
       <div className='mt-6 h-fit w-full'>
-        <EventsCarousel slides={events} />
+        {events.length > 0 ? (
+          <EventsCarousel slides={events} />
+        ) : (
+          <div>
+            <Typograph className='flex w-full items-center justify-center'>
+              Não há eventos cadastrados nesta categoria!
+            </Typograph>
+          </div>
+        )}
       </div>
-    </div>
+    </Article>
   );
 };

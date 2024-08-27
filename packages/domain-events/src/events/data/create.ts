@@ -13,7 +13,7 @@ export const create =
     const { data, error } = await supabase
       .from('events')
       .insert<EventsCreateModel>(toCreate(event))
-      .select(`*, owner: users!fk_user_id(*)`);
+      .select(`*, owner: users!fk_user_id(*), category: events_categories!fk_category_id(*)`);
     if (error) throw error;
 
     return fromModel(data[0] as EventsModel);
@@ -25,7 +25,7 @@ export const bulkCreate =
     const { data, error } = await supabase
       .from('events')
       .insert<EventsCreateModel[]>(events.map(toCreate))
-      .select(`*, owner: users!fk_user_id(*)`);
+      .select(`*, owner: users!fk_user_id(*), category: events_categories!fk_category_id(*)`);
     if (error) throw error;
 
     return data.map(fromModel);

@@ -5,12 +5,14 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { createEventSchema } from './forms-schemas';
 import { InputLabel } from '@repo/design-system/molecules';
 import { Button, Label, Select, SelectContent, SelectItem, SelectTrigger } from '@repo/design-system/atoms';
+import { EventsCategoryEntity } from '../../../../../packages/domain-events/src/category';
 
 interface CreteEventContainerProps {
+  categories: EventsCategoryEntity[];
   onSubmit: (data: FieldValues) => void;
 }
 
-export const CreteEventFormContainer = ({ onSubmit }: CreteEventContainerProps) => {
+export const CreteEventFormContainer = ({ categories, onSubmit }: CreteEventContainerProps) => {
   const { control, formState, handleSubmit } = useForm({
     resolver: zodResolver(createEventSchema),
   });
@@ -71,9 +73,14 @@ export const CreteEventFormContainer = ({ onSubmit }: CreteEventContainerProps) 
                 >
                   <SelectTrigger placeholder={'Categorias'} />
                   <SelectContent>
-                    <SelectItem value='music'>Música</SelectItem>
-                    <SelectItem value='movies'>Cinema</SelectItem>
-                    <SelectItem value='theater'>Teatro</SelectItem>
+                    {categories?.map((category) => (
+                      <SelectItem
+                        key={category.id}
+                        value={category.id}
+                      >
+                        {category.title}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>

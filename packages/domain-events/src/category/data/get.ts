@@ -1,9 +1,11 @@
-import { SupabaseClient } from '@supabase/supabase-js';
-import { fromModel } from '../adapters';
+import { SupabaseClient } from "@supabase/supabase-js";
+import { EventsCategoryEntity, EventsCategoryModel } from "../types";
+import { fromModel } from "../adapters";
 
-export const getByCategoryId = (supabase: SupabaseClient) => async (categoryId: string) => {
-  const { data, error } = await supabase.from('events_categories').select(`*`).eq('id', categoryId);
+export const getById = (supabase: SupabaseClient) => async (id: string): Promise<EventsCategoryEntity> => {
+  const { data, error } = await supabase.from('events_categories').select(`*`).eq('id', id);
   if (error) throw error;
 
-  return fromModel(data[0]);
+  return fromModel(data[0] as EventsCategoryModel);
+
 };

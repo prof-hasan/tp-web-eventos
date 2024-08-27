@@ -4,20 +4,23 @@ import { usePathname } from 'next/navigation';
 import { UserEntity } from '@repo/events-domain/user-types';
 import { HeaderHome } from './headers/header-home';
 import { HeaderNoButton } from './headers/header-no-button';
+import { EventsCategoryEntity } from '../../../domain-events/src/category';
 
 type HeaderProps = {
-  user?: UserEntity | null;
+  user?: UserEntity;
+  categories?: EventsCategoryEntity[];
   className?: string;
 };
 
-export const Header: React.FC<HeaderProps> = ({ className = '', user }) => {
+export const Header: React.FC<HeaderProps> = ({ className = '', categories, user }) => {
   const pathname = usePathname();
-  const headerHomePathnamesRegex = ['^\/$', '^\/events/.*$', '^\/event/.*$'];
+  const headerHome = ['/', '/events/music', '/events/theater', '/events/movies'];
 
-  if (headerHomePathnamesRegex.some((path) => new RegExp(path).test(pathname)))
+  if (headerHome.includes(pathname))
     return (
       <HeaderHome
         user={user}
+        categories={categories}
         className={className}
       />
     );
