@@ -14,9 +14,9 @@ const UserEvents = async () => {
     : null;
 
   return (
-    <div className='flex h-full w-full flex-col items-center gap-20 p-2'>
+    <div className='flex h-full w-full flex-col items-center gap-20 p-4'>
       <MyEvents events={userEvents} />
-      <SubcribedEvents events={subcribedEvents} />
+      <SubcribedEvents userEvents={subcribedEvents} />
     </div>
   );
 };
