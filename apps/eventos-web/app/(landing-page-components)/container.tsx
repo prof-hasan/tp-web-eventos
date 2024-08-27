@@ -16,24 +16,14 @@ export const LandingPageContainer = async () => {
     return acc;
   }, {} as Record<string, EventsEntity[]>);
 
-  // map title and descriptions based in categories
-  // to do: must call categories from database
-  // const categoryMappings: Record<string, { title: string; description: string }> = {
-  //   'movies': { title: 'Cinema', description: 'Explore os principais filmes em cartaz' },
-  //   'music': { title: 'Música', description: 'Descubra os melhores shows e festivais de música' },
-  //   'theater': { title: 'Teatro', description: 'Fique por dentro do principais espetáculos em exibição' },
-  //   // Add new events here
-  //   'default': { title: 'Outros Eventos', description: 'Veja outros eventos disponíveis.' }
-  // };
-
   const categories:EventsCategoryEntity[] = await events.forServerComponent().category().list();
-  // console.log(categoryMappings);
 
   return (
     <>
       {Object.keys(eventsByCategory).map((category_id) => {
-        const { title, description } = categories.find((category) => category.id === category_id) ?? {title:'default', description:'default'};
-
+        const { title, description } = Array.isArray(categories) ? categories.find((category) => category.id === category_id) ?? {title:'Default', description:'Default'} : {title:'Outros', description: 'Demais eventos na região'};
+        
+        // const {title, description} = {title:'default', description:'default'};
         return <EventsSection
           key={category_id}
           title={title}
