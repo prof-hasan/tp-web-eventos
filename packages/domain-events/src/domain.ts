@@ -1,4 +1,5 @@
 import { type SupabaseClient } from '@supabase/supabase-js';
+import * as Category from './category';
 import * as Events from './events';
 import * as Users from './users';
 import * as UsersEvents from './users-events';
@@ -19,6 +20,11 @@ export const EventsDomain = (supabase: SupabaseClient) => ({
     }),
     owner_id: (owner_id: string) => ({
       get: () => Events.getByOwnerId(supabase)(owner_id),
+    }),
+    search: () => ({
+      name: (name: string) => ({
+        get: () => Events.getBySearchByName(supabase)(name),
+      }),
     }),
   }),
   
@@ -53,9 +59,11 @@ export const EventsDomain = (supabase: SupabaseClient) => ({
   }),
 
   category: () => ({
+
     list: Category.list(supabase),
     id: (id: string) => ({
       get: () => Category.getById(supabase)(id)
     })
+
   })
 });

@@ -1,20 +1,19 @@
-import Image from 'next/image';
+import * as BaseImage from 'next/image';
 import { cn } from '../utils';
 
-
-type ImageProps = React.ComponentProps<typeof Image> & {
+type ImageProps = React.ComponentProps<typeof BaseImage.default> & {
   alt: string;
   className?: string;
 };
 
-export const BaseImage: React.FC<ImageProps> = ({ className, ...props }) => {
+export const Image: React.FC<ImageProps> = ({ className, ...props }) => {
   return (
-    <Image
+    <BaseImage.default
       aria-label='Image'
       className={cn(className)}
       data-testid='image'
-      width={150}
-      height={150}
+      width={props.width ?? 150}
+      height={props.height ?? 150}
       {...props}
     />
   );

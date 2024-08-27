@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { cn } from '../utils';
-import { Button, BaseImage as Image } from '../atoms';
+import { Button, Image } from '../atoms';
 import { EventsEntity } from '../../../domain-events/src/events/types/events-entity';
 
 type EventCardPros = {

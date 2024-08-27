@@ -21,7 +21,7 @@ const CreateEventsPage = async () => {
       console.log('Error creating event');
       return;
     }
-    redirect(`/events/${encodeURIComponent}`);
+    redirect(`/event/${encodeURIComponent(event.id)}`);
   };
 
   return (

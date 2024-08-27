@@ -1,6 +1,6 @@
 import './globals.css';
 import '@repo/design-system/styles.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import { PropsWithChildren } from 'react';
 import { LayoutProvider } from '@repo/design-system/organisms';
@@ -13,13 +13,16 @@ export const metadata: Metadata = {
   description: 'App to manage events.',
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 const RootLayout = ({ children }: PropsWithChildren) => {
   return (
     <html lang='en'>
       <body className={cn(inter.className, 'w-screen, h-screen')}>
-        <LayoutProvider>
-          {children}
-        </LayoutProvider>
+        <LayoutProvider>{children}</LayoutProvider>
       </body>
     </html>
   );

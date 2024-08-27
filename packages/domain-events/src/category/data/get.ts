@@ -7,4 +7,5 @@ export const getById = (supabase: SupabaseClient) => async (id: string): Promise
   if (error) throw error;
 
   return fromModel(data[0] as EventsCategoryModel);
+
 };

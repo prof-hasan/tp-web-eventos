@@ -2,7 +2,7 @@ import React from 'react';
 import { test, expect, afterEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { cn } from '@repo/design-system/utils';
-import { BaseImage as Image } from '@repo/design-system/atoms';
+import { Image } from '@repo/design-system/atoms';
 
 type ImageProps = React.ComponentProps<typeof Image>;
 
