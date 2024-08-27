@@ -11,8 +11,7 @@ type EventContainerProps = {
 };
 
 export const EventContainer= ({ event, subscribeAtEvent, userEventsSubscriptions }: EventContainerProps) => {
-  const userSubscription = userEventsSubscriptions ? userEventsSubscriptions.find((e: UsersEventsEntity) => e.event.id === event.id) : null;
-  console.log(userSubscription);
+  const userSubscription = userEventsSubscriptions ? userEventsSubscriptions.find((e: UsersEventsEntity) => e.event.id === event.id) : false;
 
   const handleSubscribeAtEvent = () => {
     subscribeAtEvent(userSubscription ? true : false);

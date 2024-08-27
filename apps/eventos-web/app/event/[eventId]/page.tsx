@@ -21,6 +21,7 @@ const EventPage = async ({ params: { eventId: initialEventId } }: Props) => {
 
   const user: UserAuth | null = JSON.parse(cookies().get('user')?.value ?? 'null');
   const userEntity: UserEntity | null = user ? await events.forServerComponent().users().auth_id(user.id).get() : null;
+  console.log('userEntity', userEntity);
   const userEventsSubscriptions: UsersEventsEntity[] | null = userEntity
     ? await events.forServerComponent().users_events().user_id(userEntity.id).get()
     : null;
@@ -41,6 +42,7 @@ const EventPage = async ({ params: { eventId: initialEventId } }: Props) => {
           user: { id: userEntity?.id },
         });
       revalidatePath(`/event/${encodeURIComponent(eventId)}`);
+      return;
     }
     redirect('/auth/signin');
   };
