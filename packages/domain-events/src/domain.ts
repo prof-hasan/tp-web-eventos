@@ -3,7 +3,6 @@ import * as Category from './category';
 import * as Events from './events';
 import * as Users from './users';
 import * as UsersEvents from './users-events';
-import * as Category from './category';
 
 export const EventsDomain = (supabase: SupabaseClient) => ({
   events: () => ({
