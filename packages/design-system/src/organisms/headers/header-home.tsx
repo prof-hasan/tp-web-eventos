@@ -1,6 +1,6 @@
 'use client';
 
-import { MagnifyingGlassIcon, SunIcon } from '@radix-ui/react-icons';
+import { AvatarIcon, MagnifyingGlassIcon, SunIcon } from '@radix-ui/react-icons';
 import { cn } from '../../utils';
 import { Button, Select, SelectContent, SelectItem, SelectTrigger, Logo } from '../../atoms';
 import { InputIcon } from '../../molecules';
@@ -37,16 +37,12 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
     router.push('/');
   };
 
-  const onClickCreateEvent = () => {
-    router.push('/events/create');
-  };
-
-  const onClickSignIn = () => {
-    router.push('/auth/signin');
-  };
-
-  const onClickLogout = async () => {      
-    router.push('/api/auth/signout');
+  const onClickAvatar = () => {
+    if (!user) {
+      router.push('/auth/signin');
+      return;
+    }
+    router.push(`/user/profile/${encodeURIComponent(user?.id)}`);
   };
 
   useEffect(() => {
@@ -69,24 +65,13 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
         img={<SunIcon className={cn('h-20 w-20')} />}
         onClick={onClickLogo}
       />
-      <div className={cn('relative flex w-full items-center justify-center gap-4', className)}>
-        {user ? (
-          <Button
-            className={cn('w-40')}
-            variant='primary'
-            onClick={onClickCreateEvent}
-          >
-            Criar Evento
-          </Button>
-        ) : (
-          <Button
-            className={cn('w-40')}
-            variant='primary'
-            onClick={onClickSignIn}
-          >
-            Entrar
-          </Button>
-        )}
+      <div className={cn('flex w-full items-center justify-center py-2')}>
+        <AvatarIcon
+          className='h-10 w-10 hover:cursor-pointer'
+          onClick={onClickAvatar}
+        />
+      </div>
+      <div className={cn('flex w-full flex-wrap items-center justify-center gap-4 p-1', className)}>
         <Select
           value={category}
           onValueChange={(value) => onCategoryValueChange(value)}
@@ -115,15 +100,6 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
             }
           }}
         />
-        {user && (
-          <Button
-            className='absolute right-2'
-            onClick={onClickLogout}
-          >
-            {' '}
-            Logout{' '}
-          </Button>
-        )}
       </div>
     </div>
   );
