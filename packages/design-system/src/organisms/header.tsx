@@ -14,9 +14,9 @@ type HeaderProps = {
 
 export const Header: React.FC<HeaderProps> = ({ className = '', categories, user }) => {
   const pathname = usePathname();
-  const headerHome = ['/', '/events/music', '/events/theater', '/events/movies'];
+  const headerHomePathnamesRegex = ['^\/$', '^\/events/.*$', '^\/event/.*$'];
 
-  if (headerHome.includes(pathname))
+  if (headerHomePathnamesRegex.some((path) => new RegExp(path).test(pathname)))
     return (
       <HeaderHome
         user={user}
