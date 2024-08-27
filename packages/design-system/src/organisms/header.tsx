@@ -7,17 +7,16 @@ import { HeaderNoButton } from './headers/header-no-button';
 import { EventsCategoryEntity } from '../../../domain-events/src/category';
 
 type HeaderProps = {
-
-  user?: UserEntity | null;
+  user?: UserEntity;
+  categories?: EventsCategoryEntity[];
   className?: string;
 };
 
 export const Header: React.FC<HeaderProps> = ({ className = '', categories, user }) => {
   const pathname = usePathname();
+  const headerHome = ['/', '/events/music', '/events/theater', '/events/movies'];
 
-  const headerHomePathnamesRegex = ['^\/$', '^\/events/.*$', '^\/event/.*$'];
-
-  if (headerHomePathnamesRegex.some((path) => new RegExp(path).test(pathname)))
+  if (headerHome.includes(pathname))
     return (
       <HeaderHome
         user={user}
