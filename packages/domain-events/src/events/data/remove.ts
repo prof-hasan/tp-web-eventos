@@ -9,7 +9,7 @@ export const remove =
       .from('events')
       .update({ deleted_at: new Date().toISOString() })
       .eq('id', id)
-      .select(`*, owner: users!fk_user_id(*)`);
+      .select(`*, owner: users!fk_user_id(*), category: events_categories!fk_category_id(*)`);
     if (error) throw error;
 
     return fromModel(data[0] as EventsModel);

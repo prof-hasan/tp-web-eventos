@@ -7,13 +7,15 @@ import { InputIcon } from '../../molecules';
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { UserEntity } from '@repo/events-domain/user-types';
+import { EventsCategoryEntity } from '../../../../domain-events/src/category';
 
 type HeaderProps = {
   user?: UserEntity;
+  categories?: EventsCategoryEntity[];
   className?: string;
 };
 
-export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
+export const HeaderHome: React.FC<HeaderProps> = ({ className = '', categories, user }) => {
   const [category, setCategory] = useState<string>('');
   const router = useRouter();
   const pathname = usePathname();
@@ -86,9 +88,14 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', user }) => {
             placeholder={'Categorias'}
           />
           <SelectContent>
-            <SelectItem value='music'>Música</SelectItem>
-            <SelectItem value='movies'>Cinema</SelectItem>
-            <SelectItem value='theater'>Teatro</SelectItem>
+            {categories?.map((category) => (
+              <SelectItem
+                key={category.id}
+                value={category.id}
+              >
+                {category.title}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
         <InputIcon

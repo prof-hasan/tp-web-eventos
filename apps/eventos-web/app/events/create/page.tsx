@@ -4,7 +4,9 @@ import { CreteEventFormContainer } from '../(components)/create-event-form-conta
 import { auth } from '@repo/auth-domain/auth-cli';
 import { events } from '@repo/events-domain/events-cli';
 
-const CreateEventsPage = () => {
+const CreateEventsPage = async () => {
+  const categories = await events.forServerComponent().category().list();
+
   const onSubmit = async (data: FieldValues) => {
     'use server';
     // TODO: get user id from session
@@ -24,7 +26,10 @@ const CreateEventsPage = () => {
 
   return (
     <div>
-      <CreteEventFormContainer onSubmit={onSubmit} />
+      <CreteEventFormContainer
+        categories={categories}
+        onSubmit={onSubmit}
+      />
     </div>
   );
 };

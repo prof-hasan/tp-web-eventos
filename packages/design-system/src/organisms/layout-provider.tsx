@@ -5,7 +5,6 @@ import { auth } from '@repo/auth-domain/auth-cli';
 import { events } from '@repo/events-domain/events-cli';
 
 export const LayoutProvider = async ({ children }: PropsWithChildren) => {
-
   let user = null;
   try {
     user = await auth.forServerComponent().auth().user().get();
@@ -14,13 +13,16 @@ export const LayoutProvider = async ({ children }: PropsWithChildren) => {
   }
   const userEntity = user ? await events.forServerComponent().users().auth_id(user.id).get() : null;
 
+  const categories = await events.forServerComponent().category().list();
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header user={userEntity} />
-      <main className="flex-grow">
-        {children}
-      </main>
-      <Footer className="mt-auto" />
+    <div className='flex min-h-screen flex-col'>
+      <Header
+        user={userEntity}
+        categories={categories}
+      />
+      <main className='flex-grow'>{children}</main>
+      <Footer className='mt-auto' />
     </div>
   );
 };

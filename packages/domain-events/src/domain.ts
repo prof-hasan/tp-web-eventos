@@ -53,7 +53,7 @@ export const EventsDomain = (supabase: SupabaseClient) => ({
   }),
 
   category: () => ({
-    list: () => Category.list(supabase),
+    list: Category.list(supabase),
     id: (id: string) => ({
       get: () => Category.getById(supabase)(id)
     })

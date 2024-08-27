@@ -11,15 +11,21 @@ type EventsSectionProps = {
 
 export const EventsSection: React.FC<EventsSectionProps> = ({ events, className, title, description }) => {
   return (
-    <Article
-      data-testid='events-section'
-    >
+    <Article data-testid='events-section'>
       <div className=' flex flex-col items-center justify-center'>
         <Typograph variant='h3'>{title}</Typograph>
         <Typograph variant='h2'>{description}</Typograph>
       </div>
       <div className='mt-6 h-fit w-full'>
-        <EventsCarousel slides={events} />
+        {events.length > 0 ? (
+          <EventsCarousel slides={events} />
+        ) : (
+          <div>
+            <Typograph className='flex w-full items-center justify-center'>
+              Não há eventos cadastrados nesta categoria!
+            </Typograph>
+          </div>
+        )}
       </div>
     </Article>
   );
