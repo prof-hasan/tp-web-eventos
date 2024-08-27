@@ -6,7 +6,7 @@ import { HeaderHome } from './headers/header-home';
 import { HeaderNoButton } from './headers/header-no-button';
 
 type HeaderProps = {
-  user?: UserEntity;
+  user?: UserEntity | null;
   className?: string;
 };
 

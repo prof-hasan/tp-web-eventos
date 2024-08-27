@@ -6,14 +6,16 @@ import { UsersEventsEntity } from '@repo/events-domain/users-events-types';
 
 type EventContainerProps = {
   event: EventsEntity;
-  userEventsSubscriptions: UsersEventsEntity[];
+  userEventsSubscriptions: UsersEventsEntity[] | null;
   subscribeAtEvent: (userSubscription: boolean) => void;
 };
 
-export const EventContainer = ({ event, subscribeAtEvent, userEventsSubscriptions }: EventContainerProps) => {
+export const EventContainer= ({ event, subscribeAtEvent, userEventsSubscriptions }: EventContainerProps) => {
+  const userSubscription = userEventsSubscriptions ? userEventsSubscriptions.find((e: UsersEventsEntity) => e.event.id === event.id) : false;
 
-  const userSubscription = userEventsSubscriptions.find((e: UsersEventsEntity) => e.event.id === event.id);
-  console.log(userSubscription);
+  const handleSubscribeAtEvent = () => {
+    subscribeAtEvent(userSubscription ? true : false);
+  };
 
   return (
     <div className='flex h-full w-full flex-col items-center justify-center gap-10 p-2'>
@@ -35,7 +37,7 @@ export const EventContainer = ({ event, subscribeAtEvent, userEventsSubscription
       </div>
       <Button
         variant='primary'
-        onClick={() => subscribeAtEvent(userSubscription ? true : false)}
+        onClick={handleSubscribeAtEvent}
         className='w-56'
       >
         {userSubscription ? 'Sair do evento' : 'Inscrever no evento'}
