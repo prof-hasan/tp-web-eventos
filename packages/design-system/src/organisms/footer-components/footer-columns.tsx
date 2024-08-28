@@ -10,24 +10,24 @@ type FooterColumnsProps = ComponentProps<'input'> & {
 
 export const FooterColumns: React.FC<FooterColumnsProps> = ({ className = '' }) => {
   return (
-    <div className={cn('grid grid-cols-1 md:grid-cols-3 gap-4', className)}>
+    <div className={cn('grid grid-cols-3 place-content-evenly', className)}>
       <Column
-        className='text-center'
+        className=''
         header='informações'
         icons={[]}
         items={[
           <Link href="/info/about" passHref>
-            Quem somos? / Nosso trabalho 
+            Quem somos?
           </Link>,
           <Link href="/info/policies" passHref>
-            Política de Implementação 
+            Política
           </Link>,
           <Link href="/info/design" passHref>
             Design
           </Link>,
           <Link href="/info/terms" passHref>
-            Termos de Uso
-          </Link> 
+            Termos
+          </Link>
         ]}
       />
       <Column
@@ -37,12 +37,12 @@ export const FooterColumns: React.FC<FooterColumnsProps> = ({ className = '' }) 
         items={['SAC']}
       />
       <Column
-        className='text-center'
-        header='siga nas redes sociais'
+        className='flex-row text-right justify-end'
+        header='redes sociais'
         icons={
           [
-            <TwitterLogoIcon />, 
-            <InstagramLogoIcon />, 
+            <TwitterLogoIcon />,
+            <InstagramLogoIcon />,
             <LinkedInLogoIcon />,
             <GitHubLogoIcon />
           ]
