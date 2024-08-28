@@ -14,10 +14,10 @@ const DesignPage = async () => {
         <Article>
           <Typograph variant='h3'>Text: Roboto 20px 2D2327</Typograph>
           <Typograph>Pellentesque habitant morbi  senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</Typograph>
-          <span className={cn('flex w-full justify-center justify-around')}>
+          <div className={cn('grid grid-cols-1 md:grid-cols-2 gap-4')}>
             <Typograph variant='em'>TEXTO EM DESTAQUE</Typograph>
             <Typograph variant='i'>TEXTO ESMAECIDO</Typograph>
-          </span>
+          </div>
           <Typograph variant='h2'>Paleta</Typograph>
           <Image
             src='https://placehold.co/150x150'
