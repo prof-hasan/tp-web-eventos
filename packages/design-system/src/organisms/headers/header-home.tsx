@@ -67,12 +67,6 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', categories, 
         img={<SunIcon className={cn('h-20 w-20')} />}
         onClick={onClickLogo}
       />
-      <div className={cn('flex w-full items-center justify-center py-2')}>
-        <AvatarIcon
-          className='h-10 w-10 hover:cursor-pointer'
-          onClick={onClickAvatar}
-        />
-      </div>
       <div className={cn('flex w-full flex-wrap items-center justify-center gap-4 p-1', className)}>
         <Select
           value={category}
@@ -106,6 +100,10 @@ export const HeaderHome: React.FC<HeaderProps> = ({ className = '', categories, 
               onSearchEventName();
             }
           }}
+        />
+        <AvatarIcon
+          className='h-10 w-10 hover:cursor-pointer'
+          onClick={onClickAvatar}
         />
       </div>
     </div>
