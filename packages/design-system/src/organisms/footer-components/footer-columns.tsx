@@ -10,9 +10,9 @@ type FooterColumnsProps = ComponentProps<'input'> & {
 
 export const FooterColumns: React.FC<FooterColumnsProps> = ({ className = '' }) => {
   return (
-    <div className={cn('grid grid-cols-3 place-content-evenly', className)}>
+    <div className={cn('grid grid-cols-1 md:grid-cols-3 gap-4', className)}>
       <Column
-        className=''
+        className='text-center'
         header='informações'
         icons={[]}
         items={[
@@ -37,7 +37,7 @@ export const FooterColumns: React.FC<FooterColumnsProps> = ({ className = '' }) 
         items={['SAC']}
       />
       <Column
-        className='flex-row text-right justify-end'
+        className='text-center'
         header='siga nas redes sociais'
         icons={
           [

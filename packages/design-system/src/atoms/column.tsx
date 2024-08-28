@@ -18,7 +18,7 @@ export const Column: React.FC<ColumnProps> = ({ className = '', header, icons, i
       {items.map((item, index) => (
         <p key={index}>{item}</p>
       ))}
-      <div className='flex flex-row gap-2 pt-1 justify-end'>
+      <div className='flex flex-row gap-2 pt-1 justify-center'>
         {icons.map(
           (icon, index) =>
             icon &&
