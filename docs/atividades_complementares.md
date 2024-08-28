@@ -30,7 +30,7 @@ As atividades marcadas estão concluídos
   - [x] 1 ponto: Local Storage
     - Foi utilizado os cookies ao invés do local storage 
   - [x] 2 pontos: Ajax
-    - De acordo com a [Alura](https://cursos.alura.com.br/forum/topico-quando-usar-ajax-async-await-ou-then-234659#:~:text=AJAX%20(Asynchronous%20JavaScript%20and%20XML,o%20trabalho%20com%20c%C3%B3digo%20ass%C3%ADncrono.), os métodos de Async/Await é a forma mais moderna de se utilizar as requisições assíncronas.
+    - De acordo com a [Alura](https://cursos.alura.com.br/forum/topico-quando-usar-ajax-async-await-ou-then-234659#:~:text=AJAX%20(Asynchronous%20JavaScript%20and%20XML,o%20trabalho%20com%20c%C3%B3digo%20ass%C3%ADncrono. ), os métodos de Async/Await é a forma mais moderna de se utilizar as requisições assíncronas.
     - Um exemplo de uso dos métodos Async/Await está presente [aqui](https://github.com/prof-hasan/tp-web-eventos/blob/main/packages/domain-events/src/events/data/get.ts)
 
 - [x] 3 pontos: site responsivo por meio de media queries (não perdendo funcionalidades ao abrir em celular)
