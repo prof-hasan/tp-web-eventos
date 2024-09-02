@@ -1,0 +1,113 @@
+:root {
+    --primary-color: #2364AA; 
+    --secundary-color: #2D2327; 
+    --accent-color: #FFBF00; 
+    --background-color-1: #F7F0F0;
+    --background-color-2:#FAFDF6;
+  }
+*{    
+    margin: 0% 5% 0% 5%;
+    padding: 0;
+}
+
+#main{
+
+    font-family: "Roboto", sans-serif;
+    background-color: var(--background-color-2);
+}
+
+body{
+    color: var(--secundary-color);
+    background-color: var(--background-color-1);
+}
+.round-icone{
+    border-radius: 50%;
+    shape-outside: circle(50%);
+    width: 60px;
+    border: 1px solid var(--accent-color);
+}
+
+h2,h3{
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+h2{
+    color: var(--secundary-color);
+    font-size: 42px;
+    font-weight: bold;
+}
+h3{
+    font-size: 20px;
+    text-transform:uppercase;
+    color: var(--primary-color);
+}
+.stylized{
+    color: var(--accent-color);
+    font-size: 28px;
+}
+.dimmed{
+    margin: 0% 0% 0% 0%;
+    opacity: .5;
+    font-style:normal;
+}
+
+p{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+button{
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border:var(--primary-color);
+}
+ul{
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+}
+li {
+    margin-right: 10px;
+    text-decoration: none; 
+    font-size: 16px; 
+}
+
+#foot{
+    background-color: var(--secundary-color);
+} 
+#foot p {
+    color: var(--background-color-2);
+    font-size: 18px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid;
+    background-color: black;
+    box-sizing: border-box; 
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .square {
+    width: 100px;
+    height: 100px;
+    margin: 0px;
+    background-color: gray; /* Cor padrão */
+  }
+  
+  /* Defina cores específicas para cada quadrado */
+  .row:nth-child(1) .square:nth-child(1) { background-color: var(--accent-color); }
+  .row:nth-child(1) .square:nth-child(2) { background-color: white; }
+  .row:nth-child(1) .square:nth-child(3) { background-color: var(--primary-color); }
+  .row:nth-child(2) .square:nth-child(1) { background-color: var(--background-color-1); }
+  .row:nth-child(2) .square:nth-child(2) { background-color: var(--secundary-color); }
+  .row:nth-child(2) .square:nth-child(3) { background-color: var(--background-color-2); }
+  
