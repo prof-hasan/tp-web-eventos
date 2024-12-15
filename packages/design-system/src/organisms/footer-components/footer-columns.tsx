@@ -17,17 +17,17 @@ export const FooterColumns: React.FC<FooterColumnsProps> = ({ className = '' }) 
         icons={[]}
         items={[
           <Link href="/info/about" passHref>
-            Quem somos? / Nosso trabalho 
+            Quem somos?
           </Link>,
           <Link href="/info/policies" passHref>
-            Política de Implementação 
+            Política
           </Link>,
           <Link href="/info/design" passHref>
             Design
           </Link>,
           <Link href="/info/terms" passHref>
-            Termos de Uso
-          </Link> 
+            Termos
+          </Link>
         ]}
       />
       <Column
@@ -38,11 +38,11 @@ export const FooterColumns: React.FC<FooterColumnsProps> = ({ className = '' }) 
       />
       <Column
         className='flex-row text-right justify-end'
-        header='siga nas redes sociais'
+        header='redes sociais'
         icons={
           [
-            <TwitterLogoIcon />, 
-            <InstagramLogoIcon />, 
+            <TwitterLogoIcon />,
+            <InstagramLogoIcon />,
             <LinkedInLogoIcon />,
             <GitHubLogoIcon />
           ]

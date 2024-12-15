@@ -7,16 +7,16 @@ const AboutPage = async () => {
       <Article variant='red'>
         <Typograph variant='h3'>Nosso Trabalho</Typograph>
         <Typograph>Este site foi produzido por um grupo de alunos para a matéria de <strong>TÓPICOS ESPECIAIS EM ENGENHARIA DE SOFTWARE: PROGRAMAÇÃO PARA WEB</strong> ministrado no CEFET-MG pelo professor Daniel Hasan. O projeto consiste em um sistema de visualização de eventos ficticios (criado por nós) e não ficiticios. Os eventos não ficticios foram obtidos através de APIs de sites como o Sympla e foram utilizados com o intuito de estudar mais técnicas de desenvolvimento WEB.</Typograph>
-        <span className={cn('flex w-full justify-center justify-around')}>
-          <div className={cn('flex flex-col items-center w-1/2 px-4')}>
+        <div className={cn('grid grid-cols-1 md:grid-cols-2 gap-4')}>
+          <div className={cn('flex flex-col items-center px-4')}>
             <Typograph variant='h4'>Front-end</Typograph>
             <Typograph>NextJS + Typescript + Tailwind</Typograph>
           </div>
-          <div className={cn('flex flex-col items-center w-1/2 px-4')}>
+          <div className={cn('flex flex-col items-center px-4')}>
             <Typograph variant='h4'>Back-end</Typograph>
             <Typograph>NodeJS</Typograph>
           </div>
-        </span>
+        </div>
       </Article>
       <Article>
         <Typograph variant='h3'>Quem Somos</Typograph>

@@ -11,13 +11,13 @@ type Props = {
 
 const EventPage = async ({ params: { category: categoryId } }: Props) => {
   const _categoryId = decodeURIComponent(categoryId);
-  const { id: category, description } = await events.forServerComponent().category().id(_categoryId).get();
+  const { id: category, title, description } = await events.forServerComponent().category().id(_categoryId).get();
   const eventsObjs: EventsEntity[] = await events.forServerComponent().events().category(category).get();
 
   return (
     <div>
       <EventsCategoryContainer
-        category={category}
+        category={title}
         description={description ?? 'Eventos'}
         events={eventsObjs}
       />
